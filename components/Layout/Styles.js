@@ -21,6 +21,13 @@ export const StyledNavText = styled.a`
       color: ${({ theme }) =>
         theme.darken({ amount: 0.2, color: theme.white })};
     `}
+
+  ${({ submenu }) =>
+    submenu &&
+    css`
+      padding: 0 0.8rem;
+      font-size: 0.85rem;
+    `}
 `;
 
 export const StyledNavMenuWrapper = styled.div`
@@ -40,8 +47,14 @@ export const StyledNavWrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 5rem;
-  background-color: ${({ theme }) => theme.black};
+  max-width: 1200px;
+  height: 4rem;
+
+  ${({ submenu }) =>
+    submenu &&
+    css`
+      height: 2.5rem;
+    `}
 `;
 
 // LAYOUT
@@ -69,15 +82,30 @@ export const StyledFooterWrapper = styled.div`
   align-items: flex-start;
   justify-content: space-around;
   width: 100%;
+  max-width: 1220px;
+  flex-direction: column;
+  padding: 1rem 2rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding: 6rem 0;
+    flex-direction: row;
+  }
 
   > div {
-    width: 33.33%;
+    width: 100%;
+    margin: 1.5rem 0px;
+    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+      width: 20%;
+      margin: 0;
+    }
   }
 `;
 
 export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.black};
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const StyledIconWrapper = styled.div`
@@ -91,4 +119,53 @@ export const StyledIconWrapper = styled.div`
 export const StyledCopyright = styled.div`
   width: 100%;
   height: 2rem;
+`;
+
+export const StyledMenuWrapper = styled.div`
+  background-color: ${({ theme }) => theme.black};
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: none;
+  }
+`;
+
+export const StyledSubMenu = styled.a`
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
+  }
+`;
+export const StyledFooterAdres = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+export const StyledSubFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 2rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.5rem 10rem;
+  }
+`;
+
+export const StyledTelWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  align-items: flex-start;
 `;
