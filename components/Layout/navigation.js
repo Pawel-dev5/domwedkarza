@@ -24,7 +24,9 @@ const Navigation = ({ menuItems, subMenuItems }) => {
         <div>
           {subMenuItems?.map((item) => (
             <StyledSubMenu
-              href={`tel:${item?.node?.label}`}
+              href={`${
+                item?.node?.path === "http://email" ? "mailto:" : "tel:"
+              }${item?.node?.label}`}
               key={item?.node?.id}
             >
               <StyledNavText submenu key={item?.node?.id}>

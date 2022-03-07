@@ -9,7 +9,7 @@ import Footer from "./footer";
 // STYLES
 import { StyledLayoutBackground, StyledLayout } from "./Styles";
 
-const Layout = ({ children, slug, menuItems, subMenuItems }) => (
+const Layout = ({ children, slug, menuItems, subMenuItems, footerItems }) => (
   <>
     <Head>
       <title>
@@ -24,7 +24,7 @@ const Layout = ({ children, slug, menuItems, subMenuItems }) => (
       <StyledLayout>{children}</StyledLayout>
     </StyledLayoutBackground>
 
-    <Footer />
+    <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
   </>
 );
 

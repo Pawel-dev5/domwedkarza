@@ -9,6 +9,7 @@ export const StyledContainer = styled.div`
 export const StyledText = styled.span`
   font-size: 1rem;
   padding: 0.5rem;
+  color: ${({ theme }) => theme.white};
 
   ${({ h1 }) =>
     h1 &&
@@ -25,42 +26,42 @@ export const StyledText = styled.span`
       font-size: 1.25rem;
     `}
 
-  ${({ h5 }) =>
+    ${({ h5 }) =>
     h5 &&
     css`
       font-size: 0.8rem;
     `}
-  ${({ h6 }) =>
+
+    ${({ h6 }) =>
     h6 &&
     css`
       font-size: 0.7rem;
     `}
 
-  ${({ white }) =>
+    ${({ white }) =>
     white &&
     css`
       color: ${({ theme }) => theme.white};
     `}
 
-  ${({ grey }) =>
+    ${({ grey }) =>
     grey &&
     css`
       color: ${({ theme }) => theme.grey700};
     `}
 
-  ${({ bold }) =>
+    ${({ bold }) =>
     bold &&
     css`
       font-weight: ${({ theme }) => theme.bold};
     `}
 
-  ${({ semiBold }) =>
+    ${({ semiBold }) =>
     semiBold &&
     css`
       font-weight: ${({ theme }) => theme.semiBold};
     `}
-   
-   ${({ avatarName }) =>
+    ${({ avatarName }) =>
     avatarName &&
     css`
       margin-left: 1rem;
@@ -71,12 +72,18 @@ export const StyledText = styled.span`
     css`
       cursor: pointer;
     `}
-    
+
     ${({ center }) =>
     center &&
     css`
       text-align: center;
-    `}
+    `};
+
+  ${({ footerAdres }) =>
+    footerAdres &&
+    css`
+      padding: 1rem 0;
+    `};
 `;
 
 export const StyledWrapper = styled.div`
@@ -170,9 +177,20 @@ export const StyledWrapper = styled.div`
 
 export const StyledLogoWrapper = styled.div`
   position: relative;
-  width: 10.6rem;
-  height: 3rem;
+  width: 6rem;
+  height: 6rem;
   cursor: pointer;
+
+  ${({ footer }) =>
+    footer &&
+    css`
+      height: 10.5rem;
+      width: 100%;
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 16.5rem;
+        height: 8.5rem;
+      }
+    `}
 `;
 
 // BLOG

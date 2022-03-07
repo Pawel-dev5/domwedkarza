@@ -1,10 +1,11 @@
 import Layout from "../components/Layout/layout";
-import { getPrimaryMenu, getSubMenu } from "../lib/api";
+import { getPrimaryMenu, getSubMenu, getFooter } from "../lib/api";
 
-const Home = ({ menuItems: { menuItems }, subMenuItems }) => (
+const Home = ({ menuItems: { menuItems }, subMenuItems, footerItems }) => (
   <Layout
     menuItems={menuItems?.edges}
     subMenuItems={subMenuItems?.menuItems?.edges}
+    footerItems={footerItems?.menuItems?.edges}
   >
     <main>
       <span>content</span>
@@ -15,11 +16,13 @@ const Home = ({ menuItems: { menuItems }, subMenuItems }) => (
 export async function getStaticProps() {
   const menuItems = await getPrimaryMenu();
   const subMenuItems = await getSubMenu();
+  const footerItems = await getFooter();
 
   return {
     props: {
       menuItems,
       subMenuItems,
+      footerItems,
     },
     // revalidate: 10, // In seconds
   };
