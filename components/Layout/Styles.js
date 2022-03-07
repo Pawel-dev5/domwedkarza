@@ -21,6 +21,13 @@ export const StyledNavText = styled.a`
       color: ${({ theme }) =>
         theme.darken({ amount: 0.2, color: theme.white })};
     `}
+
+  ${({ submenu }) =>
+    submenu &&
+    css`
+      padding: 0 0.8rem;
+      font-size: 0.85rem;
+    `}
 `;
 
 export const StyledNavMenuWrapper = styled.div`
@@ -40,8 +47,14 @@ export const StyledNavWrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 5rem;
-  background-color: ${({ theme }) => theme.black};
+  max-width: 1200px;
+  height: 4rem;
+
+  ${({ submenu }) =>
+    submenu &&
+    css`
+      height: 2.5rem;
+    `}
 `;
 
 // LAYOUT
@@ -91,4 +104,19 @@ export const StyledIconWrapper = styled.div`
 export const StyledCopyright = styled.div`
   width: 100%;
   height: 2rem;
+`;
+
+export const StyledMenuWrapper = styled.div`
+  background-color: ${({ theme }) => theme.black};
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const StyledSubMenu = styled.a`
+  text-decoration: none;
+  :hover {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
+  }
 `;

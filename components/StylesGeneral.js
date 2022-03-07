@@ -4,10 +4,6 @@ import styled, { css } from "styled-components";
 export const StyledContainer = styled.div`
   width: 100%;
   margin: auto;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    width: 1200px;
-  }
 `;
 
 export const StyledText = styled.span`
