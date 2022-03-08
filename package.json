@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "eslint": "8.9.0",
-    "eslint-config-next": "12.1.0"
+    "eslint-config-next": "12.1.0",
+    "fslightbox-react": "^1.6.2-2"
   }
 }

@@ -1,16 +1,14 @@
 // COPONENTS
 import FirstSection from "./sections/FirstSection";
 import SecondSection from "./sections/SecondSection";
+import ThirdSection from "./sections/ThirdSection";
 
-const HomePage = ({ mainGallery }) => {
-  const gallery = Object.values(mainGallery?.galeriaGlowna);
-
-  return (
-    <>
-      <FirstSection gallery={gallery} />
-      <SecondSection data={mainGallery?.sekcjaDruga} />
-    </>
-  );
-};
+const HomePage = ({ mainGallery }) => (
+  <>
+    <FirstSection data={mainGallery?.galeriaGlowna} />
+    <SecondSection data={mainGallery?.sekcjaDruga} />
+    <ThirdSection data={mainGallery?.sekcjaTrzecia} />
+  </>
+);
 
 export default HomePage;
