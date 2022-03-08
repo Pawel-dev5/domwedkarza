@@ -39,10 +39,6 @@ export const StyledNavMenuWrapper = styled.div`
 `;
 
 export const StyledNavWrapper = styled.nav`
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  z-index: 999;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -111,6 +107,10 @@ export const StyledCopyright = styled.div`
 `;
 
 export const StyledMenuWrapper = styled.div`
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  z-index: 999;
+  top: 0;
   background-color: ${({ theme }) => theme.black};
   display: flex;
   align-items: center;

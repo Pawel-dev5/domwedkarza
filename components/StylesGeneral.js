@@ -84,6 +84,12 @@ export const StyledText = styled.span`
     css`
       padding: 1rem 0;
     `};
+
+  ${({ main }) =>
+    main &&
+    css`
+      z-index: 9;
+    `};
 `;
 
 export const StyledWrapper = styled.div`
@@ -189,6 +195,18 @@ export const StyledLogoWrapper = styled.div`
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         width: 16.5rem;
         height: 8.5rem;
+      }
+    `}
+
+  ${({ gallery }) =>
+    gallery &&
+    css`
+      width: 20.5rem;
+      height: 30.5rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 36.5rem;
+        height: 26.5rem;
       }
     `}
 `;

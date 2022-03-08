@@ -37,6 +37,14 @@ const ThemeDefault = () => {
             box-shadow: 0px 8px 12px -3px rgb(0 0 0 / 80%), 0px 0px 2px 0 rgb(0 0 0 / 15%);
         `,
 
+    overlay: `
+        background-color: #000000;
+        opacity: 0.4;
+        * {
+          opacity: 1;
+        }
+        `,
+
     borderRadius100: "0.5rem", // 24px
     borderRadius400: "1.5rem", // 24px
 
