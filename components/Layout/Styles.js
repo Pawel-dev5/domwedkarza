@@ -58,22 +58,11 @@ export const StyledNavWrapper = styled.nav`
 `;
 
 // LAYOUT
-export const StyledLayoutBackground = styled.div`
-  background-image: url("https://db.finlux.com.pl/wp-content/uploads/2022/02/background-g29cbff064_1920.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: 30%;
-`;
-
 export const StyledLayout = styled.main`
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.9) 0,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.9) 100%
-  ); ;
+  min-height: 800px;
+  background: ${({ theme }) => theme.white};
 `;
 
 // FOOTER

@@ -7,7 +7,7 @@ import Navigation from "./navigation";
 import Footer from "./footer";
 
 // STYLES
-import { StyledLayoutBackground, StyledLayout } from "./Styles";
+import { StyledLayout } from "./Styles";
 
 const Layout = ({ children, slug, menuItems, subMenuItems, footerItems }) => (
   <>
@@ -20,9 +20,7 @@ const Layout = ({ children, slug, menuItems, subMenuItems, footerItems }) => (
     </Head>
     <Navigation menuItems={menuItems} subMenuItems={subMenuItems} />
 
-    <StyledLayoutBackground>
-      <StyledLayout>{children}</StyledLayout>
-    </StyledLayoutBackground>
+    <StyledLayout>{children}</StyledLayout>
 
     <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
   </>

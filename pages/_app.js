@@ -2,6 +2,8 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import theme from "../theme/themeDefault";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "react-multi-carousel/lib/styles.css";
+
 config.autoAddCss = false;
 
 const GlobalStyle = createGlobalStyle`
