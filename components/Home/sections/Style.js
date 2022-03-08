@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const StyledSecondWrapper = styled.div`
   width: 100%;
-  height: 700px;
+  height: 1000px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     height: 500px;
@@ -54,4 +54,22 @@ export const StyledThirdSection = styled.div`
       }
     }
   }
+`;
+
+export const StyledVideo = styled.video`
+  height: 100%;
+`;
+
+export const StyledVideoWrapper = styled.div`
+  width: 100%;
+  max-width: 100%;
+  height: 180px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    height: 500px;
+  }
+  margin: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

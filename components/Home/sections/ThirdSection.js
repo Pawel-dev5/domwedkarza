@@ -4,19 +4,24 @@ import Image from "next/image";
 import { StyledThirdSection } from "./Style";
 
 const ThirdSection = ({ data }) => {
-  const gallery = Object.values(data);
+  let gallery = [];
+  if (data) {
+    gallery = Object.values(data);
+  }
 
-  return (
-    <>
-      <StyledThirdSection>
-        {gallery?.map((image) => (
-          <div key={image?.id} aria-hidden="true">
-            <Image src={image?.sourceUrl} alt={image?.altText} />
-          </div>
-        ))}
-      </StyledThirdSection>
-    </>
-  );
+  if (data) {
+    return (
+      <>
+        <StyledThirdSection>
+          {gallery?.map((image) => (
+            <div key={image?.id} aria-hidden="true">
+              <Image src={image?.sourceUrl} alt={image?.altText} />
+            </div>
+          ))}
+        </StyledThirdSection>
+      </>
+    );
+  } else return null;
 };
 
 export default ThirdSection;

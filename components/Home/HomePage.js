@@ -2,12 +2,17 @@
 import FirstSection from "./sections/FirstSection";
 import SecondSection from "./sections/SecondSection";
 import ThirdSection from "./sections/ThirdSection";
+import Video from "./sections/video";
 
-const HomePage = ({ mainGallery }) => (
+const HomePage = ({ mainData }) => (
   <>
-    <FirstSection data={mainGallery?.galeriaGlowna} />
-    <SecondSection data={mainGallery?.sekcjaDruga} />
-    <ThirdSection data={mainGallery?.sekcjaTrzecia} />
+    <FirstSection
+      data={mainData?.galeriaGlowna}
+      naglowek={mainData?.glownaNaglowek?.glownaNaglowek}
+    />
+    <SecondSection data={mainData?.sekcjaDruga} />
+    <ThirdSection data={mainData?.sekcjaTrzecia} />
+    <Video src={mainData?.glownaWideo?.wideo} />
   </>
 );
 

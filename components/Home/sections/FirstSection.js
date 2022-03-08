@@ -17,50 +17,58 @@ const responsive = {
   },
 };
 
-const FirstSection = ({ data }) => {
-  const gallery = Object.values(data);
+const FirstSection = ({ data, naglowek }) => {
+  let gallery = [];
+  if (data) {
+    gallery = Object.values(data);
+  }
 
-  return (
-    <div>
-      <StyledCarouselWrapper>
-        <Carousel
-          containerClass="container-with-dots"
-          itemClass="image-item"
-          responsive={responsive}
-          ssr
-          infinite={false}
-          showDots={false}
-          arrows={false}
-          swipeable={true}
-          autoPlay={true}
-          autoPlaySpeed={5000}
-          customTransition="all .5"
-          transitionDuration={1000}
-        >
-          {gallery?.map((image) => (
+  if (data && naglowek) {
+    return (
+      <div>
+        <StyledCarouselWrapper>
+          <Carousel
+            containerClass="container-with-dots"
+            itemClass="image-item"
+            responsive={responsive}
+            ssr
+            infinite={false}
+            showDots={false}
+            arrows={false}
+            swipeable={true}
+            autoPlay={true}
+            autoPlaySpeed={5000}
+            customTransition="all .5"
+            transitionDuration={1000}
+          >
+            {gallery?.map((image) => (
+              <Image
+                key={image?.id}
+                src={image?.sourceUrl}
+                alt={image?.altText}
+              />
+            ))}
+          </Carousel>
+        </StyledCarouselWrapper>
+
+        <StyledMainOverlay>
+          <StyledOverlay />
+
+          <StyledLogoWrapper gallery>
             <Image
-              key={image?.id}
-              src={image?.sourceUrl}
-              alt={image?.altText}
+              alt="Nad Zalewem"
+              src={logo}
+              layout="fill"
+              objectFit="cover"
             />
-          ))}
-        </Carousel>
-      </StyledCarouselWrapper>
+          </StyledLogoWrapper>
 
-      <StyledMainOverlay>
-        <StyledOverlay />
-
-        <StyledLogoWrapper gallery>
-          <Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
-        </StyledLogoWrapper>
-
-        <StyledText h1 main>
-          Organizacja przyjęć okolicznościowych
-          <br />
-          nad malowniczym Zalewem Nowohuckim
-        </StyledText>
-      </StyledMainOverlay>
-    </div>
-  );
+          <StyledText h1 main>
+            {naglowek}
+          </StyledText>
+        </StyledMainOverlay>
+      </div>
+    );
+  } else return null;
 };
 export default FirstSection;

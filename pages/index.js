@@ -15,7 +15,7 @@ const Home = ({
     subMenuItems={subMenuItems?.menuItems?.edges}
     footerItems={footerItems?.menuItems?.edges}
   >
-    <HomePage mainGallery={homePage?.node} />
+    <HomePage mainData={homePage?.node} />
   </Layout>
 );
 
