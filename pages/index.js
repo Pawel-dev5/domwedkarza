@@ -1,9 +1,4 @@
-import {
-  getPrimaryMenu,
-  getSubMenu,
-  getFooter,
-  getMainGallery,
-} from "../lib/api";
+import { getPrimaryMenu, getSubMenu, getFooter, getHomePage } from "../lib/api";
 
 // COMPONENTS
 import Layout from "../components/Layout/layout";
@@ -13,14 +8,14 @@ const Home = ({
   menuItems: { menuItems },
   subMenuItems,
   footerItems,
-  mainGallery,
+  homePage,
 }) => (
   <Layout
     menuItems={menuItems?.edges}
     subMenuItems={subMenuItems?.menuItems?.edges}
     footerItems={footerItems?.menuItems?.edges}
   >
-    <HomePage mainGallery={mainGallery?.node} />
+    <HomePage mainGallery={homePage?.node} />
   </Layout>
 );
 
@@ -28,14 +23,14 @@ export async function getStaticProps() {
   const menuItems = await getPrimaryMenu();
   const subMenuItems = await getSubMenu();
   const footerItems = await getFooter();
-  const mainGallery = await getMainGallery();
+  const homePage = await getHomePage();
 
   return {
     props: {
       menuItems,
       subMenuItems,
       footerItems,
-      mainGallery,
+      homePage,
     },
     // revalidate: 10, // In seconds
   };

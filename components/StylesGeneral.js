@@ -38,10 +38,10 @@ export const StyledText = styled.span`
       font-size: 0.7rem;
     `}
 
-    ${({ white }) =>
-    white &&
+    ${({ black }) =>
+    black &&
     css`
-      color: ${({ theme }) => theme.white};
+      color: ${({ theme }) => theme.black};
     `}
 
     ${({ grey }) =>
@@ -90,6 +90,18 @@ export const StyledText = styled.span`
     css`
       z-index: 9;
     `};
+
+  ${({ width }) =>
+    width &&
+    css`
+      width: ${width};
+    `}
+
+  ${({ lh }) =>
+    lh &&
+    css`
+      line-height: ${lh};
+    `}
 `;
 
 export const StyledWrapper = styled.div`
@@ -209,6 +221,14 @@ export const StyledLogoWrapper = styled.div`
         height: 26.5rem;
       }
     `}
+`;
+
+export const StyledButton = styled.button`
+  padding: 0.6rem 1.25rem;
+  background-color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.white};
+  border: none;
+  margin: 2rem;
 `;
 
 // BLOG
