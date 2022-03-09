@@ -13,7 +13,10 @@ const HomePage = ({ mainData }) => (
     />
     <SecondSection data={mainData?.sekcjaDruga} />
     <ThirdSection data={mainData?.sekcjaTrzecia} />
-    <Features features={mainData?.features?.features} />
+    <Features
+      features={mainData?.features?.features}
+      heading={mainData?.features?.featuresHeading}
+    />
     <Video src={mainData?.glownaWideo?.wideo} />
   </>
 );

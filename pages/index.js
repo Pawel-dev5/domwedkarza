@@ -32,7 +32,7 @@ export async function getStaticProps() {
       footerItems,
       homePage,
     },
-    // revalidate: 10, // In seconds
+    revalidate: 10, // In seconds
   };
 }
 

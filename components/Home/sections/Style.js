@@ -1,5 +1,13 @@
 import styled, { css } from "styled-components";
 
+const basicCardStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+`;
+
 export const StyledSecondWrapper = styled.div`
   width: 100%;
   height: 1000px;
@@ -69,16 +77,21 @@ export const StyledVideoWrapper = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     height: 500px;
   }
-  margin: 5rem 0;
+  margin: 0 0 5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const StyledFeaturesWrapper = styled.div`
+  ${basicCardStyles};
+  margin: 5rem 0px;
+`;
+
+export const StyledItemsWrapper = styled.div`
   width: 100%;
   max-width: 100%;
-  height: 1000px;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +99,7 @@ export const StyledFeaturesWrapper = styled.div`
   text-align: center;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    height: 450px;
+    height: 500px;
     display: grid;
     grid-template-columns: 1fr;
 

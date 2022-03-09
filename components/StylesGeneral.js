@@ -20,6 +20,12 @@ export const StyledText = styled.span`
       padding-bottom: 0.5rem;
     `}
 
+  ${({ featureHeader }) =>
+    featureHeader &&
+    css`
+      font-size: 1.5rem;
+    `}
+  
   ${({ h2 }) =>
     h2 &&
     css`
