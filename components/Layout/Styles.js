@@ -59,6 +59,7 @@ export const StyledLayout = styled.main`
   height: 100%;
   min-height: 800px;
   background: ${({ theme }) => theme.white};
+  padding-top: 100px;
 `;
 
 // FOOTER
@@ -107,8 +108,10 @@ export const StyledCopyright = styled.div`
 `;
 
 export const StyledMenuWrapper = styled.div`
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: -webkit-fixed; /* Safari */
+  /* position: sticky; */
+  position: fixed;
+  width: 100%;
   z-index: 999;
   top: 0;
   background-color: ${({ theme }) => theme.black};
