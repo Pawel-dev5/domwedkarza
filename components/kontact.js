@@ -1,5 +1,4 @@
 import { KontaktItems } from "./items";
-import styled from "styled-components";
 
 // STYLES
 import { StyledFormWrapper, StyledFormContainer } from "./Styles";

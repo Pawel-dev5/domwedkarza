@@ -89,7 +89,7 @@ export const StyledText = styled.span`
   ${({ footerAdres }) =>
     footerAdres &&
     css`
-      padding: 1rem 0;
+      width: 55%;
     `};
 
   ${({ main }) =>
@@ -114,6 +114,12 @@ export const StyledText = styled.span`
     padding &&
     css`
       padding: ${padding};
+    `}
+ 
+ ${({ textAlign }) =>
+    textAlign &&
+    css`
+      text-align: ${textAlign};
     `}
 `;
 

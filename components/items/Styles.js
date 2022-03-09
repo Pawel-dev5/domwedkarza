@@ -47,6 +47,7 @@ export const StyledFooterAdres = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  align-items: flex-start;
 `;
 
 export const StyledTelWrapper = styled.div`
@@ -72,6 +73,19 @@ export const StyledContact = styled.div`
 
       * {
         color: ${({ theme }) => theme.white};
+      }
+    `}
+
+  ${({ color }) =>
+    color === "black" &&
+    css`
+      width: 50%;
+      > div {
+        width: 50%;
+      }
+
+      span {
+        font-size: 2rem;
       }
     `}
 `;

@@ -23,12 +23,30 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
         <StyledFooterAdres>
           <div>
             <StyledIcon icon={faHome} className="fa-xl" />
-            <StyledText h5>Adres</StyledText>
+            <StyledText
+              h5={color === "white" ?? true}
+              h3={color === "black" ?? true}
+            >
+              Adres
+            </StyledText>
           </div>
 
           <StyledAdressWrapper>
-            <StyledText h5>{footerItems[0]?.node?.label}</StyledText>
-            <StyledText h5>NIP: {footerItems[1]?.node?.label}</StyledText>
+            <StyledText
+              h3={color === "black" ?? true}
+              h5={color === "white" ?? true}
+              footerAdres={color === "black" ?? true}
+              textAlign="left"
+            >
+              {footerItems[0]?.node?.label}
+            </StyledText>
+            <StyledText
+              h5={color === "white" ?? true}
+              h3={color === "black" ?? true}
+              textAlign="left"
+            >
+              NIP: {footerItems[1]?.node?.label}
+            </StyledText>
           </StyledAdressWrapper>
         </StyledFooterAdres>
 
@@ -36,7 +54,12 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
           <div>
             <StyledIcon icon={faPhone} className="fa-xl" />
 
-            <StyledText h5>Zadzwoń</StyledText>
+            <StyledText
+              h5={color === "white" ?? true}
+              h3={color === "black" ?? true}
+            >
+              Zadzwoń
+            </StyledText>
           </div>
 
           <StyledTelWrapper>
@@ -47,7 +70,11 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
                 }${item?.node?.label}`}
                 key={item?.node?.id}
               >
-                <StyledText h5 submenu key={item?.node?.id}>
+                <StyledText
+                  h5={color === "white" ?? true}
+                  h3={color === "black" ?? true}
+                  key={item?.node?.id}
+                >
                   {item?.node?.label}
                 </StyledText>
               </StyledSubMenu>

@@ -10,9 +10,17 @@ export const StyledFormWrapper = styled.div`
 
 export const StyledFormContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-flow: column nowrap;
   text-align: center;
   margin: 2.5rem auto;
+
+  width: 100%;
+  max-width: 1220px;
+  padding: 1rem 2rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    flex-flow: row nowrap;
+  }
 `;
