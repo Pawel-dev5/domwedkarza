@@ -2,16 +2,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 // COMPONENTS
-import { Date } from "../elements";
-import { Tags } from "../items";
+// import { Tags } from "../items";
 
 // STYLES
 import { StyledWrapper, StyledText } from "../../components/StylesGeneral";
-import { StyledHeroImgWrapper, StyledHeroWrapper } from "./Styles";
+import {
+  StyledHeroImgWrapper,
+  StyledHeroWrapper,
+  StyledHeroSection,
+} from "./Styles";
 
-const HeroPost = ({ title, featuredImage, date, excerpt, slug, tags }) => (
-  <Link href={`/blog/${slug}`} passHref>
-    <section>
+const HeroPost = ({ title, featuredImage, excerpt, slug }) => (
+  <Link href={`/oferta/${slug}`} passHref>
+    <StyledHeroSection>
       <StyledHeroImgWrapper>
         <Image
           width={730}
@@ -25,18 +28,16 @@ const HeroPost = ({ title, featuredImage, date, excerpt, slug, tags }) => (
 
       <StyledWrapper between hero>
         <StyledHeroWrapper column>
-          <StyledText h1 bold>
+          <StyledText h1 bold black>
             {title}
           </StyledText>
 
-          {tags && <Tags tags={tags?.edges} />}
-
-          <Date dateString={date} />
+          {/* {tags && <Tags tags={tags?.edges} />} */}
         </StyledHeroWrapper>
 
         <StyledHeroWrapper dangerouslySetInnerHTML={{ __html: excerpt }} />
       </StyledWrapper>
-    </section>
+    </StyledHeroSection>
   </Link>
 );
 

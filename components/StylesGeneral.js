@@ -130,7 +130,18 @@ export const StyledWrapper = styled.div`
     css`
       margin: 3rem 0.5rem;
       margin-top: 1.5rem;
-      min-height: 10.5rem;
+      min-height: 5.5rem;
+    `}
+
+  ${({ offer }) =>
+    offer &&
+    css`
+      width: 100%;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 75%;
+        margin: auto;
+      }
     `}
 
   ${({ avatar }) =>
@@ -237,11 +248,17 @@ export const StyledLogoWrapper = styled.div`
 `;
 
 export const StyledButton = styled.button`
+  cursor: pointer;
   padding: 0.6rem 1.25rem;
   background-color: ${({ theme }) => theme.black};
   color: ${({ theme }) => theme.white};
   border: none;
   margin: 2rem;
+
+  :hover {
+    background-color: ${({ theme }) =>
+      theme.transparentize({ amount: 0.2, color: theme.black })};
+  }
 `;
 
 // BLOG

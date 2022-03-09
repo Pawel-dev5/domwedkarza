@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // STYLES
 import { StyledSecondWrapper } from "./Style";
 import { StyledText, StyledButton } from "../../StylesGeneral";
@@ -10,7 +12,9 @@ const SecondSection = ({ data }) => {
           {data?.naglowek}
         </StyledText>
 
-        <StyledButton type="button">{data?.przycisk}</StyledButton>
+        <Link href={`/oferta`} passHref>
+          <StyledButton type="button">{data?.przycisk}</StyledButton>
+        </Link>
       </StyledSecondWrapper>
     );
   } else return null;

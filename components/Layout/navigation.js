@@ -38,7 +38,10 @@ const Navigation = ({ menuItems, subMenuItems }) => {
           ))}
         </div>
 
-        <Link href="https://www.facebook.com/" passHref>
+        <Link
+          href="https://www.facebook.com/profile.php?id=100057231978583"
+          passHref
+        >
           <FontAwesomeIcon
             icon={faFacebookSquare}
             className="fa-xl"

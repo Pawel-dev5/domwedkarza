@@ -9,6 +9,7 @@ const PostFooter = ({ tags, categories, date }) => (
         Opublikowano <Date dateString={date} />
       </div>
     )}
+
     {tags && <Tags tags={tags} />}
     {categories && <Categories categories={categories} />}
   </footer>

@@ -1,4 +1,4 @@
-import { PostHeader, PostTitle, PostBody, PostFooter } from "./Post";
+import { PostHeader, PostBody } from "./Post";
 
 const PostContent = ({ post }) => (
   <>
@@ -12,11 +12,11 @@ const PostContent = ({ post }) => (
 
     <PostBody content={post?.content} />
 
-    <PostFooter
+    {/* <PostFooter
       tags={post?.tags?.edges}
       categories={post?.categories}
       date={post?.date}
-    />
+    /> */}
   </>
 );
 
