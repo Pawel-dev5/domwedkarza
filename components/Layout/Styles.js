@@ -121,19 +121,6 @@ export const StyledMenuWrapper = styled.div`
   }
 `;
 
-export const StyledSubMenu = styled.a`
-  text-decoration: none;
-
-  :hover {
-    text-decoration: underline;
-    color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
-  }
-`;
-export const StyledFooterAdres = styled.div`
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-`;
 export const StyledSubFooter = styled.div`
   display: flex;
   align-items: center;
@@ -152,9 +139,12 @@ export const StyledSubFooter = styled.div`
   }
 `;
 
-export const StyledTelWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
-  align-items: flex-start;
+export const StyledIframe = styled.iframe`
+  border: none;
+  width: 100%;
+  height: 300px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 55%;
+  }
 `;

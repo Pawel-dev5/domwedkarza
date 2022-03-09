@@ -6,13 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
 // STYLES
-import { StyledLogoWrapper } from "../../components/StylesGeneral";
+import {
+  StyledLogoWrapper,
+  StyledSubMenu,
+} from "../../components/StylesGeneral";
 import {
   StyledNavWrapper,
   StyledNavMenuWrapper,
   StyledNavText,
   StyledMenuWrapper,
-  StyledSubMenu,
 } from "./Styles";
 
 const Navigation = ({ menuItems, subMenuItems }) => {

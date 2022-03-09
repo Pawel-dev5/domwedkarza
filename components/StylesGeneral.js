@@ -267,3 +267,12 @@ export const StyledBlogTitle = styled.span`
       `}
   }
 `;
+
+export const StyledSubMenu = styled.a`
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
+  }
+`;

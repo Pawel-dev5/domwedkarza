@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledCoverImg = styled.div`
   cursor: pointer;
@@ -41,4 +41,43 @@ export const StyledTags = styled.span`
     background-color: ${({ theme }) => theme.grey300};
     border: 1px solid ${({ theme }) => theme.grey500};
   } */
+`;
+
+export const StyledFooterAdres = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+
+export const StyledTelWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  align-items: flex-start;
+`;
+
+export const StyledContact = styled.div`
+  color: ${({ theme }) => theme.black};
+
+  * {
+    color: ${({ theme }) => theme.black};
+  }
+
+  ${({ color }) =>
+    color === "white" &&
+    css`
+      color: ${({ theme }) => theme.white};
+
+      * {
+        color: ${({ theme }) => theme.white};
+      }
+    `}
+`;
+
+export const StyledAdressWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 `;
