@@ -6,7 +6,9 @@ export const StyledCarouselWrapper = styled.div`
   position: absolute;
 
   .container-with-dots {
-    min-height: 800px;
+    * {
+      min-height: 800px;
+    }
     img {
       min-height: 800px !important;
       object-fit: cover;

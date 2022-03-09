@@ -61,6 +61,7 @@ export const StyledText = styled.span`
     css`
       font-weight: ${({ theme }) => theme.semiBold};
     `}
+
     ${({ avatarName }) =>
     avatarName &&
     css`
@@ -101,6 +102,12 @@ export const StyledText = styled.span`
     lh &&
     css`
       line-height: ${lh};
+    `}
+ 
+ ${({ padding }) =>
+    padding &&
+    css`
+      padding: ${padding};
     `}
 `;
 
