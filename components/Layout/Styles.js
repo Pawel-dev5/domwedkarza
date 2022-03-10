@@ -59,7 +59,6 @@ export const StyledLayout = styled.main`
   height: 100%;
   min-height: 800px;
   background: ${({ theme }) => theme.white};
-  padding-top: 100px;
 `;
 
 // FOOTER
@@ -149,5 +148,38 @@ export const StyledIframe = styled.iframe`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 55%;
+  }
+`;
+
+export const StyledLayoutHeader = styled.div`
+  ${({ src }) =>
+    src &&
+    css`
+      margin-top: 100px;
+      min-height: 350px;
+      width: 100%;
+      background-image: url(${src});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
+    `}
+`;
+
+export const StyledLayoutHeaderText = styled.div`
+  width: 60%;
+  border-bottom: 1px solid gray;
+  height: 100px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 30%;
   }
 `;

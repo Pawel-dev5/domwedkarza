@@ -37,3 +37,7 @@ export const StyledOverlay = styled.div`
 
   ${({ theme }) => theme.overlay}
 `;
+
+export const StyledFirstSectionWrapper = styled.div`
+  margin-top: 100px;
+`;

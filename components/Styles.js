@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const StyledFormWrapper = styled.div`
-  width: 300px;
+  width: 500px;
   height: 300px;
   background-color: grey;
   color: black;

@@ -20,8 +20,11 @@ const Index = ({
       menuItems={menuItems?.edges}
       subMenuItems={subMenuItems?.menuItems?.edges}
       footerItems={footerItems?.menuItems?.edges}
+      headerText={galleryPage?.title}
+      headerImg={galleryPage?.featuredImage?.node}
+      subHeaderText={galleryPage?.galeria?.galeria?.galleryText}
     >
-      <Gallery data={galleryPage?.node?.galeria?.galeria} />
+      <Gallery data={galleryPage?.galeria?.galeria} />
     </Layout>
   );
 };

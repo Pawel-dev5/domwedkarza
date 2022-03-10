@@ -3,6 +3,7 @@ import {
   getPrimaryMenu,
   getSubMenu,
   getFooter,
+  getOfferHeader,
 } from "../lib/api";
 
 // COMPONENTS
@@ -19,6 +20,7 @@ const Blog = ({
   menuItems: { menuItems },
   subMenuItems,
   footerItems,
+  offerHeader,
 }) => {
   const heroPost = edges[0]?.node;
   const morePosts = edges.slice(1);
@@ -28,15 +30,11 @@ const Blog = ({
       menuItems={menuItems?.edges}
       subMenuItems={subMenuItems?.menuItems?.edges}
       footerItems={footerItems?.menuItems?.edges}
+      headerImg={offerHeader?.featuredImage?.node}
+      headerText={offerHeader?.title}
+      subHeaderText={offerHeader?.oferta?.subheader}
     >
       <Container>
-        <StyledWrapper between offer>
-          <StyledBlogTitle>Oferta</StyledBlogTitle>
-          <StyledBlogTitle subTitle>
-            Wyjątkowe miejsce nad Zalewem Nowohuckim w&nbsp;Krakowie
-          </StyledBlogTitle>
-        </StyledWrapper>
-
         {heroPost && <HeroPost {...heroPost} />}
         <hr />
         {morePosts && <MoreStories posts={morePosts} />}
@@ -50,9 +48,10 @@ export async function getStaticProps() {
   const subMenuItems = await getSubMenu();
   const footerItems = await getFooter();
   const allPosts = await getAllPostsForHome();
+  const offerHeader = await getOfferHeader();
 
   return {
-    props: { allPosts, menuItems, subMenuItems, footerItems },
+    props: { allPosts, menuItems, subMenuItems, footerItems, offerHeader },
     revalidate: 10, // In seconds
   };
 }

@@ -8,6 +8,7 @@ import {
   StyledCarouselWrapper,
   StyledMainOverlay,
   StyledOverlay,
+  StyledFirstSectionWrapper,
 } from "../Styles";
 
 const responsive = {
@@ -25,7 +26,7 @@ const FirstSection = ({ data, naglowek }) => {
 
   if (data && naglowek) {
     return (
-      <div>
+      <StyledFirstSectionWrapper>
         <StyledCarouselWrapper>
           <Carousel
             containerClass="container-with-dots"
@@ -67,7 +68,7 @@ const FirstSection = ({ data, naglowek }) => {
             {naglowek}
           </StyledText>
         </StyledMainOverlay>
-      </div>
+      </StyledFirstSectionWrapper>
     );
   } else return null;
 };

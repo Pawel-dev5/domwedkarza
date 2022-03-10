@@ -21,15 +21,6 @@ const Gallery = ({ data }) => {
   return (
     <>
       <StyledWrapper column>
-        <StyledText h1 black>
-          {data?.galleryHeader}
-        </StyledText>
-        <StyledText h2 black>
-          {data?.galleryText}
-        </StyledText>
-      </StyledWrapper>
-
-      <StyledWrapper column>
         <StyledText h2 black>
           {data?.imprezyOkolicznoCiowe?.imprezyOkolicznoCioweHeader}
         </StyledText>

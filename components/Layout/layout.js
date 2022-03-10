@@ -7,9 +7,23 @@ import Navigation from "./navigation";
 import Footer from "./footer";
 
 // STYLES
-import { StyledLayout } from "./Styles";
+import {
+  StyledLayout,
+  StyledLayoutHeader,
+  StyledLayoutHeaderText,
+} from "./Styles";
+import { StyledText } from "../StylesGeneral";
 
-const Layout = ({ children, slug, menuItems, subMenuItems, footerItems }) => (
+const Layout = ({
+  children,
+  slug,
+  menuItems,
+  subMenuItems,
+  footerItems,
+  headerImg,
+  headerText,
+  subHeaderText,
+}) => (
   <>
     <Head>
       <title>
@@ -19,6 +33,24 @@ const Layout = ({ children, slug, menuItems, subMenuItems, footerItems }) => (
       <Meta slug={slug} />
     </Head>
     <Navigation menuItems={menuItems} subMenuItems={subMenuItems} />
+
+    {headerImg?.sourceUrl && <StyledLayoutHeader src={headerImg?.sourceUrl} />}
+
+    {(subHeaderText || headerText) && (
+      <StyledLayoutHeaderText>
+        {headerText && (
+          <StyledText h1 black>
+            {headerText}
+          </StyledText>
+        )}
+
+        {subHeaderText && (
+          <StyledText h3 black>
+            {subHeaderText}
+          </StyledText>
+        )}
+      </StyledLayoutHeaderText>
+    )}
 
     <StyledLayout>{children}</StyledLayout>
 
