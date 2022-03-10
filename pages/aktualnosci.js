@@ -10,7 +10,7 @@ const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems }) => {
       subMenuItems={subMenuItems?.menuItems?.edges}
       footerItems={footerItems?.menuItems?.edges}
     >
-      <span>O nas</span>
+      <span>Aktualności</span>
     </Layout>
   );
 };

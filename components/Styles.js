@@ -28,11 +28,18 @@ export const StyledFormContainer = styled.div`
 export const StylesGalleryGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  height: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 75%;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    height: 800px;
+    width: 75%;
     grid-template-columns: repeat(3, 1fr);
   }
+
   span {
     margin: 1rem !important;
 

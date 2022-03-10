@@ -56,21 +56,6 @@ const Post = ({
                 />
               </Head>
               <PostContent post={post} />
-              {/* <PostHeader
-                title={post?.title}
-                featuredImage={post?.featuredImage}
-                date={post?.date}
-                author={post?.author?.node}
-                categories={post?.categories}
-              />
-
-              <PostBody content={post?.content} />
-
-              <PostFooter
-                tags={post?.tags?.edges}
-                categories={post?.categories}
-                date={post?.date}
-              /> */}
             </article>
 
             <hr />

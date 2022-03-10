@@ -1,9 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// COMPONENTS
-// import { Tags } from "../items";
-
 // STYLES
 import { StyledWrapper, StyledText } from "../../components/StylesGeneral";
 import {
@@ -31,8 +28,6 @@ const HeroPost = ({ title, featuredImage, excerpt, slug }) => (
           <StyledText h1 bold black>
             {title}
           </StyledText>
-
-          {/* {tags && <Tags tags={tags?.edges} />} */}
         </StyledHeroWrapper>
 
         <StyledHeroWrapper dangerouslySetInnerHTML={{ __html: excerpt }} />

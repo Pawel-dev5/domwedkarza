@@ -1,23 +1,5 @@
-import { PostHeader, PostBody } from "./Post";
+import HeroPost from "../Offer/HeroPost";
 
-const PostContent = ({ post }) => (
-  <>
-    <PostHeader
-      title={post?.title}
-      featuredImage={post?.featuredImage}
-      date={post?.date}
-      author={post?.author?.node}
-      categories={post?.categories}
-    />
-
-    <PostBody content={post?.content} />
-
-    {/* <PostFooter
-      tags={post?.tags?.edges}
-      categories={post?.categories}
-      date={post?.date}
-    /> */}
-  </>
-);
+const PostContent = ({ post }) => <>{post && <HeroPost {...post} />}</>;
 
 export default PostContent;

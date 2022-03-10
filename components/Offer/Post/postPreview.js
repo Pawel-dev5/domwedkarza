@@ -26,8 +26,6 @@ const PostPreview = ({ title, featuredImage, excerpt, slug }) => (
         <Link href={`/oferta/${slug}`} passHref>
           <div dangerouslySetInnerHTML={{ __html: excerpt }} />
         </Link>
-
-        {/* {tags && <Tags tags={tags?.edges} />} */}
       </div>
     </StyledPostPrevInfo>
   </StyledPostPreviewWrapper>
