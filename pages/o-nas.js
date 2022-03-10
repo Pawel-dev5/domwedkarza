@@ -7,6 +7,7 @@ import {
 
 // COMPONENTS
 import Layout from "../components/Layout/layout";
+import AboutUs from "../components/aboutUs";
 
 const Index = ({
   menuItems: { menuItems },
@@ -22,8 +23,7 @@ const Index = ({
       headerImg={aboutUsData?.featuredImage?.node}
       headerText={aboutUsData?.title}
     >
-      <span>O nas</span>
-      <div dangerouslySetInnerHTML={{ __html: aboutUsData?.oNas?.lista }} />
+      <AboutUs aboutUsData={aboutUsData} />
     </Layout>
   );
 };

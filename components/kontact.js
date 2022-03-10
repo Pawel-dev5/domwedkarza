@@ -15,6 +15,7 @@ const Kontakt = ({ footerItems, subMenuItems }) => (
       style={{ width: "100%", border: "none", height: "600px" }}
       allowFullScreen=""
       loading="lazy"
+      title="mapa"
     />
   </>
 );

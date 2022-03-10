@@ -51,3 +51,68 @@ export const StylesGalleryGrid = styled.div`
     }
   }
 `;
+
+export const StyledAboutWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+
+  li {
+    list-style: disc outside none;
+    margin-left: 1em;
+    overflow: visible;
+  }
+
+  ul {
+    margin: 1em;
+    overflow: visible;
+  }
+`;
+
+export const StyledSectionWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  img {
+    min-height: 800px !important;
+    object-fit: cover;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    flex-direction: row;
+  }
+`;
+
+export const StyledListWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  max-width: 500px;
+  padding-bottom: 4rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    margin-right: 10rem;
+  }
+`;
+
+export const StyledImageWrapper = styled.div`
+  position: relative;
+  min-width: 500px;
+  min-height: 500px;
+  max-width: 800px;
+
+  height: 100%;
+  width: 100%;
+`;

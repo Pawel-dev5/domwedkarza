@@ -59,6 +59,7 @@ export const StyledLayout = styled.main`
   height: 100%;
   min-height: 800px;
   background: ${({ theme }) => theme.white};
+  padding-bottom: 3rem;
 `;
 
 // FOOTER
