@@ -1,7 +1,8 @@
 import Image from "next/image";
 
 // STYLES
-import {} from "./Styles";
+import { StylesGalleryGrid } from "./Styles";
+import { StyledWrapper, StyledText } from "./StylesGeneral";
 
 const Gallery = ({ data }) => {
   let firstGallery = [];
@@ -9,53 +10,84 @@ const Gallery = ({ data }) => {
   let thirdGallery = [];
 
   if (data) {
-    firstGallery = Object.values(data?.imprezyOkolicznoCiowe);
-    secondGallery = Object.values(data?.okolica);
-    thirdGallery = Object.values(data?.przykAdowaDekoracjaSaliOrazStolow);
+    firstGallery = Object.values(data?.imprezyOkolicznoCiowe).slice(0, -1);
+    secondGallery = Object.values(data?.okolica).slice(0, -1);
+    thirdGallery = Object.values(data?.przykAdowaDekoracjaSaliOrazStolow).slice(
+      0,
+      -1
+    );
   }
 
   return (
     <>
-      <span>{data?.galleryHeader}</span>
-      <span>{data?.galleryText}</span>
+      <StyledWrapper column>
+        <StyledText h1 black>
+          {data?.galleryHeader}
+        </StyledText>
+        <StyledText h2 black>
+          {data?.galleryText}
+        </StyledText>
+      </StyledWrapper>
 
-      <span>{data?.imprezyOkolicznoCiowe?.imprezyOkolicznoCioweHeader}</span>
-      {firstGallery?.map((image) => (
-        <Image
-          key={image?.id}
-          src={image?.sourceUrl}
-          alt={image?.altText}
-          width={300}
-          height={300}
-        />
-      ))}
+      <StyledWrapper column>
+        <StyledText h2 black>
+          {data?.imprezyOkolicznoCiowe?.imprezyOkolicznoCioweHeader}
+        </StyledText>
 
-      <span>{data?.okolica?.okolicaHeader}</span>
-      {secondGallery?.map((image) => (
-        <Image
-          key={image?.id}
-          src={image?.sourceUrl}
-          alt={image?.altText}
-          width={300}
-          height={300}
-        />
-      ))}
+        <StylesGalleryGrid>
+          {firstGallery?.map((image) => (
+            <Image
+              key={image?.id}
+              src={image?.sourceUrl}
+              alt={image?.altText}
+              width={300}
+              height={300}
+              style={{ objectFit: "cover" }}
+            />
+          ))}
+        </StylesGalleryGrid>
+      </StyledWrapper>
 
-      <span>
-        {
-          data?.przykAdowaDekoracjaSaliOrazStolow
-            ?.przykAdowaDekoracjaSaliOrazStolowHeader
-        }
-      </span>
-      {thirdGallery?.map((image) => (
-        <Image
-          key={image?.id}
-          src={image?.sourceUrl}
-          alt={image?.altText}
-          width={300}
-          height={300}
-        />
-      ))}
+      <StyledWrapper column>
+        <StyledText h2 black>
+          {data?.okolica?.okolicaHeader}
+        </StyledText>
+
+        <StylesGalleryGrid>
+          {secondGallery?.map((image) => (
+            <Image
+              key={image?.id}
+              src={image?.sourceUrl}
+              alt={image?.altText}
+              width={300}
+              height={300}
+              style={{ objectFit: "cover" }}
+            />
+          ))}
+        </StylesGalleryGrid>
+      </StyledWrapper>
+
+      <StyledWrapper column>
+        <StyledText h2 black>
+          {
+            data?.przykAdowaDekoracjaSaliOrazStolow
+              ?.przykAdowaDekoracjaSaliOrazStolowHeader
+          }
+        </StyledText>
+
+        <StylesGalleryGrid>
+          {thirdGallery?.map((image) => (
+            <Image
+              key={image?.id}
+              src={image?.sourceUrl}
+              alt={image?.altText}
+              width={300}
+              height={300}
+              style={{ objectFit: "cover" }}
+            />
+          ))}
+        </StylesGalleryGrid>
+      </StyledWrapper>
     </>
   );
 };

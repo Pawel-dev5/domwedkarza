@@ -4,7 +4,13 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 
 // STATE
-import { getPostAndMorePosts, getAllPostsForHome } from "../../lib/api";
+import {
+  getPostAndMorePosts,
+  getAllPostsForHome,
+  getPrimaryMenu,
+  getSubMenu,
+  getFooter,
+} from "../../lib/api";
 import { COMPANY_NAME } from "../../lib/constants";
 
 // COMPONENTS
@@ -13,7 +19,13 @@ import { PostTitle } from "../../components/Offer/Post";
 import PostContent from "../../components/Offer/PostContent";
 import MoreStories from "../../components/Offer/MoreStories";
 
-const Post = ({ post, posts }) => {
+const Post = ({
+  post,
+  posts,
+  menuItems: { menuItems },
+  subMenuItems,
+  footerItems,
+}) => {
   const router = useRouter();
   const morePosts = posts?.edges;
 
@@ -22,7 +34,12 @@ const Post = ({ post, posts }) => {
   }
 
   return (
-    <Layout slug={post?.slug}>
+    <Layout
+      slug={post?.slug}
+      menuItems={menuItems?.edges}
+      subMenuItems={subMenuItems?.menuItems?.edges}
+      footerItems={footerItems?.menuItems?.edges}
+    >
       <div>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -69,12 +86,17 @@ export default Post;
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const data = await getPostAndMorePosts(params.slug, preview, previewData);
-
+  const menuItems = await getPrimaryMenu();
+  const subMenuItems = await getSubMenu();
+  const footerItems = await getFooter();
   return {
     props: {
       preview,
       post: data?.post,
       posts: data?.posts,
+      menuItems,
+      subMenuItems,
+      footerItems,
     },
     revalidate: 10, // In seconds
   };
