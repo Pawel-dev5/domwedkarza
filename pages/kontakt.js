@@ -17,12 +17,8 @@ const Index = ({
   subMenuItems,
   footerItems,
   kontaktHeader,
-  setAsideMenu,
-  asideMenu,
 }) => (
   <Layout
-    setAsideMenu={setAsideMenu}
-    asideMenu={asideMenu}
     menuItems={menuItems?.edges}
     subMenuItems={subMenuItems?.menuItems?.edges}
     footerItems={footerItems?.menuItems?.edges}

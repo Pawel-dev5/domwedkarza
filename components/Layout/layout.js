@@ -26,11 +26,16 @@ const Layout = ({
   setAsideMenu,
   asideMenu,
 }) => (
-  <>
+  <div
+    data-swipe-threshold="10"
+    data-swipe-timeout="1000"
+    data-swipe-ignore="false"
+  >
     <Head>
       <title>
         {COMPANY_NAME} {slug ?? ""}
       </title>
+
       <meta name="description" content={`${COMPANY_NAME}. ${slug ?? ""}`} />
       <Meta slug={slug} />
     </Head>
@@ -47,6 +52,7 @@ const Layout = ({
         {headerImg?.sourceUrl && (
           <StyledLayoutHeader src={headerImg?.sourceUrl} />
         )}
+
         {(subHeaderText || headerText) && (
           <StyledLayoutHeaderText>
             {headerText && (
@@ -64,10 +70,10 @@ const Layout = ({
         )}
         {children}
       </Navigation.Mobile>
-    </StyledLayout>
 
-    <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
-  </>
+      <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
+    </StyledLayout>
+  </div>
 );
 
 export default Layout;

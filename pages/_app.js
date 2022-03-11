@@ -8,10 +8,6 @@ import "react-multi-carousel/lib/styles.css";
 config.autoAddCss = false;
 
 const GlobalStyle = createGlobalStyle`
-    .asideMenu {  
-      overflow: hidden;
-      }
-
   body {
     margin:0;
 
@@ -28,14 +24,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 const App = ({ Component, pageProps }) => {
-  const [asideMenu, setAsideMenu] = useState(false);
-  const data = { ...pageProps, asideMenu, setAsideMenu };
-
   return (
     <>
       <ThemeProvider theme={theme}>
-        <GlobalStyle asideMenu={asideMenu} />
-        <Component {...data} />
+        <GlobalStyle />
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );

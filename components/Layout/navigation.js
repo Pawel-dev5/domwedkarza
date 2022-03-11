@@ -6,6 +6,9 @@ import logo from "../../public/logoDW.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
+// COMPONENTS
+import Burger from "../items/Burger";
+
 // STYLES
 import {
   StyledLogoWrapper,
@@ -21,6 +24,8 @@ import {
   StyledMobileMenu,
   StyledMobileNavWrapper,
   StyledLayout,
+  StyledMobileBodyWrapper,
+  StyledBurgerWrapper,
 } from "./Styles";
 
 const Navigation = ({ menuItems, subMenuItems }) => {
@@ -86,14 +91,9 @@ const Navigation = ({ menuItems, subMenuItems }) => {
   );
 };
 
-const NavigationMobile = ({
-  menuItems,
-  subMenuItems,
-  children,
-  setAsideMenu,
-  asideMenu,
-}) => {
+const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
   const router = useRouter();
+  const [asideMenu, setAsideMenu] = useState(false);
 
   return (
     <StyledMobileNavWrapper>
@@ -113,59 +113,63 @@ const NavigationMobile = ({
           </StyledLogoWrapper>
         </StyledNavMenuWrapper>
 
-        <StyledNavMenuWrapper>
+        {/* <StyledNavMenuWrapper> */}
+        <StyledBurgerWrapper asideMenu={asideMenu}>
           <StyledButton
+            burger
             type="button"
-            onClick={() => {
-              setAsideMenu(!asideMenu);
-              !asideMenu
-                ? document.body.classList.add("asideMenu")
-                : document.body.classList.remove("asideMenu");
-            }}
+            onClick={() => setAsideMenu(!asideMenu)}
           >
-            <StyledNavText>X</StyledNavText>
+            <Burger />
           </StyledButton>
-        </StyledNavMenuWrapper>
+        </StyledBurgerWrapper>
+        {/* </StyledNavMenuWrapper> */}
       </StyledMobileMenuWrapper>
 
-      <StyledMobileMenu asideMenu={asideMenu}>
-        {menuItems?.map((item) => (
-          <Link href={item?.node?.path} passHref key={item?.node?.id}>
-            <StyledNavText
-              active={router?.pathname === item?.node?.path ?? true}
-            >
-              {item?.node?.label}
-            </StyledNavText>
-          </Link>
-        ))}
-
-        <StyledNavWrapper submenu>
-          <div>
-            {subMenuItems?.map((item) => (
-              <StyledSubMenu
-                href={`${
-                  item?.node?.path === "http://email" ? "mailto:" : "tel:"
-                }${item?.node?.label}`}
-                key={item?.node?.id}
+      <StyledMobileMenu
+        asideMenu={asideMenu}
+        onClick={() => setAsideMenu(!asideMenu)}
+      >
+        <StyledMobileBodyWrapper>
+          {menuItems?.map((item) => (
+            <Link href={item?.node?.path} passHref key={item?.node?.id}>
+              <StyledNavText
+                customPadding="0.5rem"
+                active={router?.pathname === item?.node?.path ?? true}
               >
-                <StyledNavText submenu key={item?.node?.id}>
-                  {item?.node?.label}
-                </StyledNavText>
-              </StyledSubMenu>
-            ))}
-          </div>
+                {item?.node?.label}
+              </StyledNavText>
+            </Link>
+          ))}
 
-          <Link
-            href="https://www.facebook.com/profile.php?id=100057231978583"
-            passHref
-          >
-            <FontAwesomeIcon
-              icon={faFacebookSquare}
-              className="fa-xl"
-              style={{ color: "#fff" }}
-            />
-          </Link>
-        </StyledNavWrapper>
+          <StyledNavWrapper submenu>
+            <div>
+              {subMenuItems?.map((item) => (
+                <StyledSubMenu
+                  href={`${
+                    item?.node?.path === "http://email" ? "mailto:" : "tel:"
+                  }${item?.node?.label}`}
+                  key={item?.node?.id}
+                >
+                  <StyledNavText submenu key={item?.node?.id}>
+                    {item?.node?.label}
+                  </StyledNavText>
+                </StyledSubMenu>
+              ))}
+            </div>
+
+            <Link
+              href="https://www.facebook.com/profile.php?id=100057231978583"
+              passHref
+            >
+              <FontAwesomeIcon
+                icon={faFacebookSquare}
+                className="fa-xl"
+                style={{ color: "#fff" }}
+              />
+            </Link>
+          </StyledNavWrapper>
+        </StyledMobileBodyWrapper>
       </StyledMobileMenu>
     </StyledMobileNavWrapper>
   );

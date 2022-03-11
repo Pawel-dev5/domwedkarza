@@ -1,5 +1,14 @@
 import styled, { css } from "styled-components";
 
+export const StyledMobileBodyWrapper = styled.div`
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+`;
+
 // NAVIGATION
 export const StyledNavText = styled.a`
   text-decoration: none;
@@ -28,6 +37,12 @@ export const StyledNavText = styled.a`
       padding: 0 0.8rem;
       font-size: 0.85rem;
     `}
+  
+  ${({ customPadding }) =>
+    customPadding &&
+    css`
+      padding: ${customPadding};
+    `}
 `;
 
 export const StyledNavMenuWrapper = styled.div`
@@ -54,6 +69,21 @@ export const StyledNavWrapper = styled.nav`
     submenu &&
     css`
       height: 2.5rem;
+      @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+        padding: 6rem 0;
+        height: 100%;
+        flex-direction: column;
+
+        > div {
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          flex-direction: column;
+          padding-top: 4rem;
+        }
+      }
     `}
 `;
 
@@ -64,7 +94,6 @@ export const StyledLayout = styled.main`
   height: 100%;
   min-height: 800px;
   background: ${({ theme }) => theme.white};
-  padding-bottom: 3rem;
 `;
 
 // FOOTER
@@ -247,4 +276,74 @@ export const StyledLayoutHeaderText = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 30%;
   }
+`;
+
+export const StyledBurgerWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  margin: 0;
+
+  .container {
+    cursor: pointer;
+    display: flex;
+    width: 50px;
+    height: 100px;
+  }
+  svg {
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  path {
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  path:nth-child(1) {
+    transform-origin: 36% 40%;
+  }
+  path:nth-child(2) {
+    stroke-dasharray: 29 299;
+  }
+  path:nth-child(3) {
+    transform-origin: 35% 63%;
+  }
+  path:nth-child(4) {
+    stroke-dasharray: 29 299;
+  }
+  path:nth-child(5) {
+    transform-origin: 61% 52%;
+  }
+  path:nth-child(6) {
+    transform-origin: 62% 52%;
+  }
+
+  ${({ asideMenu }) =>
+    asideMenu &&
+    css`
+      path:nth-child(1) {
+        transform: translateX(9px) translateY(1px) rotate(45deg);
+      }
+      path:nth-child(2) {
+        stroke-dasharray: 225 299;
+        stroke-dashoffset: -72px;
+      }
+      path:nth-child(3) {
+        transform: translateX(9px) translateY(1px) rotate(-45deg);
+      }
+      path:nth-child(4) {
+        stroke-dasharray: 225 299;
+        stroke-dashoffset: -72px;
+      }
+      path:nth-child(5) {
+        transform: translateX(9px) translateY(1px) rotate(-45deg);
+      }
+      path:nth-child(6) {
+        transform: translateX(9px) translateY(1px) rotate(45deg);
+      }
+      svg {
+        transform: rotate(90deg);
+      }
+    `}
 `;

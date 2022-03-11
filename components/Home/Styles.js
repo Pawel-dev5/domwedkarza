@@ -39,8 +39,6 @@ export const StyledOverlay = styled.div`
 `;
 
 export const StyledFirstSectionWrapper = styled.div`
-  margin-top: 35px;
-
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     margin-top: 95px;
   }

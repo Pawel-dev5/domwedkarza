@@ -23,16 +23,12 @@ const Blog = ({
   subMenuItems,
   footerItems,
   offerHeader,
-  setAsideMenu,
-  asideMenu,
 }) => {
   const heroPost = edges[0]?.node;
   const morePosts = edges.slice(1);
 
   return (
     <Layout
-      setAsideMenu={setAsideMenu}
-      asideMenu={asideMenu}
       menuItems={menuItems?.edges}
       subMenuItems={subMenuItems?.menuItems?.edges}
       footerItems={footerItems?.menuItems?.edges}
