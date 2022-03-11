@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // STYLES
 import {
   StyledAboutWrapper,
@@ -6,7 +8,6 @@ import {
   StyledImageWrapper,
 } from "./Styles";
 import { StyledText } from "./StylesGeneral";
-import Image from "next/image";
 
 const AboutUs = ({ aboutUsData }) => (
   <StyledAboutWrapper>

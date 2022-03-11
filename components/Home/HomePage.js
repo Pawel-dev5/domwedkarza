@@ -1,9 +1,11 @@
-// COPONENTS
-import FirstSection from "./sections/FirstSection";
-import SecondSection from "./sections/SecondSection";
-import ThirdSection from "./sections/ThirdSection";
-import Features from "./sections/Features";
-import Video from "./sections/video";
+import dynamic from "next/dynamic";
+
+// COMPONENTS
+const FirstSection = dynamic(() => import("./sections/FirstSection"));
+const SecondSection = dynamic(() => import("./sections/SecondSection"));
+const ThirdSection = dynamic(() => import("./sections/ThirdSection"));
+const Features = dynamic(() => import("./sections/Features"));
+const Video = dynamic(() => import("./sections/Video"));
 
 const HomePage = ({ mainData }) => (
   <>

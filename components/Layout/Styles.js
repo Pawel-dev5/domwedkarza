@@ -36,6 +36,10 @@ export const StyledNavMenuWrapper = styled.div`
   justify-content: flex-end;
   gap: 1rem;
   padding: 0 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding: 0 0.5rem;
+  }
 `;
 
 export const StyledNavWrapper = styled.nav`
@@ -55,6 +59,7 @@ export const StyledNavWrapper = styled.nav`
 
 // LAYOUT
 export const StyledLayout = styled.main`
+  position: relative;
   width: 100%;
   height: 100%;
   min-height: 800px;
@@ -109,7 +114,6 @@ export const StyledCopyright = styled.div`
 
 export const StyledMenuWrapper = styled.div`
   position: -webkit-fixed; /* Safari */
-  /* position: sticky; */
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -122,6 +126,66 @@ export const StyledMenuWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
   }
+`;
+
+export const StyledMobileMenuWrapper = styled.div`
+  position: -webkit-fixed; /* Safari */
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  background-color: ${({ theme }) => theme.black};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: none;
+  }
+`;
+
+export const StyledMobileMenu = styled.div`
+  position: absolute;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  min-width: 100%;
+  top: 0;
+  background-color: ${({ theme }) => theme.black};
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 90px;
+  padding-top: 100px;
+
+  right: -450px;
+  transition: 1s;
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    right: -800px;
+  }
+
+  ${({ asideMenu }) =>
+    asideMenu &&
+    css`
+      right: 0;
+      transition: 1s;
+    `}
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: none;
+  }
+`;
+
+export const StyledMobileNavWrapper = styled.div`
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 `;
 
 export const StyledSubFooter = styled.div`
@@ -156,7 +220,7 @@ export const StyledLayoutHeader = styled.div`
   ${({ src }) =>
     src &&
     css`
-      margin-top: 100px;
+      margin-top: 95px;
       min-height: 350px;
       width: 100%;
       background-image: url(${src});

@@ -3,9 +3,17 @@ import { getPrimaryMenu, getSubMenu, getFooter } from "../lib/api";
 // COMPONENTS
 import Layout from "../components/Layout/layout";
 
-const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems }) => {
+const Index = ({
+  menuItems: { menuItems },
+  subMenuItems,
+  footerItems,
+  setAsideMenu,
+  asideMenu,
+}) => {
   return (
     <Layout
+      setAsideMenu={setAsideMenu}
+      asideMenu={asideMenu}
       menuItems={menuItems?.edges}
       subMenuItems={subMenuItems?.menuItems?.edges}
       footerItems={footerItems?.menuItems?.edges}

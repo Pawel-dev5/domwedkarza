@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { useState } from "react";
 import theme from "../theme/themeDefault";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -7,6 +8,10 @@ import "react-multi-carousel/lib/styles.css";
 config.autoAddCss = false;
 
 const GlobalStyle = createGlobalStyle`
+    .asideMenu {  
+      overflow: hidden;
+      }
+
   body {
     margin:0;
 
@@ -19,16 +24,21 @@ const GlobalStyle = createGlobalStyle`
       overflow-wrap: break-word;    
       overflow: hidden;
     }
+    
   }
 `;
+const App = ({ Component, pageProps }) => {
+  const [asideMenu, setAsideMenu] = useState(false);
+  const data = { ...pageProps, asideMenu, setAsideMenu };
 
-const App = ({ Component, pageProps }) => (
-  <>
-    <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  </>
-);
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle asideMenu={asideMenu} />
+        <Component {...data} />
+      </ThemeProvider>
+    </>
+  );
+};
 
 export default App;

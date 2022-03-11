@@ -23,6 +23,8 @@ const Layout = ({
   headerImg,
   headerText,
   subHeaderText,
+  setAsideMenu,
+  asideMenu,
 }) => (
   <>
     <Head>
@@ -32,27 +34,37 @@ const Layout = ({
       <meta name="description" content={`${COMPANY_NAME}. ${slug ?? ""}`} />
       <Meta slug={slug} />
     </Head>
-    <Navigation menuItems={menuItems} subMenuItems={subMenuItems} />
 
-    {headerImg?.sourceUrl && <StyledLayoutHeader src={headerImg?.sourceUrl} />}
+    <StyledLayout>
+      <Navigation menuItems={menuItems} subMenuItems={subMenuItems} />
 
-    {(subHeaderText || headerText) && (
-      <StyledLayoutHeaderText>
-        {headerText && (
-          <StyledText h1 black>
-            {headerText}
-          </StyledText>
+      <Navigation.Mobile
+        menuItems={menuItems}
+        subMenuItems={subMenuItems}
+        setAsideMenu={setAsideMenu}
+        asideMenu={asideMenu}
+      >
+        {headerImg?.sourceUrl && (
+          <StyledLayoutHeader src={headerImg?.sourceUrl} />
         )}
+        {(subHeaderText || headerText) && (
+          <StyledLayoutHeaderText>
+            {headerText && (
+              <StyledText h1 black>
+                {headerText}
+              </StyledText>
+            )}
 
-        {subHeaderText && (
-          <StyledText h3 black>
-            {subHeaderText}
-          </StyledText>
+            {subHeaderText && (
+              <StyledText h3 black>
+                {subHeaderText}
+              </StyledText>
+            )}
+          </StyledLayoutHeaderText>
         )}
-      </StyledLayoutHeaderText>
-    )}
-
-    <StyledLayout>{children}</StyledLayout>
+        {children}
+      </Navigation.Mobile>
+    </StyledLayout>
 
     <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
   </>

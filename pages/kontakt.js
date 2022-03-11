@@ -1,3 +1,6 @@
+import dynamic from "next/dynamic";
+
+// API
 import {
   getPrimaryMenu,
   getSubMenu,
@@ -7,15 +10,19 @@ import {
 
 // COMPONENTS
 import Layout from "../components/Layout/layout";
-import Kontakt from "../components/kontact";
+const Kontakt = dynamic(() => import("../components/kontact"));
 
 const Index = ({
   menuItems: { menuItems },
   subMenuItems,
   footerItems,
   kontaktHeader,
+  setAsideMenu,
+  asideMenu,
 }) => (
   <Layout
+    setAsideMenu={setAsideMenu}
+    asideMenu={asideMenu}
     menuItems={menuItems?.edges}
     subMenuItems={subMenuItems?.menuItems?.edges}
     footerItems={footerItems?.menuItems?.edges}
