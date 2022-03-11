@@ -1,21 +1,34 @@
-import { getPrimaryMenu, getSubMenu, getFooter, getHomePage } from "../lib/api";
+import dynamic from "next/dynamic";
+
+// API
+import {
+  getPrimaryMenu,
+  getSubMenu,
+  getFooter,
+  getKontaktHeader,
+} from "../lib/api";
 
 // COMPONENTS
 import Layout from "../components/Layout/layout";
-import HomePage from "../components/Home/HomePage";
+const Kontakt = dynamic(() => import("../components/kontact"));
 
-const Home = ({
+const Index = ({
   menuItems: { menuItems },
   subMenuItems,
   footerItems,
-  homePage,
+  kontaktHeader,
 }) => (
   <Layout
     menuItems={menuItems?.edges}
     subMenuItems={subMenuItems?.menuItems?.edges}
     footerItems={footerItems?.menuItems?.edges}
+    headerText={kontaktHeader?.title}
+    headerImg={kontaktHeader?.featuredImage?.node}
   >
-    <HomePage mainData={homePage?.node} />
+    <Kontakt
+      footerItems={footerItems?.menuItems?.edges}
+      subMenuItems={subMenuItems?.menuItems?.edges}
+    />
   </Layout>
 );
 
@@ -23,17 +36,17 @@ export async function getStaticProps() {
   const menuItems = await getPrimaryMenu();
   const subMenuItems = await getSubMenu();
   const footerItems = await getFooter();
-  const homePage = await getHomePage();
+  const kontaktHeader = await getKontaktHeader();
 
   return {
     props: {
       menuItems,
       subMenuItems,
       footerItems,
-      homePage,
+      kontaktHeader,
     },
     revalidate: 10, // In seconds
   };
 }
 
-export default Home;
+export default Index;

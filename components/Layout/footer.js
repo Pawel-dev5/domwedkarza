@@ -1,23 +1,20 @@
-import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/logoDW.png";
+import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
 // COMPONENTS
 import { Container } from "../elements";
+import { KontaktItems } from "../items";
 
 // STYLES
 import {
   StyledFooterWrapper,
   StyledFooter,
-  StyledSubMenu,
-  StyledFooterAdres,
   StyledSubFooter,
-  StyledTelWrapper,
+  StyledIframe,
 } from "./Styles";
-import { StyledLogoWrapper, StyledText } from "../StylesGeneral";
+import { StyledText } from "../StylesGeneral";
 
 const Footer = ({ footerItems, subMenuItems }) => {
   const currentDate = new Date();
@@ -27,62 +24,18 @@ const Footer = ({ footerItems, subMenuItems }) => {
     <Container>
       <StyledFooter>
         <StyledFooterWrapper>
-          <StyledLogoWrapper footer>
-            <Link href="/" passHref>
-              <Image
-                alt="Nad Zalewem"
-                src={logo}
-                layout="fill"
-                objectFit="cover"
-              />
-            </Link>
-          </StyledLogoWrapper>
+          <KontaktItems
+            subMenuItems={subMenuItems}
+            footerItems={footerItems}
+            color="white"
+          />
 
-          <StyledFooterAdres>
-            <div>
-              <FontAwesomeIcon
-                icon={faHome}
-                className="fa-xl"
-                style={{ color: "#fff" }}
-              />
-              <StyledText h5>Adres</StyledText>
-            </div>
-
-            <StyledText h5 footerAdres>
-              {footerItems[0]?.node?.label}
-            </StyledText>
-
-            <StyledText h5 footerAdres>
-              NIP: {footerItems[1]?.node?.label}
-            </StyledText>
-          </StyledFooterAdres>
-
-          <StyledFooterAdres>
-            <div>
-              <FontAwesomeIcon
-                icon={faPhone}
-                className="fa-xl"
-                style={{ color: "#fff" }}
-              />
-
-              <StyledText h5>Zadzwoń</StyledText>
-            </div>
-
-            <StyledTelWrapper>
-              {subMenuItems?.map((item) => (
-                <StyledSubMenu
-                  href={`${
-                    item?.node?.path === "http://email" ? "mailto:" : "tel:"
-                  }${item?.node?.label}`}
-                  key={item?.node?.id}
-                >
-                  <StyledText h5 submenu key={item?.node?.id}>
-                    {item?.node?.label}
-                  </StyledText>
-                </StyledSubMenu>
-              ))}
-            </StyledTelWrapper>
-          </StyledFooterAdres>
+          <StyledIframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10241.729473778934!2d20.0513739!3d50.0781913!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6544d5b2113f21d5!2sDom%20W%C4%99dkarza%20%7C%20Sala%20Weselna!5e0!3m2!1spl!2spl!4v1646849746358!5m2!1spl!2spl"
+            allowFullScreen=""
+            loading="lazy"
+            title="mapa"
+          />
         </StyledFooterWrapper>
 
         <StyledSubFooter>

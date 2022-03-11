@@ -51,7 +51,7 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
   align-items: flex-start;
   text-align: left;
   justify-content: space-between;
-  min-height: 10.5rem;
+  min-height: 5.5rem;
   width: 100%;
   cursor: pointer;
 
@@ -69,5 +69,14 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 50%;
+  }
+`;
+
+export const StyledHeroSection = styled.section`
+  width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 75%;
+    margin: auto;
   }
 `;

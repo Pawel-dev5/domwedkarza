@@ -18,7 +18,7 @@ const CoverImage = ({ title, featuredImage, slug }) => {
   return (
     <StyledCoverImg>
       {slug ? (
-        <Link href={`/blog/${slug}`} passHref>
+        <Link href={`/oferta/${slug}`} passHref>
           {image}
         </Link>
       ) : (

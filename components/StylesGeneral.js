@@ -20,6 +20,12 @@ export const StyledText = styled.span`
       padding-bottom: 0.5rem;
     `}
 
+  ${({ featureHeader }) =>
+    featureHeader &&
+    css`
+      font-size: 1.5rem;
+    `}
+  
   ${({ h2 }) =>
     h2 &&
     css`
@@ -38,10 +44,10 @@ export const StyledText = styled.span`
       font-size: 0.7rem;
     `}
 
-    ${({ white }) =>
-    white &&
+    ${({ black }) =>
+    black &&
     css`
-      color: ${({ theme }) => theme.white};
+      color: ${({ theme }) => theme.black};
     `}
 
     ${({ grey }) =>
@@ -61,6 +67,7 @@ export const StyledText = styled.span`
     css`
       font-weight: ${({ theme }) => theme.semiBold};
     `}
+
     ${({ avatarName }) =>
     avatarName &&
     css`
@@ -82,8 +89,38 @@ export const StyledText = styled.span`
   ${({ footerAdres }) =>
     footerAdres &&
     css`
-      padding: 1rem 0;
+      width: 55%;
     `};
+
+  ${({ main }) =>
+    main &&
+    css`
+      z-index: 9;
+    `};
+
+  ${({ width }) =>
+    width &&
+    css`
+      width: ${width};
+    `}
+
+  ${({ lh }) =>
+    lh &&
+    css`
+      line-height: ${lh};
+    `}
+ 
+ ${({ padding }) =>
+    padding &&
+    css`
+      padding: ${padding};
+    `}
+ 
+ ${({ textAlign }) =>
+    textAlign &&
+    css`
+      text-align: ${textAlign};
+    `}
 `;
 
 export const StyledWrapper = styled.div`
@@ -99,7 +136,18 @@ export const StyledWrapper = styled.div`
     css`
       margin: 3rem 0.5rem;
       margin-top: 1.5rem;
-      min-height: 10.5rem;
+      min-height: 5.5rem;
+    `}
+
+  ${({ offer }) =>
+    offer &&
+    css`
+      width: 100%;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 75%;
+        margin: auto;
+      }
     `}
 
   ${({ avatar }) =>
@@ -191,6 +239,41 @@ export const StyledLogoWrapper = styled.div`
         height: 8.5rem;
       }
     `}
+
+  ${({ gallery }) =>
+    gallery &&
+    css`
+      width: 20.5rem;
+      height: 30.5rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 36.5rem;
+        height: 26.5rem;
+      }
+    `}
+`;
+
+export const StyledButton = styled.button`
+  cursor: pointer;
+  padding: 0.6rem 1.25rem;
+  background-color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.white};
+  border: none;
+  margin: 2rem;
+
+  :hover {
+    background-color: ${({ theme }) =>
+      theme.transparentize({ amount: 0.2, color: theme.black })};
+  }
+
+  ${({ burger }) =>
+    burger &&
+    css`
+      padding: 0;
+      margin: 0;
+      margin-top: -50px;
+      margin-right: 20px;
+    `}
 `;
 
 // BLOG
@@ -214,5 +297,14 @@ export const StyledBlogTitle = styled.span`
       css`
         padding: 0;
       `}
+  }
+`;
+
+export const StyledSubMenu = styled.a`
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
   }
 `;

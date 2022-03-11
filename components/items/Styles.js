@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledCoverImg = styled.div`
   cursor: pointer;
@@ -18,27 +18,55 @@ export const StyledCoverImg = styled.div`
   }
 `;
 
-// TAGS
-export const StyledTagsWrapper = styled.div`
+export const StyledFooterAdres = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
+  align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
-export const StyledTags = styled.span`
-  min-width: 2rem;
-  padding: 0.2rem 1rem;
-  background-color: ${({ theme }) => theme.grey200};
-  border: 1px solid ${({ theme }) => theme.grey400};
-  border-radius: ${({ theme }) => theme.borderRadius400};
-  font-size: 0.9rem;
-  font-weight: 400;
+export const StyledTelWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  align-items: flex-start;
+`;
 
-  /* :hover {
-    background-color: ${({ theme }) => theme.grey300};
-    border: 1px solid ${({ theme }) => theme.grey500};
-  } */
+export const StyledContact = styled.div`
+  color: ${({ theme }) => theme.black};
+
+  * {
+    color: ${({ theme }) => theme.black};
+  }
+
+  ${({ color }) =>
+    color === "white" &&
+    css`
+      color: ${({ theme }) => theme.white};
+
+      * {
+        color: ${({ theme }) => theme.white};
+      }
+    `}
+
+  ${({ color }) =>
+    color === "black" &&
+    css`
+      width: 50%;
+      > div {
+        width: 50%;
+      }
+
+      span {
+        font-size: 2rem;
+      }
+    `}
+`;
+
+export const StyledAdressWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 `;
