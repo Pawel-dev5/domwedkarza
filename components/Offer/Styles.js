@@ -29,6 +29,9 @@ export const StyledMoreStoriesWrapper = styled.section`
         > div {
           margin: 1rem;
         }
+        > div:nth-child(2) {
+          align-items: flex-start;
+        }
       }
     }
   }
@@ -51,7 +54,6 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
   align-items: flex-start;
   text-align: left;
   justify-content: space-between;
-  min-height: 5.5rem;
   width: 100%;
   cursor: pointer;
 
@@ -61,14 +63,10 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
       flex-direction: column;
     `}
 
-  >p {
+  > p {
     padding: 0.5rem;
     padding-left: 0;
     cursor: pointer;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    width: 50%;
   }
 `;
 

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { SRLWrapper } from "simple-react-lightbox";
 
 // API
 import {
@@ -27,7 +28,9 @@ const Index = ({
       headerImg={galleryPage?.featuredImage?.node}
       subHeaderText={galleryPage?.galeria?.galeria?.galleryText}
     >
-      <Gallery data={galleryPage?.galeria?.galeria} />
+      <SRLWrapper>
+        <Gallery data={galleryPage?.galeria?.galeria} />
+      </SRLWrapper>
     </Layout>
   );
 };

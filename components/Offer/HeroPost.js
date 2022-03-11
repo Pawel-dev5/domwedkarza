@@ -25,7 +25,7 @@ const HeroPost = ({ title, featuredImage, excerpt, slug }) => (
 
       <StyledWrapper between hero>
         <StyledHeroWrapper column>
-          <StyledText h1 bold black>
+          <StyledText h1 bold black pointer>
             {title}
           </StyledText>
         </StyledHeroWrapper>

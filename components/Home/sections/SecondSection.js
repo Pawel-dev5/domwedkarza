@@ -12,8 +12,8 @@ const SecondSection = ({ data }) => {
           {data?.naglowek}
         </StyledText>
 
-        <Link href={`/oferta`} passHref>
-          <StyledButton type="button">{data?.przycisk}</StyledButton>
+        <Link href={data?.przycisk?.url} passHref>
+          <StyledButton type="button">{data?.przycisk?.text}</StyledButton>
         </Link>
       </StyledSecondWrapper>
     );

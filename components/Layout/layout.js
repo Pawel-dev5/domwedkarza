@@ -26,11 +26,7 @@ const Layout = ({
   setAsideMenu,
   asideMenu,
 }) => (
-  <div
-    data-swipe-threshold="10"
-    data-swipe-timeout="1000"
-    data-swipe-ignore="false"
-  >
+  <>
     <Head>
       <title>
         {COMPANY_NAME} {slug ?? ""}
@@ -73,7 +69,7 @@ const Layout = ({
 
       <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
     </StyledLayout>
-  </div>
+  </>
 );
 
 export default Layout;
