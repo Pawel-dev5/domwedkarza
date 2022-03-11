@@ -18,9 +18,6 @@ export const StyledPostPreviewWrapper = styled.div`
   p {
     cursor: pointer;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
   }
 `;
 

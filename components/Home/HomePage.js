@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { SRLWrapper } from "simple-react-lightbox";
 
 // COMPONENTS
 const FirstSection = dynamic(() => import("./sections/FirstSection"));
@@ -13,12 +14,18 @@ const HomePage = ({ mainData }) => (
       data={mainData?.galeriaGlowna}
       naglowek={mainData?.glownaNaglowek?.glownaNaglowek}
     />
+
     <SecondSection data={mainData?.sekcjaDruga} />
-    <ThirdSection data={mainData?.sekcjaTrzecia} />
+
+    <SRLWrapper>
+      <ThirdSection data={mainData?.sekcjaTrzecia} />
+    </SRLWrapper>
+
     <Features
       features={mainData?.features?.features}
       heading={mainData?.features?.featuresHeading}
     />
+
     <Video src={mainData?.glownaWideo?.wideo} />
   </>
 );

@@ -142,18 +142,18 @@ export const StyledCopyright = styled.div`
 `;
 
 export const StyledMenuWrapper = styled.div`
-  position: -webkit-fixed; /* Safari */
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-  top: 0;
-  background-color: ${({ theme }) => theme.black};
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  display: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    display: none;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    position: -webkit-fixed; /* Safari */
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    background-color: ${({ theme }) => theme.black};
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 `;
 
@@ -176,21 +176,22 @@ export const StyledMobileMenuWrapper = styled.div`
 export const StyledMobileMenu = styled.div`
   position: absolute;
   z-index: 998;
+  top: 0;
   width: 100%;
   height: 100%;
   min-height: 800px;
   min-width: 100%;
-  top: 0;
-  background-color: ${({ theme }) => theme.black};
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 90px;
   padding-top: 100px;
+  background-color: ${({ theme }) => theme.black};
 
-  right: -450px;
+  right: -480px;
   transition: 1s;
+
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     right: -800px;
   }
@@ -200,6 +201,10 @@ export const StyledMobileMenu = styled.div`
     css`
       right: 0;
       transition: 1s;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        right: 0;
+      }
     `}
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -263,7 +268,7 @@ export const StyledLayoutHeader = styled.div`
 export const StyledLayoutHeaderText = styled.div`
   width: 60%;
   border-bottom: 1px solid gray;
-  height: 100px;
+  min-height: 100px;
   text-align: center;
   margin: auto;
   display: flex;

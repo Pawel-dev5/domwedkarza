@@ -59,6 +59,12 @@ export const StyledAboutWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   margin: auto;
+  row-gap: 8rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    row-gap: 8rem;
+  }
 
   li {
     list-style: disc outside none;

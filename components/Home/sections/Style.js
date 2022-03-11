@@ -10,7 +10,7 @@ const basicCardStyles = css`
 
 export const StyledSecondWrapper = styled.div`
   width: 100%;
-  height: 1000px;
+  height: 850px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     height: 500px;
@@ -85,7 +85,7 @@ export const StyledVideoWrapper = styled.div`
 
 export const StyledFeaturesWrapper = styled.div`
   ${basicCardStyles};
-  margin: 5rem 0px;
+  margin: 1rem 0px;
 `;
 
 export const StyledItemsWrapper = styled.div`

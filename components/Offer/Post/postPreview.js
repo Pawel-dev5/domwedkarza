@@ -4,31 +4,28 @@ import Link from "next/link";
 import { CoverImage } from "../../items";
 
 // STYLES
-import { StyledText } from "../../../components/StylesGeneral";
-import { StyledPostPreviewWrapper, StyledPostPrevInfo } from "./Styles";
+import { StyledText, StyledWrapper } from "../../../components/StylesGeneral";
+import { StyledPostPreviewWrapper } from "./Styles";
+import { StyledHeroWrapper } from "../Styles";
 
 const PostPreview = ({ title, featuredImage, excerpt, slug }) => (
-  <StyledPostPreviewWrapper>
-    {featuredImage && (
-      <Link href={`/oferta/${slug}`} passHref>
+  <Link href={`/oferta/${slug}`} passHref>
+    <StyledPostPreviewWrapper>
+      {featuredImage && (
         <CoverImage title={title} featuredImage={featuredImage} slug={slug} />
-      </Link>
-    )}
+      )}
 
-    <StyledPostPrevInfo>
-      <Link href={`/oferta/${slug}`} passHref>
-        <StyledText h1 bold pointer black>
-          {title}
-        </StyledText>
-      </Link>
+      <StyledWrapper between hero column>
+        <StyledHeroWrapper column>
+          <StyledText h1 bold black pointer>
+            {title}
+          </StyledText>
+        </StyledHeroWrapper>
 
-      <div>
-        <Link href={`/oferta/${slug}`} passHref>
-          <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-        </Link>
-      </div>
-    </StyledPostPrevInfo>
-  </StyledPostPreviewWrapper>
+        <StyledHeroWrapper dangerouslySetInnerHTML={{ __html: excerpt }} />
+      </StyledWrapper>
+    </StyledPostPreviewWrapper>
+  </Link>
 );
 
 export default PostPreview;
