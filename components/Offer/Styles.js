@@ -55,6 +55,47 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
   text-align: left;
   justify-content: space-between;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  padding: 1rem;
+  gap: 0;
+
+  ${({ column }) =>
+    column &&
+    css`
+      flex-direction: column;
+    `}
+
+  > p {
+    padding: 0.5rem;
+    padding-left: 0;
+    cursor: pointer;
+  }
+
+  ${({ customWidth }) =>
+    customWidth &&
+    css`
+      width: ${customWidth};
+    `}
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    > p {
+      padding: 3rem;
+    }
+    gap: 1rem;
+    width: 75%;
+    margin: auto;
+  }
+`;
+
+export const StyledMorePostWrapper = styled(StyledWrapper)`
+  margin: 0;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: space-between;
+  width: 100%;
   cursor: pointer;
 
   ${({ column }) =>
@@ -70,11 +111,18 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
   }
 `;
 
-export const StyledHeroSection = styled.section`
+export const StyledSliderWrapper = styled.div`
+  height: 400px;
   width: 100%;
+  max-width: 700px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    width: 75%;
-    margin: auto;
+  .container-with-dots {
+    * {
+      min-height: 400px;
+    }
+    img {
+      min-height: 400px !important;
+      object-fit: cover;
+    }
   }
 `;

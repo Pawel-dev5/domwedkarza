@@ -1,39 +1,59 @@
 import Link from "next/link";
 import Image from "next/image";
+import Carousel from "react-multi-carousel";
 
 // STYLES
-import { StyledWrapper, StyledText } from "../../components/StylesGeneral";
-import {
-  StyledHeroImgWrapper,
-  StyledHeroWrapper,
-  StyledHeroSection,
-} from "./Styles";
+import { StyledHeroWrapper, StyledSliderWrapper } from "./Styles";
 
-const HeroPost = ({ title, featuredImage, excerpt, slug }) => (
-  <Link href={`/oferta/${slug}`} passHref>
-    <StyledHeroSection>
-      <StyledHeroImgWrapper>
-        <Image
-          width={730}
-          height={360}
-          alt={title}
-          src={featuredImage?.node?.sourceUrl}
-          layout="fill"
-          objectFit="cover"
+const responsive = {
+  all: {
+    breakpoint: { max: 4000, min: 0 },
+    items: 1,
+  },
+};
+
+const HeroPost = ({ sliderOffer, excerpt, slug }) => {
+  let sliderGallery = [];
+
+  if (sliderOffer) {
+    sliderGallery = Object.values(sliderOffer);
+  }
+
+  return (
+    <Link href={`/oferta/${slug}`} passHref>
+      <StyledHeroWrapper>
+        <StyledSliderWrapper>
+          <Carousel
+            containerClass="container-with-dots"
+            itemClass="image-item"
+            responsive={responsive}
+            ssr
+            infinite={false}
+            showDots={false}
+            arrows={false}
+            swipeable={true}
+            autoPlay={true}
+            autoPlaySpeed={5000}
+            customTransition="all .5"
+            transitionDuration={1000}
+          >
+            {sliderGallery?.map((image) => (
+              <Image
+                key={image?.id}
+                src={image?.sourceUrl}
+                alt={image?.altText}
+              />
+            ))}
+          </Carousel>
+        </StyledSliderWrapper>
+
+        <StyledHeroWrapper
+          customWidth="50%"
+          dangerouslySetInnerHTML={{ __html: excerpt }}
         />
-      </StyledHeroImgWrapper>
-
-      <StyledWrapper between hero>
-        <StyledHeroWrapper column>
-          <StyledText h1 bold black pointer>
-            {title}
-          </StyledText>
-        </StyledHeroWrapper>
-
-        <StyledHeroWrapper dangerouslySetInnerHTML={{ __html: excerpt }} />
-      </StyledWrapper>
-    </StyledHeroSection>
-  </Link>
-);
+      </StyledHeroWrapper>
+    </Link>
+  );
+};
 
 export default HeroPost;
