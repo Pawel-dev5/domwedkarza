@@ -2,6 +2,8 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+import { SRLWrapper } from "simple-react-lightbox";
 
 // STATE
 import {
@@ -16,8 +18,8 @@ import { COMPANY_NAME } from "../../lib/constants";
 // COMPONENTS
 import Layout from "../../components/Layout/layout";
 import { PostTitle } from "../../components/Offer/Post";
-import PostContent from "../../components/Offer/PostContent";
-import MoreStories from "../../components/Offer/MoreStories";
+const MoreStories = dynamic(() => import("../../components/Offer/MoreStories"));
+const HeroPost = dynamic(() => import("../../components/Offer/HeroPost"));
 
 const Post = ({
   post,
@@ -35,6 +37,8 @@ const Post = ({
 
   return (
     <Layout
+      headerText={post?.title}
+      headerImg={post?.featuredImage?.node}
       slug={post?.slug}
       menuItems={menuItems?.edges}
       subMenuItems={subMenuItems?.menuItems?.edges}
@@ -55,7 +59,10 @@ const Post = ({
                   content={post?.featuredImage?.node?.sourceUrl}
                 />
               </Head>
-              <PostContent post={post} />
+
+              <SRLWrapper>
+                <HeroPost {...post} />
+              </SRLWrapper>
             </article>
 
             <hr />

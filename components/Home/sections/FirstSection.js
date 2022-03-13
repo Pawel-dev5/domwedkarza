@@ -33,7 +33,7 @@ const FirstSection = ({ data, naglowek }) => {
             itemClass="image-item"
             responsive={responsive}
             ssr
-            infinite={false}
+            infinite={true}
             showDots={false}
             arrows={false}
             swipeable={true}

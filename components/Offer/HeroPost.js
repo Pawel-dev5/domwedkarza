@@ -1,39 +1,105 @@
-import Link from "next/link";
 import Image from "next/image";
+import Carousel from "react-multi-carousel";
+import Link from "next/link";
 
 // STYLES
-import { StyledWrapper, StyledText } from "../../components/StylesGeneral";
 import {
-  StyledHeroImgWrapper,
   StyledHeroWrapper,
-  StyledHeroSection,
+  StyledSliderWrapper,
+  StylesMenuGrid,
+  StyledDotButton,
 } from "./Styles";
+import { StyledButton, StyledText } from "../StylesGeneral";
 
-const HeroPost = ({ title, featuredImage, excerpt, slug }) => (
-  <Link href={`/oferta/${slug}`} passHref>
-    <StyledHeroSection>
-      <StyledHeroImgWrapper>
-        <Image
-          width={730}
-          height={360}
-          alt={title}
-          src={featuredImage?.node?.sourceUrl}
-          layout="fill"
-          objectFit="cover"
+const responsive = {
+  all: {
+    breakpoint: { max: 4000, min: 0 },
+    items: 1,
+  },
+};
+
+const HeroPost = ({ sliderOffer, excerpt, offerMenu }) => {
+  let sliderGallery = [];
+  if (sliderOffer) {
+    sliderGallery = Object.values(sliderOffer);
+  }
+
+  let menuGallery = [];
+  if (offerMenu) {
+    menuGallery = Object.values(offerMenu?.menu);
+  }
+
+  return (
+    <>
+      <StyledHeroWrapper>
+        {sliderGallery && (
+          <StyledSliderWrapper>
+            <Carousel
+              containerClass="container-with-dots"
+              itemClass="image-item"
+              responsive={responsive}
+              ssr
+              infinite={true}
+              showDots={true}
+              arrows={false}
+              swipeable={true}
+              autoPlay={true}
+              autoPlaySpeed={10000}
+              customTransition="all .5"
+              transitionDuration={1000}
+            >
+              {sliderGallery?.map((image) => (
+                <Image
+                  key={image?.id}
+                  src={image?.sourceUrl}
+                  alt={image?.altText}
+                  style={{ objectFit: "cover" }}
+                  objectFit="cover"
+                />
+              ))}
+            </Carousel>
+          </StyledSliderWrapper>
+        )}
+
+        <StyledHeroWrapper
+          customWidth="50%"
+          dangerouslySetInnerHTML={{ __html: excerpt }}
         />
-      </StyledHeroImgWrapper>
+      </StyledHeroWrapper>
 
-      <StyledWrapper between hero>
+      <StyledHeroWrapper>
+        <StylesMenuGrid>
+          {menuGallery?.map((item) => (
+            <Image
+              key={item?.altText}
+              width={200}
+              height={300}
+              alt={item?.altText}
+              src={item?.sourceUrl}
+              style={{ objectFit: "cover" }}
+              objectFit="cover"
+            />
+          ))}
+        </StylesMenuGrid>
+
         <StyledHeroWrapper column>
-          <StyledText h1 bold black pointer>
-            {title}
-          </StyledText>
-        </StyledHeroWrapper>
+          {offerMenu?.title && (
+            <StyledText h2 black>
+              {offerMenu?.title}
+            </StyledText>
+          )}
 
-        <StyledHeroWrapper dangerouslySetInnerHTML={{ __html: excerpt }} />
-      </StyledWrapper>
-    </StyledHeroSection>
-  </Link>
-);
+          {offerMenu?.buttonText && offerMenu?.pdf?.sourceUrl && (
+            <Link href={offerMenu?.pdf?.sourceUrl} passHref>
+              <a target="_blank" rel="noreferrer">
+                <StyledButton>{offerMenu?.buttonText}</StyledButton>
+              </a>
+            </Link>
+          )}
+        </StyledHeroWrapper>
+      </StyledHeroWrapper>
+    </>
+  );
+};
 
 export default HeroPost;
