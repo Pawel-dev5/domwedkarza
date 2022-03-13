@@ -7,14 +7,11 @@ import {
   getSubMenu,
   getFooter,
   getOfferHeader,
-  setAsideMenu,
-  asideMenu,
 } from "../lib/api";
 
 // COMPONENTS
 import { Container } from "../components/elements";
 const MoreStories = dynamic(() => import("../components/Offer/MoreStories"));
-const HeroPost = dynamic(() => import("../components/Offer/HeroPost"));
 const Layout = dynamic(() => import("../components/Layout/layout"));
 
 const Blog = ({
@@ -24,8 +21,7 @@ const Blog = ({
   footerItems,
   offerHeader,
 }) => {
-  const heroPost = edges[0]?.node;
-  const morePosts = edges.slice(1);
+  const morePosts = edges ?? [];
 
   return (
     <Layout
@@ -36,11 +32,7 @@ const Blog = ({
       headerText={offerHeader?.title}
       subHeaderText={offerHeader?.oferta?.subheader}
     >
-      <Container>
-        {heroPost && <HeroPost {...heroPost} />}
-        <hr />
-        {morePosts && <MoreStories posts={morePosts} />}
-      </Container>
+      <Container>{morePosts && <MoreStories posts={morePosts} />}</Container>
     </Layout>
   );
 };

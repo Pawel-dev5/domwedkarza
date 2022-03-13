@@ -2,6 +2,7 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 // STATE
 import {
@@ -16,8 +17,8 @@ import { COMPANY_NAME } from "../../lib/constants";
 // COMPONENTS
 import Layout from "../../components/Layout/layout";
 import { PostTitle } from "../../components/Offer/Post";
-import PostContent from "../../components/Offer/PostContent";
-import MoreStories from "../../components/Offer/MoreStories";
+const MoreStories = dynamic(() => import("../../components/Offer/MoreStories"));
+const PostContent = dynamic(() => import("../../components/Offer/PostContent"));
 
 const Post = ({
   post,
