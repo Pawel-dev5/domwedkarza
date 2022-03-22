@@ -274,6 +274,12 @@ export const StyledButton = styled.button`
       margin-top: -50px;
       margin-right: 20px;
     `}
+
+  ${({ customMargin }) =>
+    customMargin &&
+    css`
+      margin: ${customMargin};
+    `}
 `;
 
 // BLOG

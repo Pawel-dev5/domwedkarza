@@ -33,6 +33,7 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
 
           <StyledAdressWrapper>
             <StyledText
+              width="55%"
               h3={color === "black" ?? true}
               h5={color === "white" ?? true}
               footerAdres={color === "black" ?? true}

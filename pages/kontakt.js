@@ -6,6 +6,7 @@ import {
   getSubMenu,
   getFooter,
   getKontaktHeader,
+  getConfig,
 } from "../lib/api";
 
 // COMPONENTS
@@ -17,6 +18,7 @@ const Index = ({
   subMenuItems,
   footerItems,
   kontaktHeader,
+  formConfig,
 }) => (
   <Layout
     menuItems={menuItems?.edges}
@@ -28,6 +30,7 @@ const Index = ({
     <Kontakt
       footerItems={footerItems?.menuItems?.edges}
       subMenuItems={subMenuItems?.menuItems?.edges}
+      {...formConfig}
     />
   </Layout>
 );
@@ -37,6 +40,7 @@ export async function getStaticProps() {
   const subMenuItems = await getSubMenu();
   const footerItems = await getFooter();
   const kontaktHeader = await getKontaktHeader();
+  const formConfig = await getConfig();
 
   return {
     props: {
@@ -44,6 +48,7 @@ export async function getStaticProps() {
       subMenuItems,
       footerItems,
       kontaktHeader,
+      formConfig,
     },
     revalidate: 10, // In seconds
   };

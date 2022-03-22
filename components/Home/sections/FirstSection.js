@@ -18,15 +18,15 @@ const responsive = {
   },
 };
 
-const FirstSection = ({ data, naglowek }) => {
+const FirstSection = ({ data, naglowek, naglowek2 }) => {
   let gallery = [];
   if (data) {
     gallery = Object.values(data);
   }
 
-  if (data && naglowek) {
-    return (
-      <StyledFirstSectionWrapper>
+  return (
+    <StyledFirstSectionWrapper>
+      {data && (
         <StyledCarouselWrapper>
           <Carousel
             containerClass="container-with-dots"
@@ -51,25 +51,28 @@ const FirstSection = ({ data, naglowek }) => {
             ))}
           </Carousel>
         </StyledCarouselWrapper>
+      )}
 
-        <StyledMainOverlay>
-          <StyledOverlay />
+      <StyledMainOverlay>
+        <StyledOverlay />
 
-          <StyledLogoWrapper gallery>
-            <Image
-              alt="Nad Zalewem"
-              src={logo}
-              layout="fill"
-              objectFit="cover"
-            />
-          </StyledLogoWrapper>
+        <StyledLogoWrapper gallery>
+          <Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
+        </StyledLogoWrapper>
 
+        {naglowek && (
           <StyledText h1 main>
             {naglowek}
           </StyledText>
-        </StyledMainOverlay>
-      </StyledFirstSectionWrapper>
-    );
-  } else return null;
+        )}
+
+        {naglowek2 && (
+          <StyledText h2 main>
+            {naglowek2}
+          </StyledText>
+        )}
+      </StyledMainOverlay>
+    </StyledFirstSectionWrapper>
+  );
 };
 export default FirstSection;

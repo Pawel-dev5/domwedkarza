@@ -13,6 +13,7 @@ const HomePage = ({ mainData }) => (
     <FirstSection
       data={mainData?.galeriaGlowna}
       naglowek={mainData?.glownaNaglowek?.glownaNaglowek}
+      naglowek2={mainData?.glownaNaglowek?.glownaNaglowek2}
     />
 
     <SecondSection data={mainData?.sekcjaDruga} />
