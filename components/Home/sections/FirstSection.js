@@ -38,7 +38,7 @@ const FirstSection = ({ data, naglowek, naglowek2 }) => {
             arrows={false}
             swipeable={true}
             autoPlay={true}
-            autoPlaySpeed={5000}
+            autoPlaySpeed={2500}
             customTransition="all .5"
             transitionDuration={1000}
           >

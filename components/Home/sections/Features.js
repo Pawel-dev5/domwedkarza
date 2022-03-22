@@ -31,9 +31,12 @@ const Features = ({ features, heading }) => {
 
       {featureArray && (
         <StyledItemsWrapper imagesCount={featureArray?.length}>
-          {featureArray?.map((feature, index) => (
-            <StyledFeature key={index}>
-              <StyledIcon src={feature?.icon} alt={feature?.icon} />
+          {featureArray?.map((feature) => (
+            <StyledFeature key={feature?.icon?.id}>
+              <StyledIcon
+                src={feature?.icon?.sourceUrl}
+                alt={feature?.icon?.altText}
+              />
 
               <div>
                 <StyledText h2 black padding="1rem 0">
