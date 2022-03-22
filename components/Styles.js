@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFormWrapper = styled.div`
-  width: 500px;
+  width: 100%;
   color: black;
   text-align: left;
 `;
@@ -15,8 +15,8 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledInput = styled.input`
-  width: 90%;
-  max-width: 90%;
+  width: 100%;
+  max-width: 100%;
   color: #626262;
   background-color: rgba(235, 235, 235, 1);
   padding: 10px;
@@ -41,8 +41,8 @@ export const StyledTextarea = styled.textarea`
   padding: 10px;
   outline: none;
   margin: 0;
-  width: 90%;
-  max-width: 90%;
+  width: 100%;
+  max-width: 100%;
   display: block;
   margin-bottom: 0.9rem;
   font-size: 14px;
@@ -66,13 +66,16 @@ export const StyledFormContainer = styled.div`
   flex-flow: column nowrap;
   text-align: center;
   margin: 2.5rem auto;
-
+  color: ${({ theme }) => theme.black};
   width: 100%;
   max-width: 1220px;
   padding: 1rem 2rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-flow: row nowrap;
+    > div {
+      width: 50%;
+    }
   }
 `;
 
@@ -93,8 +96,12 @@ export const StylesGalleryGrid = styled.div`
 
   span {
     margin: 1rem !important;
+    min-height: 20rem;
 
     img {
+      height: 100%;
+      min-height: 100%;
+
       :hover {
         transform: scale(1.1);
         transition: transform 0.5s;

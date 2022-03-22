@@ -54,13 +54,10 @@ export const StyledContact = styled.div`
   ${({ color }) =>
     color === "black" &&
     css`
-      width: 50%;
-      > div {
-        width: 50%;
-      }
+      color: ${({ theme }) => theme.black};
 
-      span {
-        font-size: 2rem;
+      * {
+        color: ${({ theme }) => theme.black};
       }
     `}
 `;
@@ -69,4 +66,39 @@ export const StyledAdressWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+`;
+
+export const StyledNavText = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.white};
+  font-size: 1rem;
+
+  :hover,
+  :active,
+  :focus {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
+  }
+
+  ${({ active }) =>
+    active &&
+    css`
+      font-weight: ${({ theme }) => theme.semiBold};
+      text-decoration: underline;
+      color: ${({ theme }) =>
+        theme.darken({ amount: 0.2, color: theme.white })};
+    `}
+
+  ${({ submenu }) =>
+    submenu &&
+    css`
+      padding: 0 0.8rem;
+      font-size: 0.85rem;
+    `}
+  
+  ${({ customPadding }) =>
+    customPadding &&
+    css`
+      padding: ${customPadding};
+    `}
 `;

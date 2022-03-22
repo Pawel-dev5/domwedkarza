@@ -14,7 +14,7 @@ import {
   StyledInput,
   StyledTextarea,
 } from "./Styles";
-import { StyledButton } from "../components/StylesGeneral";
+import { StyledButton, StyledText } from "../components/StylesGeneral";
 
 const Kontakt = ({
   footerItems,
@@ -66,9 +66,16 @@ const Kontakt = ({
 
   return (
     <StyledFormContainer>
-      <KontaktItems footerItems={footerItems} subMenuItems={subMenuItems} />
+      <KontaktItems
+        footerItems={footerItems}
+        subMenuItems={subMenuItems}
+        color="black"
+      />
 
       <StyledFormWrapper>
+        <StyledText form black>
+          Formularz kontaktowy
+        </StyledText>
         <StyledForm ref={form} onSubmit={handleSubmit(onSubmit)}>
           <StyledInput
             type="text"
