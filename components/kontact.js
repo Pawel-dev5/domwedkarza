@@ -42,7 +42,7 @@ const Kontakt = ({
   const form = useRef();
 
   const onSubmit = handleSubmit(() => {
-    emailjs.sendForm(serviceId, tamplateId, form.current, userId).then(
+    emailjs.sendForm(serviceId, tamplateId, form.current, userId ?? null).then(
       () => {
         setFormData({ ...formData, state: "SUCCESS" });
         reset({
@@ -79,7 +79,7 @@ const Kontakt = ({
         <StyledForm ref={form} onSubmit={handleSubmit(onSubmit)}>
           <StyledInput
             type="text"
-            placeholder={formData.name}
+            placeholder={formData?.name}
             name="name"
             aria-invalid={errors.name ? "true" : "false"}
             {...register("name", {
