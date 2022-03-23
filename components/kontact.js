@@ -85,7 +85,6 @@ const Kontakt = ({
             {...register("name", {
               required: true,
               maxLength: 30,
-              pattern: /^[A-Za-z]+$/i,
             })}
           />
           {errors.name && <p>Imię i nazwisko jest wymagane</p>}
