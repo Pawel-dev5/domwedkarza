@@ -40,7 +40,7 @@ const HeroPost = ({ sliderOffer, excerpt, offerMenu }) => {
               responsive={responsive}
               ssr
               infinite={true}
-              showDots={true}
+              showDots={false}
               arrows={false}
               swipeable={true}
               autoPlay={true}

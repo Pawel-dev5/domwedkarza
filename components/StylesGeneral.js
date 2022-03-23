@@ -32,10 +32,16 @@ export const StyledText = styled.span`
       font-size: 1.25rem;
     `}
 
+  ${({ h3 }) =>
+    h3 &&
+    css`
+      font-size: 1rem;
+    `}
+
     ${({ h5 }) =>
     h5 &&
     css`
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     `}
 
     ${({ h6 }) =>
@@ -120,6 +126,26 @@ export const StyledText = styled.span`
     textAlign &&
     css`
       text-align: ${textAlign};
+    `}
+
+    ${({ form }) =>
+    form &&
+    css`
+      font-size: 1.5rem;
+      padding: 0;
+      padding-bottom: 0.5rem;
+    `}
+   
+
+    ${({ footer }) =>
+    footer &&
+    css`
+      width: 100%;
+      color: ${({ theme }) => theme.black};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 55%;
+      }
     `}
 `;
 
@@ -273,6 +299,12 @@ export const StyledButton = styled.button`
       margin: 0;
       margin-top: -50px;
       margin-right: 20px;
+    `}
+
+  ${({ customMargin }) =>
+    customMargin &&
+    css`
+      margin: ${customMargin};
     `}
 `;
 

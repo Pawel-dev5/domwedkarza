@@ -16,7 +16,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-left: 0.5rem;
 `;
 
-const kontaktItems = ({ footerItems, subMenuItems, color }) => (
+const KontaktItems = ({ footerItems, subMenuItems, color }) => (
   <StyledContact color={color}>
     {footerItems && subMenuItems && (
       <>
@@ -24,6 +24,7 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
           <div>
             <StyledIcon icon={faHome} className="fa-xl" />
             <StyledText
+              footer={color === "black" ?? true}
               h5={color === "white" ?? true}
               h3={color === "black" ?? true}
             >
@@ -33,6 +34,7 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
 
           <StyledAdressWrapper>
             <StyledText
+              footer={color === "black" ?? true}
               h3={color === "black" ?? true}
               h5={color === "white" ?? true}
               footerAdres={color === "black" ?? true}
@@ -41,6 +43,7 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
               {footerItems[0]?.node?.label}
             </StyledText>
             <StyledText
+              footer={color === "black" ?? true}
               h5={color === "white" ?? true}
               h3={color === "black" ?? true}
               textAlign="left"
@@ -55,6 +58,7 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
             <StyledIcon icon={faPhone} className="fa-xl" />
 
             <StyledText
+              footer={color === "black" ?? true}
               h5={color === "white" ?? true}
               h3={color === "black" ?? true}
             >
@@ -73,6 +77,7 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
                 <StyledText
                   h5={color === "white" ?? true}
                   h3={color === "black" ?? true}
+                  black={color === "black" ?? true}
                   key={item?.node?.id}
                 >
                   {item?.node?.label}
@@ -86,4 +91,4 @@ const kontaktItems = ({ footerItems, subMenuItems, color }) => (
   </StyledContact>
 );
 
-export default kontaktItems;
+export default KontaktItems;

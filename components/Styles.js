@@ -1,11 +1,62 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledFormWrapper = styled.div`
-  width: 500px;
-  height: 300px;
-  background-color: grey;
+  width: 100%;
   color: black;
-  text-align: center;
+  text-align: left;
+`;
+
+export const StyledForm = styled.form`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-flow: column nowrap;
+`;
+
+export const StyledInput = styled.input`
+  width: 100%;
+  max-width: 100%;
+  color: #626262;
+  background-color: rgba(235, 235, 235, 1);
+  padding: 10px;
+  outline: none;
+  margin: 0;
+  margin-bottom: 0.3rem;
+  display: block;
+  font-size: 14px;
+  border-width: 1px;
+  border-color: #ebebeb;
+  border-style: solid;
+  border-radius: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+
+  box-shadow: inset 0 0 2px 2px rgb(0 0 0 / 2%);
+`;
+
+export const StyledTextarea = styled.textarea`
+  min-height: 8rem;
+  line-height: 20px;
+  padding: 10px;
+  outline: none;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+
+  box-shadow: inset 0 0 2px 2px rgb(0 0 0 / 2%);
+
+  color: #626262;
+  background-color: rgba(235, 235, 235, 1);
+  border-color: #ebebeb;
 `;
 
 export const StyledFormContainer = styled.div`
@@ -15,13 +66,16 @@ export const StyledFormContainer = styled.div`
   flex-flow: column nowrap;
   text-align: center;
   margin: 2.5rem auto;
-
+  color: ${({ theme }) => theme.black};
   width: 100%;
   max-width: 1220px;
   padding: 1rem 2rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-flow: row nowrap;
+    > div {
+      width: 50%;
+    }
   }
 `;
 
@@ -42,8 +96,12 @@ export const StylesGalleryGrid = styled.div`
 
   span {
     margin: 1rem !important;
+    min-height: 20rem;
 
     img {
+      height: 100%;
+      min-height: 100%;
+
       :hover {
         transform: scale(1.1);
         transition: transform 0.5s;

@@ -8,13 +8,10 @@ import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
 // COMPONENTS
 import Burger from "../items/Burger";
+import SubMenu from "../items/submenu";
 
 // STYLES
-import {
-  StyledLogoWrapper,
-  StyledSubMenu,
-  StyledButton,
-} from "../StylesGeneral";
+import { StyledLogoWrapper, StyledButton } from "../StylesGeneral";
 import {
   StyledNavWrapper,
   StyledNavMenuWrapper,
@@ -34,20 +31,7 @@ const Navigation = ({ menuItems, subMenuItems }) => {
   return (
     <StyledMenuWrapper>
       <StyledNavWrapper submenu>
-        <div>
-          {subMenuItems?.map((item) => (
-            <StyledSubMenu
-              href={`${
-                item?.node?.path === "http://email" ? "mailto:" : "tel:"
-              }${item?.node?.label}`}
-              key={item?.node?.id}
-            >
-              <StyledNavText submenu key={item?.node?.id}>
-                {item?.node?.label}
-              </StyledNavText>
-            </StyledSubMenu>
-          ))}
-        </div>
+        <SubMenu subMenuItems={subMenuItems} />
 
         <Link
           href="https://www.facebook.com/profile.php?id=100057231978583"
@@ -143,20 +127,7 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
           ))}
 
           <StyledNavWrapper submenu>
-            <div>
-              {subMenuItems?.map((item) => (
-                <StyledSubMenu
-                  href={`${
-                    item?.node?.path === "http://email" ? "mailto:" : "tel:"
-                  }${item?.node?.label}`}
-                  key={item?.node?.id}
-                >
-                  <StyledNavText submenu key={item?.node?.id}>
-                    {item?.node?.label}
-                  </StyledNavText>
-                </StyledSubMenu>
-              ))}
-            </div>
+            <SubMenu subMenuItems={subMenuItems} />
 
             <Link
               href="https://www.facebook.com/profile.php?id=100057231978583"
