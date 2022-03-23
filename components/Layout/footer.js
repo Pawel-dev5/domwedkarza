@@ -40,7 +40,7 @@ const Footer = ({ footerItems, subMenuItems }) => {
 
         <StyledSubFooter>
           <StyledText center h5 white>
-            © {year} Wszelkie prawa zastrzeżone. Nad Stawem. Restauracja &
+            © {year} Wszelkie prawa zastrzeżone. Nad Zalewem Restauracja &
             Eventy. Made by Paweł Nowecki
           </StyledText>
 

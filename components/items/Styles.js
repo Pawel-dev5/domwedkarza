@@ -66,6 +66,9 @@ export const StyledAdressWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+  span {
+    width: 70%;
+  }
 `;
 
 export const StyledNavText = styled.a`
