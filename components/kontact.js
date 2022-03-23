@@ -26,7 +26,7 @@ const Kontakt = ({
   const initialState = {
     state: "IDLE",
     name: "Imię i nazwisko (wymagane)",
-    email: "Email (wymagane)",
+    email: "Email",
     phone: "Telefon (wymagane)",
     message: "Wiadomość (wymagane)",
   };
@@ -94,7 +94,7 @@ const Kontakt = ({
             aria-invalid={errors.email ? "true" : "false"}
             placeholder={formData.email}
             name="email"
-            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+            {...register("email", { pattern: /^\S+@\S+$/i })}
           />
           {errors.email && <p>Email jest wymagany.</p>}
 
@@ -104,8 +104,7 @@ const Kontakt = ({
             name="tel"
             aria-invalid={errors.tel ? "true" : "false"}
             {...register("tel", {
-              required: false,
-              maxLength: 12,
+              required: true,
             })}
           />
           {errors.tel && <p>Telefon jest wymagany</p>}
@@ -116,7 +115,6 @@ const Kontakt = ({
             {...register("message", {
               required: true,
               maxLength: 200,
-              pattern: /^[A-Za-z]+$/i,
             })}
           />
           {errors.message && <p>Wiadomość jest wymagana.</p>}

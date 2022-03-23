@@ -115,7 +115,7 @@ export const StyledFooterWrapper = styled.div`
     width: 100%;
     margin: 1.5rem 0px;
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-      width: 35%;
+      width: 33%;
       margin: 0;
     }
   }

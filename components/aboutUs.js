@@ -26,8 +26,8 @@ const AboutUs = ({ aboutUsData }) => (
           <Image
             width={600}
             height={500}
-            alt="alt"
-            src="https://db.finlux.com.pl/wp-content/uploads/2022/03/1-1.jpeg"
+            alt={aboutUsData?.oNas?.zdjecie1?.altText}
+            src={aboutUsData?.oNas?.zdjecie1?.sourceUrl}
             layout="fill"
             objectFit="cover"
           />
@@ -48,8 +48,8 @@ const AboutUs = ({ aboutUsData }) => (
           <Image
             width={600}
             height={500}
-            alt="alt"
-            src="https://db.finlux.com.pl/wp-content/uploads/2022/03/1-1.jpeg"
+            alt={aboutUsData?.oNas?.zdjecie2?.altText}
+            src={aboutUsData?.oNas?.zdjecie2?.sourceUrl}
             layout="fill"
             objectFit="cover"
           />

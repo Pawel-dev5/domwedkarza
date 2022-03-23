@@ -144,7 +144,7 @@ export const StyledText = styled.span`
       color: ${({ theme }) => theme.black};
 
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-        width: 55%;
+        width: 55% !important;
       }
     `}
 `;

@@ -3,8 +3,8 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     domains: [
-      "finlux.com.pl",
-      "db.finlux.com.pl",
+      "restauracja-nadzalewem.pl",
+      "db.restauracja-nadzalewem.pl",
       "assets.vercel.com",
       "secure.gravatar.com",
     ],
