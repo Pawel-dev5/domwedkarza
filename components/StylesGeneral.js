@@ -140,7 +140,7 @@ export const StyledText = styled.span`
     ${({ footer }) =>
     footer &&
     css`
-      width: 100%;
+      width: 85% !important;
       color: ${({ theme }) => theme.black};
 
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -251,9 +251,14 @@ export const StyledWrapper = styled.div`
 
 export const StyledLogoWrapper = styled.div`
   position: relative;
-  width: 6rem;
+  width: 9rem;
   height: 6rem;
   cursor: pointer;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 9rem;
+    height: 6rem;
+  }
 
   ${({ footer }) =>
     footer &&

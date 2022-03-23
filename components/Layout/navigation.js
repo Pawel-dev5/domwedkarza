@@ -25,12 +25,12 @@ import {
   StyledBurgerWrapper,
 } from "./Styles";
 
-const Navigation = ({ menuItems, subMenuItems }) => {
+const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
   const router = useRouter();
 
   return (
     <StyledMenuWrapper>
-      <StyledNavWrapper submenu>
+      <StyledNavWrapper submenu hideSubMenu={hideSubMenu}>
         <SubMenu subMenuItems={subMenuItems} />
 
         <Link

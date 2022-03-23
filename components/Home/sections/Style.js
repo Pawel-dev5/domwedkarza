@@ -99,7 +99,7 @@ export const StyledItemsWrapper = styled.div`
   text-align: center;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    height: 500px;
+    height: 655px;
     display: grid;
     grid-template-columns: 1fr;
 
@@ -108,6 +108,10 @@ export const StyledItemsWrapper = styled.div`
       css`
         grid-template-columns: repeat(${imagesCount}, 1fr);
       `}
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    height: 540px;
   }
 `;
 
