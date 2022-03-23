@@ -66,8 +66,12 @@ export const StyledAdressWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+
   span {
-    width: 70%;
+    width: 75%;
+    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+      width: 70%;
+    }
   }
 `;
 

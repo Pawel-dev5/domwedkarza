@@ -49,7 +49,7 @@ export const StyledNavMenuWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 1rem;
+  gap: 1.6rem;
   padding: 0 3rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -63,7 +63,7 @@ export const StyledNavWrapper = styled.nav`
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-  height: 4rem;
+  height: 6rem;
 
   ${({ submenu }) =>
     submenu &&
@@ -84,6 +84,12 @@ export const StyledNavWrapper = styled.nav`
           padding-top: 4rem;
         }
       }
+    `}
+
+  ${({ hideSubMenu }) =>
+    hideSubMenu &&
+    css`
+      display: none;
     `}
 `;
 
@@ -194,6 +200,7 @@ export const StyledMobileMenu = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     right: -800px;
+    transition: 1s;
   }
 
   ${({ asideMenu }) =>
