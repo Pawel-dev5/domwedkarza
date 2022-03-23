@@ -42,7 +42,7 @@ const Kontakt = ({
   const form = useRef();
 
   const onSubmit = handleSubmit(() => {
-    emailjs.sendForm(serviceId, tamplateId, form.current, userId ?? null).then(
+    emailjs.sendForm(serviceId, tamplateId, form.current, userId).then(
       () => {
         setFormData({ ...formData, state: "SUCCESS" });
         reset({

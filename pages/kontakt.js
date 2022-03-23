@@ -30,7 +30,7 @@ const Index = ({
     <Kontakt
       footerItems={footerItems?.menuItems?.edges}
       subMenuItems={subMenuItems?.menuItems?.edges}
-      userId={formConfig?.userId ?? null}
+      userId={formConfig?.userId}
       serviceId={formConfig?.serviceId}
       tamplateId={formConfig?.tamplateId}
     />
