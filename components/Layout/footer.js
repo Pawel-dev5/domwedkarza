@@ -1,5 +1,5 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 
@@ -13,6 +13,7 @@ import {
   StyledFooter,
   StyledSubFooter,
   StyledIframe,
+  StyledImageWrapper,
 } from "./Styles";
 import { StyledText } from "../StylesGeneral";
 
@@ -36,6 +37,28 @@ const Footer = ({ footerItems, subMenuItems }) => {
             loading="lazy"
             title="mapa"
           />
+        </StyledFooterWrapper>
+
+        <StyledFooterWrapper>
+          <StyledText h5 white>
+            Informujemy, że nasza firma korzysta z&nbsp;subwencji finansowej, w
+            {/* eslint-disable-next-line */}
+            ramach rządowego programu "Tarcza Finansowa 2.0 Polskiego Funduszu
+            {/* eslint-disable-next-line */}
+            Rozwoju dla Mikro, Małych i Średnich Firm", udzielonej przez przez
+            PFR SA.
+          </StyledText>
+
+          <StyledImageWrapper>
+            <Image
+              alt=" ys"
+              src="https://db.restauracja-nadzalewem.pl/wp-content/uploads/2022/03/277112027_339491871473215_3428012668149106858_n.webp"
+              layout="fixed"
+              width={145}
+              height={60}
+              style={{ objectFit: "cover" }}
+            />
+          </StyledImageWrapper>
         </StyledFooterWrapper>
 
         <StyledSubFooter>

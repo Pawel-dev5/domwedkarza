@@ -102,6 +102,17 @@ export const StyledLayout = styled.main`
   background: ${({ theme }) => theme.white};
 `;
 
+export const StyledImageWrapper = styled.div`
+  position: relative;
+  min-width: 300px;
+  min-height: 100px;
+  max-width: 400px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+`;
 // FOOTER
 export const StyledFooterWrapper = styled.div`
   display: flex;
@@ -113,7 +124,7 @@ export const StyledFooterWrapper = styled.div`
   padding: 1rem 2rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    padding: 6rem 0;
+    padding: 3rem 0;
     flex-direction: row;
   }
 
