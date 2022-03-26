@@ -109,3 +109,25 @@ export const StyledNavText = styled.a`
       padding: ${customPadding};
     `}
 `;
+
+export const StyledMessangerIcon = styled.a`
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
+  right: 0px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  transition: all 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.2);
+  }
+`;
