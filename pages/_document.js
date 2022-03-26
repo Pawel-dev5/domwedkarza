@@ -1,6 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-const FACEBOOK_ID = process.env.FACEBOOK_ID;
 export default class MyDocument extends Document {
   render() {
     return (
