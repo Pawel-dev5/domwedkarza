@@ -102,6 +102,7 @@ export const StyledText = styled.span`
     main &&
     css`
       z-index: 9;
+      padding: 0;
     `};
 
   ${({ width }) =>
