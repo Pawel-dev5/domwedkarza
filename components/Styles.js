@@ -101,6 +101,7 @@ export const StylesGalleryGrid = styled.div`
     img {
       height: 100%;
       min-height: 100%;
+      object-fit: cover;
 
       :hover {
         transform: scale(1.1);
