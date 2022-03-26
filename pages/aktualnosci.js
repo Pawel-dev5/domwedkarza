@@ -7,6 +7,7 @@ import {
 
 // COMPONENTS
 import Layout from "../components/Layout/layout";
+import FacebookWall from "../components/FacabookWall";
 
 const Index = ({
   menuItems: { menuItems },
@@ -22,7 +23,7 @@ const Index = ({
       headerText={aktualnosciHeader?.title}
       headerImg={aktualnosciHeader?.featuredImage?.node}
     >
-      <span>Aktualności</span>
+      <FacebookWall content={aktualnosciHeader?.content} />
     </Layout>
   );
 };
@@ -30,10 +31,10 @@ const Index = ({
 export default Index;
 
 export async function getStaticProps() {
-  const menuItems = await getPrimaryMenu();
-  const subMenuItems = await getSubMenu();
-  const footerItems = await getFooter();
-  const aktualnosciHeader = await getAktualnosciHeader();
+  const menuItems = (await getPrimaryMenu()) ?? null;
+  const subMenuItems = (await getSubMenu()) ?? null;
+  const footerItems = (await getFooter()) ?? null;
+  const aktualnosciHeader = (await getAktualnosciHeader()) ?? null;
 
   return {
     props: {
