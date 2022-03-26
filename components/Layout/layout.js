@@ -1,11 +1,12 @@
 import Head from "next/head";
 import { COMPANY_NAME } from "../../lib/constants";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // COMPONENTS
 import Meta from "../meta";
 import Navigation from "./navigation";
 import Footer from "./footer";
+import MessengerIcon from "../items/MessengerIcon";
 
 // STYLES
 import {
@@ -109,6 +110,8 @@ const Layout = ({
         </Navigation.Mobile>
 
         <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
+
+        <MessengerIcon />
       </StyledLayout>
     </>
   );
