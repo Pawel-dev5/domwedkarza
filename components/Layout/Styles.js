@@ -13,7 +13,7 @@ export const StyledMobileBodyWrapper = styled.div`
 export const StyledNavText = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.white};
-  font-size: 1rem;
+  font-size: 0.9rem;
 
   :hover,
   :active,

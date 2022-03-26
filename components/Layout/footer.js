@@ -43,7 +43,8 @@ const Footer = ({ footerItems, subMenuItems }) => {
           <StyledText h5 white>
             Informujemy, że nasza firma korzysta z&nbsp;subwencji finansowej, w
             {/* eslint-disable-next-line */}
-            ramach rządowego programu "Tarcza Finansowa 2.0 Polskiego Funduszu
+            ramach rządowego programu "Tarcza Finansowa 2.0 Polskiego
+            Funduszu&nbsp;
             {/* eslint-disable-next-line */}
             Rozwoju dla Mikro, Małych i Średnich Firm", udzielonej przez przez
             PFR SA.

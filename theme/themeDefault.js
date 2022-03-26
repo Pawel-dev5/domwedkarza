@@ -46,6 +46,7 @@ const ThemeDefault = () => {
         `,
 
     borderRadius100: "0.5rem", // 24px
+    borderRadius300: "1rem", // 24px
     borderRadius400: "1.5rem", // 24px
 
     font: '"Roboto", sans-serif',
