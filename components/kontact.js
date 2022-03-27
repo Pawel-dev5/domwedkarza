@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRef } from "react";
+import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 
@@ -13,6 +14,7 @@ import {
   StyledForm,
   StyledInput,
   StyledTextarea,
+  StyledOtherResWrapper,
 } from "./Styles";
 import { StyledButton, StyledText } from "../components/StylesGeneral";
 
@@ -65,73 +67,102 @@ const Kontakt = ({
   });
 
   return (
-    <StyledFormContainer>
-      <KontaktItems
-        footerItems={footerItems}
-        subMenuItems={subMenuItems}
-        color="black"
-      />
+    <>
+      <StyledFormContainer>
+        <KontaktItems
+          footerItems={footerItems}
+          subMenuItems={subMenuItems}
+          color="black"
+        />
 
-      <StyledFormWrapper>
-        <StyledText form black>
-          Formularz kontaktowy
-        </StyledText>
-        <StyledForm ref={form} onSubmit={handleSubmit(onSubmit)}>
-          <StyledInput
-            type="text"
-            placeholder={formData?.name}
-            name="name"
-            aria-invalid={errors.name ? "true" : "false"}
-            {...register("name", {
-              required: true,
-              maxLength: 30,
-            })}
-          />
-          {errors.name && <p>Imię i nazwisko jest wymagane</p>}
+        <StyledFormWrapper>
+          <StyledText form black>
+            Formularz kontaktowy
+          </StyledText>
+          <StyledForm ref={form} onSubmit={handleSubmit(onSubmit)}>
+            <StyledInput
+              type="text"
+              placeholder={formData?.name}
+              name="name"
+              aria-invalid={errors.name ? "true" : "false"}
+              {...register("name", {
+                required: true,
+                maxLength: 30,
+              })}
+            />
+            {errors.name && <p>Imię i nazwisko jest wymagane</p>}
 
-          <StyledInput
-            type="text"
-            aria-invalid={errors.email ? "true" : "false"}
-            placeholder={formData.email}
-            name="email"
-            {...register("email", { pattern: /^\S+@\S+$/i })}
-          />
-          {errors.email && <p>Email jest wymagany.</p>}
+            <StyledInput
+              type="text"
+              aria-invalid={errors.email ? "true" : "false"}
+              placeholder={formData.email}
+              name="email"
+              {...register("email", { pattern: /^\S+@\S+$/i })}
+            />
+            {errors.email && <p>Email jest wymagany.</p>}
 
-          <StyledInput
-            type="text"
-            placeholder={formData.phone}
-            name="tel"
-            aria-invalid={errors.tel ? "true" : "false"}
-            {...register("tel", {
-              required: true,
-            })}
-          />
-          {errors.tel && <p>Telefon jest wymagany</p>}
+            <StyledInput
+              type="text"
+              placeholder={formData.phone}
+              name="tel"
+              aria-invalid={errors.tel ? "true" : "false"}
+              {...register("tel", {
+                required: true,
+              })}
+            />
+            {errors.tel && <p>Telefon jest wymagany</p>}
 
-          <StyledTextarea
-            placeholder={formData.message}
-            name="message"
-            {...register("message", {
-              required: true,
-              maxLength: 200,
-            })}
-          />
-          {errors.message && <p>Wiadomość jest wymagana.</p>}
+            <StyledTextarea
+              placeholder={formData.message}
+              name="message"
+              {...register("message", {
+                required: true,
+                maxLength: 200,
+              })}
+            />
+            {errors.message && <p>Wiadomość jest wymagana.</p>}
 
-          <StyledButton customMargin="1rem 0" type="submit">
-            Wyślij
-          </StyledButton>
+            <StyledButton customMargin="1rem 0" type="submit">
+              Wyślij
+            </StyledButton>
 
-          {formData.state === "SUCCESS" && (
-            <p>Wiadomość pomyślnie wyłana, dziękujemy!</p>
-          )}
-          {formData.state === "ERROR" && (
-            <p>Wystąpił błąd, spróbuj ponownie.</p>
-          )}
-        </StyledForm>
-      </StyledFormWrapper>
-    </StyledFormContainer>
+            {formData.state === "SUCCESS" && (
+              <p>Wiadomość pomyślnie wyłana, dziękujemy!</p>
+            )}
+            {formData.state === "ERROR" && (
+              <p>Wystąpił błąd, spróbuj ponownie.</p>
+            )}
+          </StyledForm>
+        </StyledFormWrapper>
+      </StyledFormContainer>
+
+      <StyledOtherResWrapper>
+        {/* <div
+          style={{
+            border: "none",
+            borderBottom: "1px solid grey",
+            width: "60%",
+            paddingBottom: "2rem",
+            marginBottom: "2rem",
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "center",
+          }}
+        >
+          <StyledText form black>
+            Sprawdź też Restaurację
+          </StyledText>
+        </div> */}
+
+        <Image
+          alt=" ys"
+          src="https://db.restauracja-nadzalewem.pl/wp-content/uploads/2022/03/zalew5.webp"
+          layout="responsive"
+          width={1200}
+          height={400}
+        />
+      </StyledOtherResWrapper>
+    </>
   );
 };
 
