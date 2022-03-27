@@ -182,6 +182,29 @@ export const StyledImageWrapper = styled.div`
   width: 100%;
 `;
 
+export const StyledOtherResWrapper = styled.div`
+  position: relative;
+  display: block
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  height: 100%;
+  min-height: 400px;
+  span{
+    min-height: 400px;
+    img{
+      object-fit:cover;
+      min-height: 400px;
+    }
+  }
+  width: 100%;
+  
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    min-width: 1200px;
+  }
+`;
+
 export const StyledIframeWrapper = styled.div`
   display: flex;
   align-items: center;
