@@ -38,11 +38,11 @@ const Blog = ({
 };
 
 export async function getStaticProps() {
-  const menuItems = await getPrimaryMenu();
-  const subMenuItems = await getSubMenu();
-  const footerItems = await getFooter();
-  const allPosts = await getAllPostsForHome();
-  const offerHeader = await getOfferHeader();
+  const menuItems = (await getPrimaryMenu()) ?? null;
+  const subMenuItems = (await getSubMenu()) ?? null;
+  const footerItems = (await getFooter()) ?? null;
+  const allPosts = (await getAllPostsForHome()) ?? null;
+  const offerHeader = (await getOfferHeader()) ?? null;
 
   return {
     props: { allPosts, menuItems, subMenuItems, footerItems, offerHeader },

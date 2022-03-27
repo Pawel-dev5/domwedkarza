@@ -10,24 +10,28 @@ const Video = dynamic(() => import("./sections/Video"));
 
 const HomePage = ({ mainData }) => (
   <>
-    <FirstSection
-      data={mainData?.galeriaGlowna}
-      naglowek={mainData?.glownaNaglowek?.glownaNaglowek}
-      naglowek2={mainData?.glownaNaglowek?.glownaNaglowek2}
-    />
+    {mainData && (
+      <>
+        <FirstSection
+          data={mainData?.galeriaGlowna}
+          naglowek={mainData?.glownaNaglowek?.glownaNaglowek}
+          naglowek2={mainData?.glownaNaglowek?.glownaNaglowek2}
+        />
 
-    <SecondSection data={mainData?.sekcjaDruga} />
+        <SecondSection data={mainData?.sekcjaDruga} />
 
-    <SRLWrapper>
-      <ThirdSection data={mainData?.sekcjaTrzecia} />
-    </SRLWrapper>
+        <SRLWrapper>
+          <ThirdSection data={mainData?.sekcjaTrzecia} />
+        </SRLWrapper>
 
-    <Features
-      features={mainData?.features?.features}
-      heading={mainData?.features?.featuresHeading}
-    />
+        <Features
+          features={mainData?.features?.features}
+          heading={mainData?.features?.featuresHeading}
+        />
 
-    <Video src={mainData?.glownaWideo?.wideo} />
+        <Video src={mainData?.glownaWideo?.wideo} />
+      </>
+    )}
   </>
 );
 

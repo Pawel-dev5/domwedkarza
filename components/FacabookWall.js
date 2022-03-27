@@ -9,7 +9,7 @@ const StyledFBWrapper = styled.div`
     width: 100%;
     margin: auto;
     border-radius: ${({ theme }) => theme.borderRadius300};
-    
+
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         width: 60%;
   }
@@ -976,8 +976,10 @@ const StyledFBWrapper = styled.div`
 `;
 
 const FacebookWall = ({ content }) => (
-  <StyledFBWrapper
-    dangerouslySetInnerHTML={{ __html: content }}
-  ></StyledFBWrapper>
+  <>
+    {content && (
+      <StyledFBWrapper dangerouslySetInnerHTML={{ __html: content }} />
+    )}
+  </>
 );
 export default FacebookWall;

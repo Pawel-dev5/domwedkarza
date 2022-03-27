@@ -97,7 +97,6 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
           </StyledLogoWrapper>
         </StyledNavMenuWrapper>
 
-        {/* <StyledNavMenuWrapper> */}
         <StyledBurgerWrapper asideMenu={asideMenu}>
           <StyledButton
             burger
@@ -107,7 +106,6 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
             <Burger />
           </StyledButton>
         </StyledBurgerWrapper>
-        {/* </StyledNavMenuWrapper> */}
       </StyledMobileMenuWrapper>
 
       <StyledMobileMenu

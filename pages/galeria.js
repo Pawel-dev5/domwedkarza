@@ -38,10 +38,10 @@ const Index = ({
 export default Index;
 
 export async function getStaticProps() {
-  const menuItems = await getPrimaryMenu();
-  const subMenuItems = await getSubMenu();
-  const footerItems = await getFooter();
-  const galleryPage = await getGalleryPage();
+  const menuItems = (await getPrimaryMenu()) ?? null;
+  const subMenuItems = (await getSubMenu()) ?? null;
+  const footerItems = (await getFooter()) ?? null;
+  const galleryPage = (await getGalleryPage()) ?? null;
 
   return {
     props: {

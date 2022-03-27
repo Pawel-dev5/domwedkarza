@@ -3,11 +3,15 @@ import { pl } from "date-fns/locale";
 import { StyledDate } from "./Styles";
 
 const Date = ({ dateString }) => {
-  const date = parseISO(dateString);
+  const date = parseISO(dateString ?? null);
   return (
-    <StyledDate dateTime={dateString}>
-      {format(date, "d LLLL yyyy", { locale: pl })}
-    </StyledDate>
+    <>
+      {dateString && date && (
+        <StyledDate dateTime={dateString}>
+          {format(date, "d LLLL yyyy", { locale: pl })}
+        </StyledDate>
+      )}
+    </>
   );
 };
 export default Date;

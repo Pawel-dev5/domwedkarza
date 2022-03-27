@@ -38,11 +38,11 @@ const Index = ({
 );
 
 export async function getStaticProps() {
-  const menuItems = await getPrimaryMenu();
-  const subMenuItems = await getSubMenu();
-  const footerItems = await getFooter();
-  const kontaktHeader = await getKontaktHeader();
-  const formConfig = await getConfig();
+  const menuItems = (await getPrimaryMenu()) ?? null;
+  const subMenuItems = (await getSubMenu()) ?? null;
+  const footerItems = (await getFooter()) ?? null;
+  const kontaktHeader = (await getKontaktHeader()) ?? null;
+  const formConfig = (await getConfig()) ?? null;
 
   return {
     props: {
