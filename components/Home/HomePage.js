@@ -13,7 +13,7 @@ const HomePage = ({ mainData }) => (
     {mainData && (
       <>
         <FirstSection
-          data={mainData?.galeriaGlowna}
+          data={mainData?.galeriaglownastronaglowna}
           naglowek={mainData?.glownaNaglowek?.glownaNaglowek}
           naglowek2={mainData?.glownaNaglowek?.glownaNaglowek2}
         />
