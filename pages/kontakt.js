@@ -17,15 +17,15 @@ const Index = ({
   menuItems: { menuItems },
   subMenuItems,
   footerItems,
-  kontaktHeader,
+  kontaktData,
   formConfig,
 }) => (
   <Layout
     menuItems={menuItems?.edges}
     subMenuItems={subMenuItems?.menuItems?.edges}
     footerItems={footerItems?.menuItems?.edges}
-    headerText={kontaktHeader?.title}
-    headerImg={kontaktHeader?.featuredImage?.node}
+    headerText={kontaktData?.title}
+    headerImg={kontaktData?.featuredImage?.node}
   >
     <Kontakt
       footerItems={footerItems?.menuItems?.edges}
@@ -33,6 +33,7 @@ const Index = ({
       userId={formConfig?.userId}
       serviceId={formConfig?.serviceId}
       tamplateId={formConfig?.tamplateId}
+      {...kontaktData?.kontakt}
     />
   </Layout>
 );
@@ -41,7 +42,7 @@ export async function getStaticProps() {
   const menuItems = (await getPrimaryMenu()) ?? null;
   const subMenuItems = (await getSubMenu()) ?? null;
   const footerItems = (await getFooter()) ?? null;
-  const kontaktHeader = (await getKontaktHeader()) ?? null;
+  const kontaktData = (await getKontaktHeader()) ?? null;
   const formConfig = (await getConfig()) ?? null;
 
   return {
@@ -49,7 +50,7 @@ export async function getStaticProps() {
       menuItems,
       subMenuItems,
       footerItems,
-      kontaktHeader,
+      kontaktData,
       formConfig,
     },
     revalidate: 10, // In seconds

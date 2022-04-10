@@ -96,13 +96,6 @@ export const StyledNavText = styled.a`
         theme.darken({ amount: 0.2, color: theme.white })};
     `}
 
-  ${({ submenu }) =>
-    submenu &&
-    css`
-      padding: 0 0.8rem;
-      font-size: 0.85rem;
-    `}
-  
   ${({ customPadding }) =>
     customPadding &&
     css`

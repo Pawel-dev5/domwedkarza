@@ -102,7 +102,10 @@ export const StyledText = styled.span`
     main &&
     css`
       z-index: 9;
-      padding: 0;
+      padding: 10px 20px;
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        padding: 0;
+      }
     `};
 
   ${({ width }) =>
@@ -146,6 +149,16 @@ export const StyledText = styled.span`
 
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         width: 55% !important;
+      }
+    `}
+
+    ${({ hover }) =>
+    hover &&
+    css`
+      :hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: transform 0.5s ease 0s;
       }
     `}
 `;
@@ -340,6 +353,9 @@ export const StyledBlogTitle = styled.span`
 
 export const StyledSubMenu = styled.a`
   text-decoration: none;
+  color: ${({ theme }) => theme.white};
+  padding: 0 0.8rem;
+  font-size: 0.85rem;
 
   :hover {
     text-decoration: underline;

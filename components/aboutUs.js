@@ -21,7 +21,9 @@ const AboutUs = ({ aboutUsData }) => (
 
           <StyledSectionWrapper>
             <StyledListWrapper>
-              <StyledText black>{aboutUsData?.oNas?.text1}</StyledText>
+              <StyledText black padding="0">
+                {aboutUsData?.oNas?.text1}
+              </StyledText>
             </StyledListWrapper>
 
             <StyledImageWrapper>
@@ -40,7 +42,7 @@ const AboutUs = ({ aboutUsData }) => (
 
           <StyledSectionWrapper>
             <StyledListWrapper>
-              <StyledText h2 black>
+              <StyledText h2 black padding="0">
                 {aboutUsData?.oNas?.naglowekListy}
               </StyledText>
               <div

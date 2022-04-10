@@ -10,11 +10,8 @@ const basicCardStyles = css`
 
 export const StyledSecondWrapper = styled.div`
   width: 100%;
-  height: 850px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    height: 500px;
-  }
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 
   display: flex;
   align-items: center;

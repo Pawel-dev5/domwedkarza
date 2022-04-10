@@ -23,6 +23,8 @@ import {
   StyledLayout,
   StyledMobileBodyWrapper,
   StyledBurgerWrapper,
+  StyledSubMenuWrapper,
+  StyledMobileButtonsWrapper,
 } from "./Styles";
 
 const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
@@ -31,45 +33,48 @@ const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
   return (
     <StyledMenuWrapper>
       <StyledNavWrapper submenu hideSubMenu={hideSubMenu}>
-        <SubMenu subMenuItems={subMenuItems} />
+        <StyledSubMenuWrapper>
+          {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
-        <Link
-          href="https://www.facebook.com/profile.php?id=100057231978583"
-          passHref
-        >
-          <FontAwesomeIcon
-            icon={faFacebookSquare}
-            className="fa-xl"
-            style={{ color: "#fff" }}
-          />
-        </Link>
+          <Link href="https://www.facebook.com/" passHref target="_blank">
+            <FontAwesomeIcon
+              icon={faFacebookSquare}
+              className="fa-xl"
+              style={{ color: "#fff" }}
+            />
+          </Link>
+        </StyledSubMenuWrapper>
       </StyledNavWrapper>
 
       <StyledNavWrapper>
-        <StyledNavMenuWrapper>
-          <StyledLogoWrapper>
-            <Link href="/" passHref>
-              <Image
-                alt="Nad Zalewem"
-                src={logo}
-                layout="fill"
-                objectFit="cover"
-              />
-            </Link>
-          </StyledLogoWrapper>
-        </StyledNavMenuWrapper>
+        {logo && (
+          <StyledNavMenuWrapper>
+            <StyledLogoWrapper>
+              <Link href="/" passHref>
+                <Image
+                  alt="Nad Zalewem"
+                  src={logo}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Link>
+            </StyledLogoWrapper>
+          </StyledNavMenuWrapper>
+        )}
 
-        <StyledNavMenuWrapper>
-          {menuItems?.map((item) => (
-            <Link href={item?.node?.path} passHref key={item?.node?.id}>
-              <StyledNavText
-                active={router?.pathname === item?.node?.path ?? true}
-              >
-                {item?.node?.label}
-              </StyledNavText>
-            </Link>
-          ))}
-        </StyledNavMenuWrapper>
+        {menuItems && (
+          <StyledNavMenuWrapper>
+            {menuItems?.map((item) => (
+              <Link href={item?.node?.path} passHref key={item?.node?.id}>
+                <StyledNavText
+                  active={router?.pathname === item?.node?.path ?? true}
+                >
+                  {item?.node?.label}
+                </StyledNavText>
+              </Link>
+            ))}
+          </StyledNavMenuWrapper>
+        )}
       </StyledNavWrapper>
     </StyledMenuWrapper>
   );
@@ -81,31 +86,42 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
 
   return (
     <StyledMobileNavWrapper>
-      <StyledLayout>{children}</StyledLayout>
+      {children && <StyledLayout>{children}</StyledLayout>}
 
       <StyledMobileMenuWrapper>
-        <StyledNavMenuWrapper>
-          <StyledLogoWrapper>
-            <Link href="/" passHref>
-              <Image
-                alt="Nad Zalewem"
-                src={logo}
-                layout="fill"
-                objectFit="cover"
-              />
-            </Link>
-          </StyledLogoWrapper>
-        </StyledNavMenuWrapper>
+        {logo && (
+          <StyledNavMenuWrapper>
+            <StyledLogoWrapper>
+              <Link href="/" passHref>
+                <Image
+                  alt="Nad Zalewem"
+                  src={logo}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Link>
+            </StyledLogoWrapper>
+          </StyledNavMenuWrapper>
+        )}
 
-        <StyledBurgerWrapper asideMenu={asideMenu}>
-          <StyledButton
-            burger
-            type="button"
-            onClick={() => setAsideMenu(!asideMenu)}
-          >
-            <Burger />
-          </StyledButton>
-        </StyledBurgerWrapper>
+        <StyledMobileButtonsWrapper>
+          <Link href="https://www.facebook.com/" passHref target="_blank">
+            <FontAwesomeIcon
+              icon={faFacebookSquare}
+              className="fa-xl"
+              style={{ color: "#fff" }}
+            />
+          </Link>
+          <StyledBurgerWrapper asideMenu={asideMenu}>
+            <StyledButton
+              burger
+              type="button"
+              onClick={() => setAsideMenu(!asideMenu)}
+            >
+              <Burger />
+            </StyledButton>
+          </StyledBurgerWrapper>
+        </StyledMobileButtonsWrapper>
       </StyledMobileMenuWrapper>
 
       <StyledMobileMenu
@@ -113,24 +129,25 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
         onClick={() => setAsideMenu(!asideMenu)}
       >
         <StyledMobileBodyWrapper>
-          {menuItems?.map((item) => (
-            <Link href={item?.node?.path} passHref key={item?.node?.id}>
-              <StyledNavText
-                customPadding="0.5rem"
-                active={router?.pathname === item?.node?.path ?? true}
-              >
-                {item?.node?.label}
-              </StyledNavText>
-            </Link>
-          ))}
+          {menuItems && (
+            <>
+              {menuItems?.map((item) => (
+                <Link href={item?.node?.path} passHref key={item?.node?.id}>
+                  <StyledNavText
+                    customPadding="0.5rem"
+                    active={router?.pathname === item?.node?.path ?? true}
+                  >
+                    {item?.node?.label}
+                  </StyledNavText>
+                </Link>
+              ))}
+            </>
+          )}
 
           <StyledNavWrapper submenu>
-            <SubMenu subMenuItems={subMenuItems} />
+            {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
-            <Link
-              href="https://www.facebook.com/profile.php?id=100057231978583"
-              passHref
-            >
+            <Link href="https://www.facebook.com/" passHref>
               <FontAwesomeIcon
                 icon={faFacebookSquare}
                 className="fa-xl"

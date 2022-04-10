@@ -91,4 +91,91 @@ const KontaktItems = ({ footerItems, subMenuItems, color }) => (
   </StyledContact>
 );
 
+const ContactPageItems = ({ adres, telefon, color }) => (
+  <StyledContact color={color}>
+    {adres && telefon && (
+      <>
+        <StyledFooterAdres>
+          <div>
+            <StyledIcon icon={faHome} className="fa-xl" />
+            <StyledText
+              footer={color === "black" ?? true}
+              h5={color === "white" ?? true}
+              h3={color === "black" ?? true}
+            >
+              {adres?.tytul}
+            </StyledText>
+          </div>
+
+          <StyledAdressWrapper>
+            <StyledText
+              footer={color === "black" ?? true}
+              h3={color === "black" ?? true}
+              h5={color === "white" ?? true}
+              footerAdres={color === "black" ?? true}
+              textAlign="left"
+            >
+              {adres?.adres}
+            </StyledText>
+            <StyledText
+              footer={color === "black" ?? true}
+              h5={color === "white" ?? true}
+              h3={color === "black" ?? true}
+              textAlign="left"
+            >
+              {adres?.nip}
+            </StyledText>
+          </StyledAdressWrapper>
+        </StyledFooterAdres>
+
+        <StyledFooterAdres>
+          <div>
+            <StyledIcon icon={faPhone} className="fa-xl" />
+
+            <StyledText
+              footer={color === "black" ?? true}
+              h5={color === "white" ?? true}
+              h3={color === "black" ?? true}
+            >
+              {telefon?.tytul}
+            </StyledText>
+          </div>
+
+          <StyledTelWrapper>
+            <StyledSubMenu href={`tel:${telefon?.telefon}`}>
+              <StyledText
+                h5={color === "white" ?? true}
+                h3={color === "black" ?? true}
+                black={color === "black" ?? true}
+              >
+                {telefon?.telefon}
+              </StyledText>
+            </StyledSubMenu>
+
+            <StyledSubMenu href={`tel:${telefon?.telefon2}`}>
+              <StyledText
+                h5={color === "white" ?? true}
+                h3={color === "black" ?? true}
+                black={color === "black" ?? true}
+              >
+                {telefon?.telefon2}
+              </StyledText>
+            </StyledSubMenu>
+
+            <StyledSubMenu href={`mailto:${telefon?.email}`}>
+              <StyledText
+                h5={color === "white" ?? true}
+                h3={color === "black" ?? true}
+                black={color === "black" ?? true}
+              >
+                {telefon?.email}
+              </StyledText>
+            </StyledSubMenu>
+          </StyledTelWrapper>
+        </StyledFooterAdres>
+      </>
+    )}
+  </StyledContact>
+);
+KontaktItems.KontaktPage = ContactPageItems;
 export default KontaktItems;

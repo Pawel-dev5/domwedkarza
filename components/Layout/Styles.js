@@ -69,6 +69,9 @@ export const StyledNavWrapper = styled.nav`
     submenu &&
     css`
       height: 2.5rem;
+      max-width: none;
+      background: ${({ theme }) => theme.black};
+
       @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         padding: 6rem 0;
         height: 100%;
@@ -82,6 +85,7 @@ export const StyledNavWrapper = styled.nav`
           justify-content: space-between;
           flex-direction: column;
           padding-top: 4rem;
+          gap: 0.6rem;
         }
       }
     `}
@@ -91,6 +95,14 @@ export const StyledNavWrapper = styled.nav`
     css`
       display: none;
     `}
+`;
+export const StyledSubMenuWrapper = styled.div`
+  max-width: 1110px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
 `;
 
 // LAYOUT
@@ -167,7 +179,8 @@ export const StyledMenuWrapper = styled.div`
     width: 100%;
     z-index: 999;
     top: 0;
-    background-color: ${({ theme }) => theme.black};
+    background-color: ${({ theme }) =>
+      theme.transparentize({ amount: 0.5, color: theme.black })};
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -272,8 +285,8 @@ export const StyledLayoutHeader = styled.div`
   ${({ src }) =>
     src &&
     css`
-      margin-top: 95px;
-      min-height: 350px;
+      margin-top: 40px;
+      min-height: 400px;
       width: 100%;
       background-image: url(${src});
       background-repeat: no-repeat;
@@ -296,8 +309,19 @@ export const StyledLayoutHeaderText = styled.div`
   justify-content: center;
   flex-direction: column;
 
+  ${({ isImg }) =>
+    !isImg &&
+    css`
+      margin-top: 7rem;
+    `}
+
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 30%;
+    ${({ isImg }) =>
+      !isImg &&
+      css`
+        margin-top: 10rem;
+      `}
   }
 `;
 
@@ -369,4 +393,11 @@ export const StyledBurgerWrapper = styled.div`
         transform: rotate(90deg);
       }
     `}
+`;
+
+export const StyledMobileButtonsWrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
 `;

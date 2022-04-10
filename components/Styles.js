@@ -118,12 +118,8 @@ export const StyledAboutWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  row-gap: 8rem;
+  row-gap: 4rem;
   margin-bottom: 3rem;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    row-gap: 8rem;
-  }
 
   li {
     list-style: disc outside none;
@@ -150,7 +146,7 @@ export const StyledSectionWrapper = styled.div`
   }
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -161,14 +157,17 @@ export const StyledSectionWrapper = styled.div`
 export const StyledListWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  height: 100%;
+  justify-content: flex-start;
   text-align: left;
   flex-direction: column;
   max-width: 500px;
-  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  min-height: 500px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    margin-right: 10rem;
+    margin-right: 5rem;
+    margin-bottom: 0;
   }
 `;
 
