@@ -296,8 +296,19 @@ export const StyledLayoutHeaderText = styled.div`
   justify-content: center;
   flex-direction: column;
 
+  ${({ isImg }) =>
+    !isImg &&
+    css`
+      margin-top: 7rem;
+    `}
+
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 30%;
+    ${({ isImg }) =>
+      !isImg &&
+      css`
+        margin-top: 10rem;
+      `}
   }
 `;
 

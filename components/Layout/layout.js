@@ -75,11 +75,13 @@ const Layout = ({
       </Head>
 
       <StyledLayout>
-        <Navigation
-          menuItems={menuItems}
-          subMenuItems={subMenuItems}
-          hideSubMenu={scrollDir === "DOWN" ?? true}
-        />
+        {menuItems && subMenuItems && (
+          <Navigation
+            menuItems={menuItems}
+            subMenuItems={subMenuItems}
+            hideSubMenu={scrollDir === "DOWN" ?? true}
+          />
+        )}
 
         <Navigation.Mobile
           menuItems={menuItems}
@@ -92,7 +94,7 @@ const Layout = ({
           )}
 
           {(subHeaderText || headerText) && (
-            <StyledLayoutHeaderText>
+            <StyledLayoutHeaderText isImg={headerImg?.sourceUrl}>
               {headerText && (
                 <StyledText h1 black>
                   {headerText}
@@ -109,7 +111,9 @@ const Layout = ({
           {children}
         </Navigation.Mobile>
 
-        <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
+        {footerItems && subMenuItems && (
+          <Footer footerItems={footerItems} subMenuItems={subMenuItems} />
+        )}
 
         <MessengerIcon />
       </StyledLayout>

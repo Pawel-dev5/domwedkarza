@@ -24,6 +24,9 @@ const Kontakt = ({
   userId,
   serviceId,
   tamplateId,
+  adres,
+  telefon,
+  sprawdzTez,
 }) => {
   const initialState = {
     state: "IDLE",
@@ -32,6 +35,7 @@ const Kontakt = ({
     phone: "Telefon (wymagane)",
     message: "Wiadomość (wymagane)",
   };
+
   const [formData, setFormData] = useState(initialState);
 
   const {
@@ -48,19 +52,19 @@ const Kontakt = ({
       () => {
         setFormData({ ...formData, state: "SUCCESS" });
         reset({
-          name: formData.name,
-          email: formData.email,
-          tel: formData.phone,
-          message: formData.message,
+          name: formData?.name,
+          email: formData?.email,
+          tel: formData?.phone,
+          message: formData?.message,
         });
       },
       () => {
         setFormData({ ...formData, state: "ERROR" });
         reset({
-          name: formData.name,
-          email: formData.email,
-          tel: formData.phone,
-          message: formData.message,
+          name: formData?.name,
+          email: formData?.email,
+          tel: formData?.phone,
+          message: formData?.message,
         });
       }
     );
@@ -69,9 +73,9 @@ const Kontakt = ({
   return (
     <>
       <StyledFormContainer>
-        <KontaktItems
-          footerItems={footerItems}
-          subMenuItems={subMenuItems}
+        <KontaktItems.KontaktPage
+          adres={adres}
+          telefon={telefon}
           color="black"
         />
 
@@ -84,7 +88,7 @@ const Kontakt = ({
               type="text"
               placeholder={formData?.name}
               name="name"
-              aria-invalid={errors.name ? "true" : "false"}
+              aria-invalid={errors?.name ? "true" : "false"}
               {...register("name", {
                 required: true,
                 maxLength: 30,
@@ -94,8 +98,8 @@ const Kontakt = ({
 
             <StyledInput
               type="text"
-              aria-invalid={errors.email ? "true" : "false"}
-              placeholder={formData.email}
+              aria-invalid={errors?.email ? "true" : "false"}
+              placeholder={formData?.email}
               name="email"
               {...register("email", { pattern: /^\S+@\S+$/i })}
             />
@@ -103,7 +107,7 @@ const Kontakt = ({
 
             <StyledInput
               type="text"
-              placeholder={formData.phone}
+              placeholder={formData?.phone}
               name="tel"
               aria-invalid={errors.tel ? "true" : "false"}
               {...register("tel", {
@@ -113,7 +117,7 @@ const Kontakt = ({
             {errors.tel && <p>Telefon jest wymagany</p>}
 
             <StyledTextarea
-              placeholder={formData.message}
+              placeholder={formData?.message}
               name="message"
               {...register("message", {
                 required: true,
@@ -155,8 +159,8 @@ const Kontakt = ({
         </div> */}
 
         <Image
-          alt=" ys"
-          src="https://db.restauracja-nadzalewem.pl/wp-content/uploads/2022/03/zalew5.webp"
+          alt={sprawdzTez?.altText}
+          src={sprawdzTez?.sourceUrl}
           layout="responsive"
           width={1200}
           height={400}
