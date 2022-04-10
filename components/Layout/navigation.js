@@ -23,6 +23,7 @@ import {
   StyledLayout,
   StyledMobileBodyWrapper,
   StyledBurgerWrapper,
+  StyledSubMenuWrapper,
 } from "./Styles";
 
 const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
@@ -31,15 +32,17 @@ const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
   return (
     <StyledMenuWrapper>
       <StyledNavWrapper submenu hideSubMenu={hideSubMenu}>
-        {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
+        <StyledSubMenuWrapper>
+          {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
-        <Link href="https://www.facebook.com/" passHref>
-          <FontAwesomeIcon
-            icon={faFacebookSquare}
-            className="fa-xl"
-            style={{ color: "#fff" }}
-          />
-        </Link>
+          <Link href="https://www.facebook.com/" passHref target="_blank">
+            <FontAwesomeIcon
+              icon={faFacebookSquare}
+              className="fa-xl"
+              style={{ color: "#fff" }}
+            />
+          </Link>
+        </StyledSubMenuWrapper>
       </StyledNavWrapper>
 
       <StyledNavWrapper>

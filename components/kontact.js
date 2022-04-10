@@ -19,8 +19,6 @@ import {
 import { StyledButton, StyledText } from "../components/StylesGeneral";
 
 const Kontakt = ({
-  footerItems,
-  subMenuItems,
   userId,
   serviceId,
   tamplateId,

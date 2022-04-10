@@ -69,6 +69,9 @@ export const StyledNavWrapper = styled.nav`
     submenu &&
     css`
       height: 2.5rem;
+      max-width: none;
+      background: ${({ theme }) => theme.black};
+
       @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         padding: 6rem 0;
         height: 100%;
@@ -91,6 +94,14 @@ export const StyledNavWrapper = styled.nav`
     css`
       display: none;
     `}
+`;
+export const StyledSubMenuWrapper = styled.div`
+  max-width: 1110px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
 `;
 
 // LAYOUT
@@ -167,7 +178,8 @@ export const StyledMenuWrapper = styled.div`
     width: 100%;
     z-index: 999;
     top: 0;
-    background-color: ${({ theme }) => theme.black};
+    background-color: ${({ theme }) =>
+      theme.transparentize({ amount: 0.5, color: theme.black })};
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -272,8 +284,8 @@ export const StyledLayoutHeader = styled.div`
   ${({ src }) =>
     src &&
     css`
-      margin-top: 95px;
-      min-height: 350px;
+      margin-top: 40px;
+      min-height: 400px;
       width: 100%;
       background-image: url(${src});
       background-repeat: no-repeat;
