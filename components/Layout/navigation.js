@@ -24,6 +24,7 @@ import {
   StyledMobileBodyWrapper,
   StyledBurgerWrapper,
   StyledSubMenuWrapper,
+  StyledMobileButtonsWrapper,
 } from "./Styles";
 
 const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
@@ -103,15 +104,24 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
           </StyledNavMenuWrapper>
         )}
 
-        <StyledBurgerWrapper asideMenu={asideMenu}>
-          <StyledButton
-            burger
-            type="button"
-            onClick={() => setAsideMenu(!asideMenu)}
-          >
-            <Burger />
-          </StyledButton>
-        </StyledBurgerWrapper>
+        <StyledMobileButtonsWrapper>
+          <Link href="https://www.facebook.com/" passHref target="_blank">
+            <FontAwesomeIcon
+              icon={faFacebookSquare}
+              className="fa-xl"
+              style={{ color: "#fff" }}
+            />
+          </Link>
+          <StyledBurgerWrapper asideMenu={asideMenu}>
+            <StyledButton
+              burger
+              type="button"
+              onClick={() => setAsideMenu(!asideMenu)}
+            >
+              <Burger />
+            </StyledButton>
+          </StyledBurgerWrapper>
+        </StyledMobileButtonsWrapper>
       </StyledMobileMenuWrapper>
 
       <StyledMobileMenu

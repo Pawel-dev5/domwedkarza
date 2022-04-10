@@ -85,6 +85,7 @@ export const StyledNavWrapper = styled.nav`
           justify-content: space-between;
           flex-direction: column;
           padding-top: 4rem;
+          gap: 0.6rem;
         }
       }
     `}
@@ -392,4 +393,11 @@ export const StyledBurgerWrapper = styled.div`
         transform: rotate(90deg);
       }
     `}
+`;
+
+export const StyledMobileButtonsWrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
 `;
