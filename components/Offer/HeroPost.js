@@ -6,10 +6,10 @@ import Link from "next/link";
 import {
   StyledHeroWrapper,
   StyledSliderWrapper,
-  StylesMenuGrid,
-  StyledDotButton,
+  StylesMenuWrapper,
+  StyledTextWrapper,
 } from "./Styles";
-import { StyledButton, StyledText } from "../StylesGeneral";
+import { StyledText } from "../StylesGeneral";
 
 const responsive = {
   all: {
@@ -61,39 +61,40 @@ const HeroPost = ({ sliderOffer, excerpt, offerMenu }) => {
           </StyledSliderWrapper>
         )}
 
-        <StyledHeroWrapper
-          customWidth="50%"
+        <StyledTextWrapper
+          customWidth
           dangerouslySetInnerHTML={{ __html: excerpt }}
         />
       </StyledHeroWrapper>
 
-      <StyledHeroWrapper>
-        <StylesMenuGrid>
-          {menuGallery?.map((item) => (
-            <Image
-              key={item?.altText}
-              width={200}
-              height={300}
-              alt={item?.altText}
-              src={item?.sourceUrl}
-              style={{ objectFit: "cover" }}
-              objectFit="cover"
-            />
-          ))}
-        </StylesMenuGrid>
+      <StyledHeroWrapper menu>
+        {menuGallery && (
+          <StylesMenuWrapper>
+            {menuGallery?.map((item) => (
+              <Image
+                key={item?.altText}
+                width={200}
+                height={300}
+                alt={item?.altText}
+                src={item?.sourceUrl}
+                style={{ objectFit: "cover" }}
+                objectFit="cover"
+              />
+            ))}
+          </StylesMenuWrapper>
+        )}
 
         <StyledHeroWrapper column>
-          {offerMenu?.title && (
-            <StyledText h2 black>
-              {offerMenu?.title}
-            </StyledText>
-          )}
-
-          {offerMenu?.buttonText && offerMenu?.pdf?.sourceUrl && (
-            <Link href={offerMenu?.pdf?.sourceUrl} passHref>
-              <a target="_blank" rel="noreferrer">
-                <StyledButton>{offerMenu?.buttonText}</StyledButton>
-              </a>
+          {offerMenu?.title && offerMenu?.pdf?.sourceUrl && (
+            <Link
+              href={offerMenu?.pdf?.sourceUrl}
+              passHref
+              target="_blank"
+              rel="noreferrer"
+            >
+              <StyledText h2 black hover>
+                {offerMenu?.title}
+              </StyledText>
             </Link>
           )}
         </StyledHeroWrapper>

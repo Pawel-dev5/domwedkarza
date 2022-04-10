@@ -51,14 +51,11 @@ export const StyledHeroImgWrapper = styled.div`
 
 export const StyledHeroWrapper = styled(StyledWrapper)`
   margin: 0;
-  align-items: flex-start;
   text-align: left;
-  justify-content: space-between;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
   padding: 1rem;
   gap: 0;
 
@@ -77,22 +74,33 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
   ${({ customWidth }) =>
     customWidth &&
     css`
-      width: ${customWidth};
+      height: 30%;
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 50%;
+        height: 500px;
+      }
     `}
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    gap: 1rem;
-    width: 75%;
-    margin: auto;
+  ${({ menu }) =>
+    menu &&
+    css`
+      height: 100%;
+      width: 100%;
 
-    div:nth-child(1) {
-      width: 70%;
-    }
-    div:nth-child(2) {
-      width: 30%;
-      margin: initial;
-    }
-  }
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 75%;
+        height: 500px;
+        margin: auto;
+
+        div:nth-child(1) {
+          width: 60%;
+        }
+        div:nth-child(2) {
+          width: 40%;
+          margin: initial;
+        }
+      }
+    `}
 `;
 
 export const StyledMorePostWrapper = styled(StyledWrapper)`
@@ -141,23 +149,24 @@ export const StyledSliderWrapper = styled.div`
   }
 `;
 
-export const StylesMenuGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 75%;
+export const StylesMenuWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 75%;
-    grid-template-columns: repeat(4, 1fr);
+    height: 75%;
   }
+
   span {
     margin: 1rem !important;
 
-    img {
-      :hover {
-        transform: scale(1.1);
-        transition: transform 0.5s;
-      }
+    :hover {
+      transform: scale(1.1);
+      transition: transform 0.5s;
     }
   }
 `;
@@ -170,4 +179,14 @@ export const StyledDotButton = styled.button`
   display: inline-block;
   min-height: 25px !important;
   max-height: 25px;
+`;
+
+export const StyledTextWrapper = styled.div`
+  width: 100%;
+  margin: 2rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 30%;
+    margin: 0 2rem;
+  }
 `;

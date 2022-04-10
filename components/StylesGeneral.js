@@ -148,6 +148,16 @@ export const StyledText = styled.span`
         width: 55% !important;
       }
     `}
+
+    ${({ hover }) =>
+    hover &&
+    css`
+      :hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: transform 0.5s ease 0s;
+      }
+    `}
 `;
 
 export const StyledWrapper = styled.div`
