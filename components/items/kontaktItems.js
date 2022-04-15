@@ -143,7 +143,7 @@ const ContactPageItems = ({ adres, telefon, color }) => (
           </div>
 
           <StyledTelWrapper>
-            <StyledSubMenu href={`tel:${telefon?.telefon}`}>
+            <StyledSubMenu footer href={`tel:${telefon?.telefon}`}>
               <StyledText
                 h5={color === "white" ?? true}
                 h3={color === "black" ?? true}
@@ -153,7 +153,7 @@ const ContactPageItems = ({ adres, telefon, color }) => (
               </StyledText>
             </StyledSubMenu>
 
-            <StyledSubMenu href={`tel:${telefon?.telefon2}`}>
+            <StyledSubMenu footer href={`tel:${telefon?.telefon2}`}>
               <StyledText
                 h5={color === "white" ?? true}
                 h3={color === "black" ?? true}
@@ -163,7 +163,7 @@ const ContactPageItems = ({ adres, telefon, color }) => (
               </StyledText>
             </StyledSubMenu>
 
-            <StyledSubMenu href={`mailto:${telefon?.email}`}>
+            <StyledSubMenu footer href={`mailto:${telefon?.email}`}>
               <StyledText
                 h5={color === "white" ?? true}
                 h3={color === "black" ?? true}
