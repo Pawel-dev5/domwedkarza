@@ -73,6 +73,7 @@ const KontaktItems = ({ footerItems, subMenuItems, color }) => (
                   item?.node?.path === "http://email" ? "mailto:" : "tel:"
                 }${item?.node?.label}`}
                 key={item?.node?.id}
+                footer
               >
                 <StyledText
                   h5={color === "white" ?? true}

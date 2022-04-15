@@ -361,4 +361,9 @@ export const StyledSubMenu = styled.a`
     text-decoration: underline;
     color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
   }
+  ${({ footer }) =>
+    footer &&
+    css`
+      padding: 0;
+    `}
 `;
