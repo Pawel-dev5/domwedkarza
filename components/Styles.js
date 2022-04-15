@@ -187,6 +187,7 @@ export const StyledOtherResWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
+  cursor: pointer;
 
   height: 100%;
   min-height: 400px;

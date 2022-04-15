@@ -139,6 +139,7 @@ const StyledFBWrapper = styled.div`
     position: relative;
     display: block;
     text-decoration: none !important;
+    overflow: visible;
   }
   .cff-visual-header .cff-header-inner-wrap a {
     color: inherit !important;

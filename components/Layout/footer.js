@@ -70,12 +70,11 @@ const Footer = ({ footerItems, subMenuItems }) => {
             Eventy. Made by Paweł Nowecki
           </StyledText>
 
-          <Link href="https://www.facebook.com/" passHref>
-            <FontAwesomeIcon
-              icon={faFacebookSquare}
-              className="fa-xl"
-              style={{ color: "#fff" }}
-            />
+          <Link
+            href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
+            passHref
+          >
+            <FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
           </Link>
         </StyledSubFooter>
       </StyledFooter>
