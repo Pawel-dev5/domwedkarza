@@ -130,7 +130,7 @@ const Kontakt = ({
             </StyledButton>
 
             {formData.state === "SUCCESS" && (
-              <p>Wiadomość pomyślnie wyłana, dziękujemy!</p>
+              <p>Wiadomość pomyślnie wysłana, dziękujemy!</p>
             )}
             {formData.state === "ERROR" && (
               <p>Wystąpił błąd, spróbuj ponownie.</p>
