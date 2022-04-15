@@ -16,8 +16,7 @@ import {
 import { COMPANY_NAME } from "../../lib/constants";
 
 // COMPONENTS
-import Layout from "../../components/Layout/layout";
-import { PostTitle } from "../../components/Offer/Post";
+const Layout = dynamic(() => import("../../components/Layout/layout"));
 const MoreStories = dynamic(() => import("../../components/Offer/MoreStories"));
 const HeroPost = dynamic(() => import("../../components/Offer/HeroPost"));
 
@@ -46,7 +45,7 @@ const Post = ({
     >
       <div>
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <h2>Loading…</h2>
         ) : (
           <>
             <article>
