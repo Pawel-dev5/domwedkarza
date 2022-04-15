@@ -2,7 +2,7 @@
 import { StyledMessangerIcon } from "./Styles";
 
 const MessengerIcon = () => (
-  <StyledMessangerIcon href="https://m.me/choinkidostawa">
+  <StyledMessangerIcon href="https://m.me/163812774261061">
     <svg
       viewBox="0 0 80 80"
       width="40"

@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 // COMPONENTS
 import { KontaktItems } from "./items";
@@ -139,30 +140,20 @@ const Kontakt = ({
       </StyledFormContainer>
 
       <StyledOtherResWrapper>
-        {/* <div
-          style={{
-            border: "none",
-            borderBottom: "1px solid grey",
-            width: "60%",
-            paddingBottom: "2rem",
-            marginBottom: "2rem",
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
+        <Link
+          href="http://podwawelem.net/"
+          target="_blank"
+          passHref
+          rel="noreferrer"
         >
-          <StyledText form black>
-            Sprawdź też Restaurację
-          </StyledText>
-        </div> */}
-
-        <Image
-          alt={sprawdzTez?.altText}
-          src={sprawdzTez?.sourceUrl}
-          layout="responsive"
-          width={1200}
-          height={400}
-        />
+          <Image
+            alt={sprawdzTez?.altText}
+            src={sprawdzTez?.sourceUrl}
+            layout="responsive"
+            width={1200}
+            height={400}
+          />
+        </Link>
       </StyledOtherResWrapper>
     </>
   );

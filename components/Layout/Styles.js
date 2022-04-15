@@ -155,6 +155,15 @@ export const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  svg {
+    cursor: pointer;
+    color: ${({ theme }) => theme.white};
+    :hover {
+      color: ${({ theme }) =>
+        theme.darken({ amount: 0.2, color: theme.white })};
+    }
+  }
 `;
 
 export const StyledIconWrapper = styled.div`
@@ -184,6 +193,16 @@ export const StyledMenuWrapper = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+
+  svg {
+    cursor: pointer;
+
+    color: ${({ theme }) => theme.white};
+    :hover {
+      color: ${({ theme }) =>
+        theme.darken({ amount: 0.2, color: theme.white })};
+    }
   }
 `;
 

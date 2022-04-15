@@ -19,7 +19,9 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;    
       overflow-wrap: break-word;    
       overflow: hidden;
+      
     }
+
     
   }
 `;

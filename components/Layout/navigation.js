@@ -36,12 +36,12 @@ const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
         <StyledSubMenuWrapper>
           {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
-          <Link href="https://www.facebook.com/" passHref target="_blank">
-            <FontAwesomeIcon
-              icon={faFacebookSquare}
-              className="fa-xl"
-              style={{ color: "#fff" }}
-            />
+          <Link
+            href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
+            passHref
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
           </Link>
         </StyledSubMenuWrapper>
       </StyledNavWrapper>
@@ -105,12 +105,12 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
         )}
 
         <StyledMobileButtonsWrapper>
-          <Link href="https://www.facebook.com/" passHref target="_blank">
-            <FontAwesomeIcon
-              icon={faFacebookSquare}
-              className="fa-xl"
-              style={{ color: "#fff" }}
-            />
+          <Link
+            href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
+            passHref
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
           </Link>
           <StyledBurgerWrapper asideMenu={asideMenu}>
             <StyledButton
@@ -147,12 +147,11 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
           <StyledNavWrapper submenu>
             {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
-            <Link href="https://www.facebook.com/" passHref>
-              <FontAwesomeIcon
-                icon={faFacebookSquare}
-                className="fa-xl"
-                style={{ color: "#fff" }}
-              />
+            <Link
+              href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
+              passHref
+            >
+              <FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
             </Link>
           </StyledNavWrapper>
         </StyledMobileBodyWrapper>
