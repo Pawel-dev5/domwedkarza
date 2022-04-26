@@ -26,10 +26,10 @@ const Index = ({
       footerItems={footerItems?.menuItems?.edges}
       headerText={galleryPage?.title}
       headerImg={galleryPage?.featuredImage?.node}
-      subHeaderText={galleryPage?.galeria?.galeria?.galleryText}
+      subHeaderText={galleryPage?.galeria?.galleryHeader}
     >
       <SRLWrapper>
-        <Gallery data={galleryPage?.galeria?.galeria} />
+        <Gallery content={galleryPage?.content} />
       </SRLWrapper>
     </Layout>
   );
