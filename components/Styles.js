@@ -89,7 +89,7 @@ export const StylesGalleryGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 3rem;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -97,26 +97,27 @@ export const StylesGalleryGrid = styled.div`
     }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+      width: 68%;
       grid-template-columns: repeat(3, 1fr);
     }
 
     .wp-block-image {
       margin: 1rem;
+      height: 400px;
+      width: 400px;
+
+      > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      :hover {
+        transform: scale(1.1);
+        transition: transform 0.5s;
+      }
     }
   }
 
-  img {
-    height: 100%;
-    min-height: 100%;
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-
-    :hover {
-      transform: scale(1.1);
-      transition: transform 0.5s;
-    }
-  }
   span {
     margin: 1rem !important;
     min-height: 20rem;
