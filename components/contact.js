@@ -17,9 +17,9 @@ import {
 	StyledTextarea,
 	StyledOtherResWrapper,
 } from './Styles';
-import { StyledButton, StyledText } from '../components/StylesGeneral';
+import { StyledButton, StyledText } from './StylesGeneral';
 
-const Kontakt = ({ userId, serviceId, tamplateId, adres, telefon, sprawdzTez }) => {
+const Contact = ({ userId, serviceId, tamplateId, adres, telefon, sprawdzTez }) => {
 	const initialState = {
 		state: 'IDLE',
 		name: 'Imię i nazwisko (wymagane)',
@@ -68,7 +68,7 @@ const Kontakt = ({ userId, serviceId, tamplateId, adres, telefon, sprawdzTez }) 
 				<KontaktItems.KontaktPage adres={adres} telefon={telefon} color="black" />
 
 				<StyledFormWrapper>
-					<StyledText form black>
+					<StyledText formStyle black>
 						Formularz kontaktowy
 					</StyledText>
 					<StyledForm ref={form} onSubmit={handleSubmit(onSubmit)}>
@@ -126,17 +126,19 @@ const Kontakt = ({ userId, serviceId, tamplateId, adres, telefon, sprawdzTez }) 
 
 			<StyledOtherResWrapper>
 				<Link href="http://podwawelem.net/" target="_blank" passHref rel="noreferrer">
-					<Image
-						alt={sprawdzTez?.altText}
-						src={sprawdzTez?.sourceUrl}
-						layout="responsive"
-						width={1200}
-						height={400}
-					/>
+					<a>
+						<Image
+							alt={sprawdzTez?.altText}
+							src={sprawdzTez?.sourceUrl}
+							layout="responsive"
+							width={1200}
+							height={400}
+						/>
+					</a>
 				</Link>
 			</StyledOtherResWrapper>
 		</>
 	);
 };
 
-export default Kontakt;
+export default Contact;

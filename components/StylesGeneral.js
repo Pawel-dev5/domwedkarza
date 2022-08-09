@@ -132,8 +132,8 @@ export const StyledText = styled.span`
 			text-align: ${textAlign};
 		`}
 
-    ${({ form }) =>
-		form &&
+    ${({ formStyle }) =>
+		formStyle &&
 		css`
 			font-size: 1.5rem;
 			padding: 0;

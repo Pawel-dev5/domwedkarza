@@ -19,6 +19,7 @@ const Blog = ({ allPosts: { edges }, menuItems: { menuItems }, subMenuItems, foo
 			headerImg={offerHeader?.featuredImage?.node}
 			headerText={offerHeader?.title}
 			subHeaderText={offerHeader?.oferta?.subheader}
+			seo={offerHeader?.seo}
 		>
 			<Container>{morePosts && <MoreStories posts={morePosts} />}</Container>
 		</Layout>
