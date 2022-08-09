@@ -1,126 +1,125 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const StyledCoverImg = styled.div`
-  cursor: pointer;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 20rem;
-  max-width: 30rem;
-  ${({ theme }) => theme.shadow};
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 20rem;
+	max-width: 30rem;
+	${({ theme }) => theme.shadow};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    min-width: 30rem;
-  }
+	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+		min-width: 30rem;
+	}
 
-  :hover {
-    transform: scale(1.01);
-  }
+	:hover {
+		transform: scale(1.01);
+	}
 `;
 
 export const StyledFooterAdres = styled.div`
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
 `;
 
 export const StyledTelWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  padding-bottom: 1rem;
-  padding-top: 0.5rem;
-  align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	padding-bottom: 1rem;
+	padding-top: 0.5rem;
+	align-items: flex-start;
 `;
 
 export const StyledContact = styled.div`
-  color: ${({ theme }) => theme.black};
+	color: ${({ theme }) => theme.black};
 
-  * {
-    color: ${({ theme }) => theme.black};
-  }
+	* {
+		color: ${({ theme }) => theme.black};
+	}
 
-  ${({ color }) =>
-    color === "white" &&
-    css`
-      color: ${({ theme }) => theme.white};
+	${({ color }) =>
+		color === 'white' &&
+		css`
+			color: ${({ theme }) => theme.white};
 
-      * {
-        color: ${({ theme }) => theme.white};
-      }
-    `}
+			* {
+				color: ${({ theme }) => theme.white};
+			}
+		`}
 
-  ${({ color }) =>
-    color === "black" &&
-    css`
-      color: ${({ theme }) => theme.black};
+	${({ color }) =>
+		color === 'black' &&
+		css`
+			color: ${({ theme }) => theme.black};
 
-      * {
-        color: ${({ theme }) => theme.black};
-      }
-    `}
+			* {
+				color: ${({ theme }) => theme.black};
+			}
+		`}
 `;
 
 export const StyledAdressWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
 
-  span {
-    width: 75%;
-    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-      width: 70%;
-    }
-  }
+	span {
+		width: 75%;
+		@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+			width: 70%;
+		}
+	}
 `;
 
 export const StyledNavText = styled.a`
-  text-decoration: none;
-  color: ${({ theme }) => theme.white};
-  font-size: 1rem;
+	text-decoration: none;
+	color: ${({ theme }) => theme.white};
+	font-size: 1rem;
 
-  :hover,
-  :active,
-  :focus {
-    text-decoration: underline;
-    color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
-  }
+	:hover,
+	:active,
+	:focus {
+		text-decoration: underline;
+		color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
+	}
 
-  ${({ active }) =>
-    active &&
-    css`
-      font-weight: ${({ theme }) => theme.semiBold};
-      text-decoration: underline;
-      color: ${({ theme }) =>
-        theme.darken({ amount: 0.2, color: theme.white })};
-    `}
+	${({ active }) =>
+		active &&
+		css`
+			font-weight: ${({ theme }) => theme.semiBold};
+			text-decoration: underline;
+			color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
+		`}
 
-  ${({ customPadding }) =>
-    customPadding &&
-    css`
-      padding: ${customPadding};
-    `}
+	${({ customPadding }) =>
+		customPadding &&
+		css`
+			padding: ${customPadding};
+		`}
 `;
 
 export const StyledMessangerIcon = styled.a`
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0px;
-  right: 0px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	bottom: 0px;
+	right: 0px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    bottom: 20px;
-    right: 20px;
-  }
+	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+		bottom: 20px;
+		right: 20px;
+	}
 
-  transition: all 0.2s ease-in-out;
-  :hover {
-    transform: scale(1.2);
-  }
+	transition: all 0.2s ease-in-out;
+	:hover {
+		transform: scale(1.2);
+	}
 `;

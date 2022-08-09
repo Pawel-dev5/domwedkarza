@@ -1,3 +1,100 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "airbnb",
+    "next/babel",
+    "prettier",
+    "next/core-web-vitals"
+  ],
+  "plugins": [
+    "prettier"
+    // "next/babel"
+  ],
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "requireConfigFile": false,
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "rules": {
+    // =========================
+    // --> turn the rule off <--
+    // =========================
+    "linebreak-style": 0,
+    "react/no-children-prop": 0,
+    "import/no-unresolved": 0,
+    "react/no-array-index-key": 0,
+    "import/prefer-default-export": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/no-danger": 0,
+    "@next/next/no-img-element": "off",
+    // =====================================
+    // --> turn the rule on as a warning <--
+    // =====================================
+    "no-unused-vars": 1,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    // ====================================
+    // --> turn the rule on as an error <--
+    // ====================================
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ], // This rule is aimed to enforce consistent function types for function components.
+    "react/jsx-no-useless-fragment": [
+      2,
+      {
+        "allowExpressions": true
+      }
+    ],
+    "no-plusplus": [
+      2,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "radix": [
+      2,
+      "as-needed"
+    ],
+    "react/jsx-props-no-spreading": [
+      2,
+      {
+        "html": "ignore",
+        "custom": "ignore",
+        "explicitSpread": "ignore",
+        "exceptions": [
+          ""
+        ]
+      }
+    ],
+    // ==============================
+    // --> START propsTypes rules <--
+    // ==============================
+    "react/prop-types": 0,
+    "react/forbid-prop-types": 0
+    // ============================
+    // --> END propsTypes rules <--
+    // ============================
+  }
 }
