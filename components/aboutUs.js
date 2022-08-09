@@ -27,8 +27,6 @@ const AboutUs = ({ aboutUsData }) => (
 								height={500}
 								alt={aboutUsData?.oNas?.zdjecie1?.altText}
 								src={aboutUsData?.oNas?.zdjecie1?.sourceUrl}
-								layout="fill"
-								objectFit="cover"
 							/>
 						</StyledImageWrapper>
 					</StyledSectionWrapper>
@@ -50,7 +48,6 @@ const AboutUs = ({ aboutUsData }) => (
 								alt={aboutUsData?.oNas?.zdjecie2?.altText}
 								src={aboutUsData?.oNas?.zdjecie2?.sourceUrl}
 								layout="fill"
-								objectFit="cover"
 							/>
 						</StyledImageWrapper>
 					</StyledSectionWrapper>
