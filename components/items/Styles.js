@@ -1,23 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const StyledCoverImg = styled.div`
-	cursor: pointer;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	min-height: 20rem;
-	max-width: 30rem;
-	${({ theme }) => theme.shadow};
-
-	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-		min-width: 30rem;
-	}
-
-	:hover {
-		transform: scale(1.01);
-	}
-`;
-
 export const StyledFooterAdres = styled.div`
 	display: flex;
 	align-items: flex-start;

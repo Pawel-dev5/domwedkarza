@@ -15,6 +15,7 @@ const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, virtualWal
 			footerItems={footerItems?.menuItems?.edges}
 			headerText={virtualWalk?.title}
 			headerImg={virtualWalk?.featuredImage?.node}
+			seo={virtualWalk?.seo}
 		>
 			<VirtualWalk iframe={virtualWalk?.content} />
 		</Layout>

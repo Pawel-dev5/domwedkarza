@@ -17,6 +17,7 @@ const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, galleryPag
 			headerText={galleryPage?.title}
 			headerImg={galleryPage?.featuredImage?.node}
 			subHeaderText={galleryPage?.galeria?.galleryHeader}
+			seo={galleryPage?.seo}
 		>
 			<SRLWrapper>
 				<Gallery content={galleryPage?.content} />

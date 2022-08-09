@@ -214,7 +214,7 @@ export const StyledOtherResWrapper = styled.div`
   }
   width: 100%;
   
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     min-width: 1200px;
   }
 `;

@@ -15,6 +15,7 @@ const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, aktualnosc
 			footerItems={footerItems?.menuItems?.edges}
 			headerText={aktualnosciHeader?.title}
 			headerImg={aktualnosciHeader?.featuredImage?.node}
+			seo={aktualnosciHeader?.seo}
 		>
 			<FacebookWall content={aktualnosciHeader?.content} />
 		</Layout>

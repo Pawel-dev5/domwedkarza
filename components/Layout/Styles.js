@@ -420,4 +420,7 @@ export const StyledMobileButtonsWrapper = styled.div`
 	flex-flow: row nowrap;
 	align-items: center;
 	gap: 1rem;
+	a {
+		color: ${({ theme }) => theme.white};
+	}
 `;

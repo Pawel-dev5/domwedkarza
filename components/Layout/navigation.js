@@ -41,7 +41,7 @@ const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
 						passHref
 						target="_blank"
 					>
-						<a>
+						<a aria-label="Facebook" alt="Facebook">
 							<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
 						</a>
 					</Link>
