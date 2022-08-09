@@ -1,163 +1,141 @@
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import logo from "../../public/logoDW.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import logo from '../../public/logoDW.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 
 // COMPONENTS
-import Burger from "../items/Burger";
-import SubMenu from "../items/submenu";
+import Burger from '../items/Burger';
+import SubMenu from '../items/submenu';
 
 // STYLES
-import { StyledLogoWrapper, StyledButton } from "../StylesGeneral";
+import { StyledLogoWrapper, StyledButton } from '../StylesGeneral';
 import {
-  StyledNavWrapper,
-  StyledNavMenuWrapper,
-  StyledNavText,
-  StyledMenuWrapper,
-  StyledMobileMenuWrapper,
-  StyledMobileMenu,
-  StyledMobileNavWrapper,
-  StyledLayout,
-  StyledMobileBodyWrapper,
-  StyledBurgerWrapper,
-  StyledSubMenuWrapper,
-  StyledMobileButtonsWrapper,
-} from "./Styles";
+	StyledNavWrapper,
+	StyledNavMenuWrapper,
+	StyledNavText,
+	StyledMenuWrapper,
+	StyledMobileMenuWrapper,
+	StyledMobileMenu,
+	StyledMobileNavWrapper,
+	StyledLayout,
+	StyledMobileBodyWrapper,
+	StyledBurgerWrapper,
+	StyledSubMenuWrapper,
+	StyledMobileButtonsWrapper,
+} from './Styles';
 
 const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
-  const router = useRouter();
+	const router = useRouter();
 
-  return (
-    <StyledMenuWrapper>
-      <StyledNavWrapper submenu hideSubMenu={hideSubMenu}>
-        <StyledSubMenuWrapper>
-          {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
+	return (
+		<StyledMenuWrapper>
+			<StyledNavWrapper submenu hideSubMenu={hideSubMenu}>
+				<StyledSubMenuWrapper>
+					{subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
-          <Link
-            href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
-            passHref
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
-          </Link>
-        </StyledSubMenuWrapper>
-      </StyledNavWrapper>
+					<Link
+						href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
+						passHref
+						target="_blank"
+					>
+						<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+					</Link>
+				</StyledSubMenuWrapper>
+			</StyledNavWrapper>
 
-      <StyledNavWrapper>
-        {logo && (
-          <StyledNavMenuWrapper>
-            <StyledLogoWrapper>
-              <Link href="/" passHref>
-                <Image
-                  alt="Nad Zalewem"
-                  src={logo}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </Link>
-            </StyledLogoWrapper>
-          </StyledNavMenuWrapper>
-        )}
+			<StyledNavWrapper>
+				{logo && (
+					<StyledNavMenuWrapper>
+						<StyledLogoWrapper>
+							<Link href="/" passHref>
+								<Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
+							</Link>
+						</StyledLogoWrapper>
+					</StyledNavMenuWrapper>
+				)}
 
-        {menuItems && (
-          <StyledNavMenuWrapper>
-            {menuItems?.map((item) => (
-              <Link href={item?.node?.path} passHref key={item?.node?.id}>
-                <StyledNavText
-                  active={router?.pathname === item?.node?.path ?? true}
-                >
-                  {item?.node?.label}
-                </StyledNavText>
-              </Link>
-            ))}
-          </StyledNavMenuWrapper>
-        )}
-      </StyledNavWrapper>
-    </StyledMenuWrapper>
-  );
+				{menuItems && (
+					<StyledNavMenuWrapper>
+						{menuItems?.map((item) => (
+							<Link href={item?.node?.path} passHref key={item?.node?.id}>
+								<StyledNavText active={router?.pathname === item?.node?.path ?? true}>
+									{item?.node?.label}
+								</StyledNavText>
+							</Link>
+						))}
+					</StyledNavMenuWrapper>
+				)}
+			</StyledNavWrapper>
+		</StyledMenuWrapper>
+	);
 };
 
 const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
-  const router = useRouter();
-  const [asideMenu, setAsideMenu] = useState(false);
+	const router = useRouter();
+	const [asideMenu, setAsideMenu] = useState(false);
 
-  return (
-    <StyledMobileNavWrapper>
-      {children && <StyledLayout>{children}</StyledLayout>}
+	return (
+		<StyledMobileNavWrapper>
+			{children && <StyledLayout>{children}</StyledLayout>}
 
-      <StyledMobileMenuWrapper>
-        {logo && (
-          <StyledNavMenuWrapper>
-            <StyledLogoWrapper>
-              <Link href="/" passHref>
-                <Image
-                  alt="Nad Zalewem"
-                  src={logo}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </Link>
-            </StyledLogoWrapper>
-          </StyledNavMenuWrapper>
-        )}
+			<StyledMobileMenuWrapper>
+				{logo && (
+					<StyledNavMenuWrapper>
+						<StyledLogoWrapper>
+							<Link href="/" passHref>
+								<Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
+							</Link>
+						</StyledLogoWrapper>
+					</StyledNavMenuWrapper>
+				)}
 
-        <StyledMobileButtonsWrapper>
-          <Link
-            href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
-            passHref
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
-          </Link>
-          <StyledBurgerWrapper asideMenu={asideMenu}>
-            <StyledButton
-              burger
-              type="button"
-              onClick={() => setAsideMenu(!asideMenu)}
-            >
-              <Burger />
-            </StyledButton>
-          </StyledBurgerWrapper>
-        </StyledMobileButtonsWrapper>
-      </StyledMobileMenuWrapper>
+				<StyledMobileButtonsWrapper>
+					<Link
+						href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
+						passHref
+						target="_blank"
+					>
+						<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+					</Link>
+					<StyledBurgerWrapper asideMenu={asideMenu}>
+						<StyledButton burger type="button" onClick={() => setAsideMenu(!asideMenu)}>
+							<Burger />
+						</StyledButton>
+					</StyledBurgerWrapper>
+				</StyledMobileButtonsWrapper>
+			</StyledMobileMenuWrapper>
 
-      <StyledMobileMenu
-        asideMenu={asideMenu}
-        onClick={() => setAsideMenu(!asideMenu)}
-      >
-        <StyledMobileBodyWrapper>
-          {menuItems && (
-            <>
-              {menuItems?.map((item) => (
-                <Link href={item?.node?.path} passHref key={item?.node?.id}>
-                  <StyledNavText
-                    customPadding="0.5rem"
-                    active={router?.pathname === item?.node?.path ?? true}
-                  >
-                    {item?.node?.label}
-                  </StyledNavText>
-                </Link>
-              ))}
-            </>
-          )}
+			<StyledMobileMenu asideMenu={asideMenu} onClick={() => setAsideMenu(!asideMenu)}>
+				<StyledMobileBodyWrapper>
+					{menuItems && (
+						<>
+							{menuItems?.map((item) => (
+								<Link href={item?.node?.path} passHref key={item?.node?.id}>
+									<StyledNavText
+										customPadding="0.5rem"
+										active={router?.pathname === item?.node?.path ?? true}
+									>
+										{item?.node?.label}
+									</StyledNavText>
+								</Link>
+							))}
+						</>
+					)}
 
-          <StyledNavWrapper submenu>
-            {subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
+					<StyledNavWrapper submenu>
+						{subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
-            <Link
-              href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061"
-              passHref
-            >
-              <FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
-            </Link>
-          </StyledNavWrapper>
-        </StyledMobileBodyWrapper>
-      </StyledMobileMenu>
-    </StyledMobileNavWrapper>
-  );
+						<Link href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061" passHref>
+							<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+						</Link>
+					</StyledNavWrapper>
+				</StyledMobileBodyWrapper>
+			</StyledMobileMenu>
+		</StyledMobileNavWrapper>
+	);
 };
 
 Navigation.Mobile = NavigationMobile;

@@ -1,11 +1,5 @@
 // STYLES
-import { StyledIframeWrapper } from "./Styles";
+import { StyledIframeWrapper } from './Styles';
 
-const VirtualWalk = ({ iframe }) => (
-  <>
-    {iframe && (
-      <StyledIframeWrapper dangerouslySetInnerHTML={{ __html: iframe }} />
-    )}
-  </>
-);
+const VirtualWalk = ({ iframe }) => <>{iframe && <StyledIframeWrapper dangerouslySetInnerHTML={{ __html: iframe }} />}</>;
 export default VirtualWalk;
