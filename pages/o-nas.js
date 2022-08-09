@@ -15,6 +15,7 @@ const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, aboutUsDat
 			footerItems={footerItems?.menuItems?.edges}
 			headerImg={aboutUsData?.featuredImage?.node}
 			headerText={aboutUsData?.title}
+			seo={aboutUsData?.seo}
 		>
 			<AboutUs aboutUsData={aboutUsData} />
 		</Layout>

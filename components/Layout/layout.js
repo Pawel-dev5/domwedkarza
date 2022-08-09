@@ -3,7 +3,7 @@ import { COMPANY_NAME } from '../../lib/constants';
 import { useState, useEffect } from 'react';
 
 // COMPONENTS
-import Meta from '../meta';
+import Seo from './seo';
 import Navigation from './navigation';
 import Footer from './footer';
 import MessengerIcon from '../items/MessengerIcon';
@@ -23,8 +23,13 @@ const Layout = ({
 	subHeaderText,
 	setAsideMenu,
 	asideMenu,
+	seo,
 }) => {
 	const [scrollDir, setScrollDir] = useState('START');
+	const newSeo = {
+		...seo,
+		metatitle: seo?.metatitle ?? slug,
+	};
 
 	useEffect(() => {
 		const threshold = 0;
@@ -61,14 +66,7 @@ const Layout = ({
 
 	return (
 		<>
-			<Head>
-				<title>
-					{COMPANY_NAME} {slug ?? ''}
-				</title>
-
-				<meta name="description" content={`${COMPANY_NAME}. ${slug ?? ''}`} />
-				<Meta slug={slug} />
-			</Head>
+			<Seo {...newSeo} />
 
 			<StyledLayout>
 				{menuItems && subMenuItems && (

@@ -1,13 +1,12 @@
+import { useEffect } from 'react';
 // NEXT
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { SRLWrapper } from 'simple-react-lightbox';
 
 // STATE
 import { getPostAndMorePosts, getAllPostsForHome, getPrimaryMenu, getSubMenu, getFooter } from '../../lib/api';
-import { COMPANY_NAME } from '../../lib/constants';
 
 // COMPONENTS
 const Layout = dynamic(() => import('../../components/Layout/layout'));
@@ -21,6 +20,13 @@ const Post = ({ post, posts, menuItems: { menuItems }, subMenuItems, footerItems
 	if (!router.isFallback && !post?.slug) {
 		return <ErrorPage statusCode={404} />;
 	}
+	const newSeo = {
+		...post?.seo,
+		shareimage: {
+			altText: post?.seo?.shareimage?.altText !== '' ? post?.seo?.shareimage?.altText : post?.title,
+			sourceUrl: post?.seo?.shareimage?.sourceUrl ?? post?.featuredImage?.node?.sourceUrl,
+		},
+	};
 
 	return (
 		<Layout
@@ -30,6 +36,7 @@ const Post = ({ post, posts, menuItems: { menuItems }, subMenuItems, footerItems
 			menuItems={menuItems?.edges}
 			subMenuItems={subMenuItems?.menuItems?.edges}
 			footerItems={footerItems?.menuItems?.edges}
+			seo={newSeo}
 		>
 			<div>
 				{router.isFallback ? (
@@ -37,13 +44,6 @@ const Post = ({ post, posts, menuItems: { menuItems }, subMenuItems, footerItems
 				) : (
 					<>
 						<article>
-							<Head>
-								<title>
-									{post?.title} | {COMPANY_NAME}
-								</title>
-								<meta property="og:image" content={post?.featuredImage?.node?.sourceUrl} />
-							</Head>
-
 							<SRLWrapper>
 								<HeroPost {...post} />
 							</SRLWrapper>

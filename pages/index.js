@@ -12,6 +12,7 @@ const Home = ({ menuItems: { menuItems }, subMenuItems, footerItems, homePage })
 		menuItems={menuItems?.edges}
 		subMenuItems={subMenuItems?.menuItems?.edges}
 		footerItems={footerItems?.menuItems?.edges}
+		seo={homePage?.node?.seo}
 	>
 		<HomePage mainData={homePage?.node} />
 	</Layout>

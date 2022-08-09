@@ -59,6 +59,9 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
 	padding: 1rem;
 	gap: 0;
 
+	a {
+		text-decoration: none;
+	}
 	${({ column }) =>
 		column &&
 		css`
@@ -94,6 +97,7 @@ export const StyledHeroWrapper = styled(StyledWrapper)`
 
 				div:nth-child(1) {
 					width: 60%;
+					height: 100%;
 				}
 				div:nth-child(2) {
 					width: 40%;
@@ -154,12 +158,9 @@ export const StylesMenuWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
-
-	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-		width: 75%;
-		height: 75%;
-	}
+	flex-flow: row nowrap;
+	width: 256px;
+	height: 331px;
 
 	span {
 		margin: 1rem !important;
@@ -167,6 +168,10 @@ export const StylesMenuWrapper = styled.div`
 		:hover {
 			transform: scale(1.1);
 			transition: transform 0.5s;
+		}
+		img {
+			width: 256px;
+			height: 331px;
 		}
 	}
 `;

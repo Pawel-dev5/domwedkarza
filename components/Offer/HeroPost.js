@@ -6,6 +6,9 @@ import Link from 'next/link';
 import { StyledHeroWrapper, StyledSliderWrapper, StylesMenuWrapper, StyledTextWrapper } from './Styles';
 import { StyledText } from '../StylesGeneral';
 
+// HELPERS
+import tokenMaker from '../../helpers/TokenMaker';
+
 const responsive = {
 	all: {
 		breakpoint: { max: 4000, min: 0 },
@@ -43,15 +46,12 @@ const HeroPost = ({ sliderOffer, excerpt, offerMenu }) => {
 							customTransition="all .5"
 							transitionDuration={1000}
 						>
-							{sliderGallery?.map((image) => (
-								<Image
-									key={image?.id}
-									src={image?.sourceUrl}
-									alt={image?.altText}
-									style={{ objectFit: 'cover' }}
-									objectFit="cover"
-								/>
-							))}
+							{sliderGallery?.map((image) => {
+								if (!image?.sourceUrl) return null;
+								return (
+									<Image key={tokenMaker(5)} src={image?.sourceUrl} alt={image?.altText} layout="fill" />
+								);
+							})}
 						</Carousel>
 					</StyledSliderWrapper>
 				)}
@@ -64,13 +64,11 @@ const HeroPost = ({ sliderOffer, excerpt, offerMenu }) => {
 					<StylesMenuWrapper>
 						{menuGallery?.map((item) => (
 							<Image
-								key={item?.altText}
-								width={200}
-								height={300}
+								key={tokenMaker(5)}
+								width="256px"
+								height="331px"
 								alt={item?.altText}
 								src={item?.sourceUrl}
-								style={{ objectFit: 'cover' }}
-								objectFit="cover"
 							/>
 						))}
 					</StylesMenuWrapper>

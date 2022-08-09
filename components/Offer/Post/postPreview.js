@@ -1,17 +1,19 @@
 import Link from 'next/link';
-
-// COMPONENTS
-import { CoverImage } from '../../items';
+import Image from 'next/image';
 
 // STYLES
 import { StyledText, StyledWrapper } from '../../../components/StylesGeneral';
-import { StyledPostPreviewWrapper } from './Styles';
+import { StyledPostPreviewWrapper, StyledCoverImg } from './Styles';
 import { StyledMorePostWrapper } from '../Styles';
 
 const PostPreview = ({ title, featuredImage, excerpt, slug }) => (
 	<Link href={`/oferta/${slug}`} passHref>
 		<StyledPostPreviewWrapper>
-			{featuredImage && <CoverImage title={title} featuredImage={featuredImage} slug={slug} />}
+			{featuredImage && (
+				<StyledCoverImg>
+					<Image layout="fill" alt={title} src={featuredImage?.node?.sourceUrl} />
+				</StyledCoverImg>
+			)}
 
 			<StyledWrapper between hero column>
 				<StyledMorePostWrapper column>
