@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic';
 
+// API
 import { getPrimaryMenu, getSubMenu, getFooter, getVirtualWalkHeader } from '../lib/api';
 
 // COMPONENTS
-import Layout from '../components/Layout/layout';
+const Layout = dynamic(() => import('../components/Layout/layout'));
 const VirtualWalk = dynamic(() => import('../components/VirtualWalk'));
 
 const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, virtualWalk }) => {
@@ -35,6 +36,6 @@ export async function getStaticProps() {
 			footerItems,
 			virtualWalk,
 		},
-		revalidate: 10, // In seconds
+		revalidate: 300, // In seconds
 	};
 }

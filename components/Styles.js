@@ -92,12 +92,12 @@ export const StylesGalleryGrid = styled.div`
 		max-width: 100%;
 		margin-bottom: 3rem;
 
-		@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+		@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-			width: 68%;
+		@media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+			width: 100%;
 			grid-template-columns: repeat(3, 1fr);
 		}
 
@@ -110,9 +110,10 @@ export const StylesGalleryGrid = styled.div`
 				height: 100%;
 				width: 100%;
 				object-fit: cover;
+				cursor: pointer;
 			}
 			:hover {
-				transform: scale(1.1);
+				transform: scale(1.05);
 				transition: transform 0.5s;
 			}
 		}

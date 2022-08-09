@@ -2,7 +2,7 @@
 import { StyledMessangerIcon } from './Styles';
 
 const MessengerIcon = () => (
-	<StyledMessangerIcon href="https://m.me/163812774261061">
+	<StyledMessangerIcon aria-label="Messenger" alt="Messenger" href="https://m.me/163812774261061">
 		<svg viewBox="0 0 80 80" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
 			<path
 				fillRule="evenodd"

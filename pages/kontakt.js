@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { getPrimaryMenu, getSubMenu, getFooter, getKontaktHeader, getConfig } from '../lib/api';
 
 // COMPONENTS
-import Layout from '../components/Layout/layout';
+const Layout = dynamic(() => import('../components/Layout/layout'));
 const Kontakt = dynamic(() => import('../components/kontact'));
 
 const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, kontaktData, formConfig }) => (
@@ -41,7 +41,7 @@ export async function getStaticProps() {
 			kontaktData,
 			formConfig,
 		},
-		revalidate: 10, // In seconds
+		revalidate: 300, // In seconds
 	};
 }
 

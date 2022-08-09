@@ -1,7 +1,10 @@
+import dynamic from 'next/dynamic';
+
+// API
 import { getPrimaryMenu, getSubMenu, getFooter } from '../lib/api';
 
 // COMPONENTS
-import Layout from '../components/Layout/layout';
+const Layout = dynamic(() => import('../components/Layout/layout'));
 
 const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems }) => {
 	return (

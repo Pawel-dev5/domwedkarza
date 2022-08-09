@@ -41,7 +41,9 @@ const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
 						passHref
 						target="_blank"
 					>
-						<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+						<a>
+							<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+						</a>
 					</Link>
 				</StyledSubMenuWrapper>
 			</StyledNavWrapper>
@@ -51,7 +53,9 @@ const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
 					<StyledNavMenuWrapper>
 						<StyledLogoWrapper>
 							<Link href="/" passHref>
-								<Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
+								<a>
+									<Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
+								</a>
 							</Link>
 						</StyledLogoWrapper>
 					</StyledNavMenuWrapper>
@@ -86,7 +90,9 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
 					<StyledNavMenuWrapper>
 						<StyledLogoWrapper>
 							<Link href="/" passHref>
-								<Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
+								<a>
+									<Image alt="Nad Zalewem" src={logo} layout="fill" objectFit="cover" />
+								</a>
 							</Link>
 						</StyledLogoWrapper>
 					</StyledNavMenuWrapper>
@@ -98,7 +104,9 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
 						passHref
 						target="_blank"
 					>
-						<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+						<a alt="Facebook" aria-label="Facebook">
+							<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+						</a>
 					</Link>
 					<StyledBurgerWrapper asideMenu={asideMenu}>
 						<StyledButton burger type="button" onClick={() => setAsideMenu(!asideMenu)}>
@@ -129,7 +137,9 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
 						{subMenuItems && <SubMenu subMenuItems={subMenuItems} />}
 
 						<Link href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061" passHref>
-							<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+							<a alt="Facebook" aria-label="Facebook">
+								<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+							</a>
 						</Link>
 					</StyledNavWrapper>
 				</StyledMobileBodyWrapper>

@@ -5,7 +5,7 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import { getPrimaryMenu, getSubMenu, getFooter, getGalleryPage } from '../lib/api';
 
 // COMPONENTS
-import Layout from '../components/Layout/layout';
+const Layout = dynamic(() => import('../components/Layout/layout'));
 const Gallery = dynamic(() => import('../components/gallery'));
 
 const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, galleryPage }) => {
@@ -40,6 +40,6 @@ export async function getStaticProps() {
 			footerItems,
 			galleryPage,
 		},
-		revalidate: 10, // In seconds
+		revalidate: 300, // In seconds
 	};
 }

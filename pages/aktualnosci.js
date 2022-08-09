@@ -1,8 +1,11 @@
+import dynamic from 'next/dynamic';
+
+// API
 import { getPrimaryMenu, getSubMenu, getFooter, getAktualnosciHeader } from '../lib/api';
 
 // COMPONENTS
-import Layout from '../components/Layout/layout';
-import FacebookWall from '../components/FacabookWall';
+const Layout = dynamic(() => import('../components/Layout/layout'));
+const FacebookWall = dynamic(() => import('../components/FacabookWall'));
 
 const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, aktualnosciHeader }) => {
 	return (
@@ -33,6 +36,6 @@ export async function getStaticProps() {
 			footerItems,
 			aktualnosciHeader,
 		},
-		revalidate: 10, // In seconds
+		revalidate: 300, // In seconds
 	};
 }

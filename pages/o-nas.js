@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { getPrimaryMenu, getSubMenu, getFooter, getAboutUsPage } from '../lib/api';
 
 // COMPONENTS
-import Layout from '../components/Layout/layout';
+const Layout = dynamic(() => import('../components/Layout/layout'));
 const AboutUs = dynamic(() => import('../components/aboutUs'));
 
 const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, aboutUsData }) => {
@@ -36,6 +36,6 @@ export async function getStaticProps() {
 			footerItems,
 			aboutUsData,
 		},
-		revalidate: 10, // In seconds
+		revalidate: 300, // In seconds
 	};
 }

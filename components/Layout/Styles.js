@@ -192,7 +192,7 @@ export const StyledMenuWrapper = styled.div`
 		width: 100%;
 		z-index: 999;
 		top: 0;
-		background-color: ${({ theme }) => theme.transparentize({ amount: 0.5, color: theme.black })};
+		background-color: ${({ theme }) => theme.transparentize({ amount: 0.3, color: theme.black })};
 		display: flex;
 		align-items: center;
 		flex-direction: column;

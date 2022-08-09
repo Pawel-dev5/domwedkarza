@@ -74,7 +74,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 			subMenuItems,
 			footerItems,
 		},
-		revalidate: 10, // In seconds
+		revalidate: 300, // In seconds
 	};
 }
 

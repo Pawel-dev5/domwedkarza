@@ -33,15 +33,14 @@ const Footer = ({ footerItems, subMenuItems }) => {
 
 				<StyledFooterWrapper>
 					<StyledText h5 white>
-						Informujemy, że nasza firma korzysta z&nbsp;subwencji finansowej, w{/* eslint-disable-next-line */}
-						ramach rządowego programu "Tarcza Finansowa 2.0 Polskiego Funduszu&nbsp;
-						{/* eslint-disable-next-line */}
-						Rozwoju dla Mikro, Małych i Średnich Firm", udzielonej przez przez PFR SA.
+						Informujemy, że nasza firma korzysta z&nbsp;subwencji finansowej, w ramach rządowego programu "Tarcza
+						Finansowa 2.0 Polskiego Funduszu&nbsp; Rozwoju dla Mikro, Małych i Średnich Firm", udzielonej przez
+						przez PFR SA.
 					</StyledText>
 
 					<StyledImageWrapper>
 						<Image
-							alt=" ys"
+							alt="PFR"
 							src="https://db.restauracja-nadzalewem.pl/wp-content/uploads/2022/03/277112027_339491871473215_3428012668149106858_n.webp"
 							layout="fixed"
 							width={145}
@@ -56,7 +55,9 @@ const Footer = ({ footerItems, subMenuItems }) => {
 					</StyledText>
 
 					<Link href="https://www.facebook.com/Restauracja-Eventy-Nad-Zalewem-163812774261061" passHref>
-						<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+						<a alt="Facebook" aria-label="Facebook">
+							<FontAwesomeIcon icon={faFacebookSquare} className="fa-xl" />
+						</a>
 					</Link>
 				</StyledSubFooter>
 			</StyledFooter>
