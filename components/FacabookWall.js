@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledFBWrapper = styled.div`
 .cff-wrapper{
@@ -976,11 +976,5 @@ const StyledFBWrapper = styled.div`
   }
 `;
 
-const FacebookWall = ({ content }) => (
-  <>
-    {content && (
-      <StyledFBWrapper dangerouslySetInnerHTML={{ __html: content }} />
-    )}
-  </>
-);
+const FacebookWall = ({ content }) => <>{content && <StyledFBWrapper dangerouslySetInnerHTML={{ __html: content }} />}</>;
 export default FacebookWall;

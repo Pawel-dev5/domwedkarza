@@ -1,9 +1,9 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import theme from "../theme/themeDefault";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import "react-multi-carousel/lib/styles.css";
-import SimpleReactLightbox from "simple-react-lightbox";
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import theme from '../theme/themeDefault';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'react-multi-carousel/lib/styles.css';
+import SimpleReactLightbox from 'simple-react-lightbox';
 
 config.autoAddCss = false;
 
@@ -26,14 +26,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 const App = ({ Component, pageProps }) => {
-  return (
-    <SimpleReactLightbox>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </SimpleReactLightbox>
-  );
+	return (
+		<SimpleReactLightbox>
+			<ThemeProvider theme={theme}>
+				<GlobalStyle />
+				<Component {...pageProps} />
+			</ThemeProvider>
+		</SimpleReactLightbox>
+	);
 };
 
 export default App;
