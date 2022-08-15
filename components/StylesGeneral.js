@@ -144,12 +144,8 @@ export const StyledText = styled.span`
     ${({ footer }) =>
 		footer &&
 		css`
-			width: 85% !important;
+			width: 58%;
 			color: ${({ theme }) => theme.black};
-
-			@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-				width: 55% !important;
-			}
 		`}
 
     ${({ hover }) =>
