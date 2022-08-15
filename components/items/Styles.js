@@ -50,10 +50,7 @@ export const StyledAdressWrapper = styled.div`
 	margin-bottom: 2rem;
 
 	span {
-		width: 75%;
-		@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-			width: 70%;
-		}
+		width: 90%;
 	}
 `;
 
