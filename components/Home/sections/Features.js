@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 // STYLES
 import { StyledItemsWrapper, StyledFeature, StyledIcon, StyledFeaturesWrapper } from './Style';
 import { StyledText } from '../../StylesGeneral';
@@ -21,7 +23,15 @@ const Features = ({ features, heading }) => {
 				<StyledItemsWrapper imagesCount={featureArray?.length}>
 					{featureArray?.map((feature) => (
 						<StyledFeature key={feature?.icon?.id}>
-							<StyledIcon src={feature?.icon?.sourceUrl} alt={feature?.icon?.altText} />
+							<StyledIcon>
+								<Image
+									src={feature?.icon?.sourceUrl}
+									alt={feature?.icon?.altText}
+									width="140px"
+									height="140px"
+									quality={65}
+								/>
+							</StyledIcon>
 
 							<div>
 								<StyledText h2 black padding="1rem 0">

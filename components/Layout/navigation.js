@@ -109,7 +109,13 @@ const NavigationMobile = ({ menuItems, subMenuItems, children }) => {
 						</a>
 					</Link>
 					<StyledBurgerWrapper asideMenu={asideMenu}>
-						<StyledButton burger type="button" onClick={() => setAsideMenu(!asideMenu)}>
+						<StyledButton
+							burger
+							type="button"
+							name="Close"
+							aria-label="Close"
+							onClick={() => setAsideMenu(!asideMenu)}
+						>
 							<Burger />
 						</StyledButton>
 					</StyledBurgerWrapper>

@@ -126,7 +126,7 @@ const Contact = ({ userId, serviceId, tamplateId, adres, telefon, sprawdzTez }) 
 
 			<StyledOtherResWrapper>
 				<Link href="http://podwawelem.net/" target="_blank" passHref rel="noreferrer">
-					<a>
+					<a alt="Restauracja pod Wawelem" target="_blank" rel="noreferrer">
 						<Image
 							alt={sprawdzTez?.altText}
 							src={sprawdzTez?.sourceUrl}
