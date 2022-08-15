@@ -69,12 +69,11 @@ export const StyledVideo = styled.video`
 export const StyledVideoWrapper = styled.div`
 	width: 100%;
 	max-width: 100%;
-	height: 180px;
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
 		height: 500px;
 	}
-	margin: 0 0 5rem 0;
+	margin: 6rem 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -117,12 +116,13 @@ export const StyledFeature = styled.div`
 	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-direction: column;
+	margin-top: 7rem;
 
-	> div {
+	> div:nth-child(2) {
 		width: 100%;
-		height: 50%;
+		height: auto;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
@@ -130,10 +130,9 @@ export const StyledFeature = styled.div`
 	}
 `;
 
-export const StyledIcon = styled.img`
-	width: 140px;
-	height: 140px;
-
+export const StyledIcon = styled.div`
+	padding: 1rem;
+	height: initial;
 	:hover {
 		transform: scale(1.1);
 		transition: transform 0.5s;

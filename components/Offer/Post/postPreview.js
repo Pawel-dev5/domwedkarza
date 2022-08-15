@@ -11,7 +11,7 @@ const PostPreview = ({ title, featuredImage, excerpt, slug }) => (
 		<StyledPostPreviewWrapper>
 			{featuredImage && (
 				<StyledCoverImg>
-					<Image layout="fill" alt={title} src={featuredImage?.node?.sourceUrl} />
+					<Image layout="fill" alt={title} src={featuredImage?.node?.sourceUrl} objectFit="cover" />
 				</StyledCoverImg>
 			)}
 
