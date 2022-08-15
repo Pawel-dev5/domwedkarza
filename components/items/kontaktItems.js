@@ -20,7 +20,7 @@ const KontaktItems = ({ footerItems, subMenuItems, color }) => (
 						<StyledIcon icon={faHome} className="fa-xl" />
 						<StyledText
 							footer={color === 'black' ?? true}
-							h5={color === 'white' ?? true}
+							h4={color === 'white' ?? true}
 							h3={color === 'black' ?? true}
 						>
 							Adres
@@ -30,8 +30,8 @@ const KontaktItems = ({ footerItems, subMenuItems, color }) => (
 					<StyledAdressWrapper>
 						<StyledText
 							footer={color === 'black' ?? true}
+							h4={color === 'white' ?? true}
 							h3={color === 'black' ?? true}
-							h5={color === 'white' ?? true}
 							footerAdres={color === 'black' ?? true}
 							textAlign="left"
 						>
@@ -39,7 +39,7 @@ const KontaktItems = ({ footerItems, subMenuItems, color }) => (
 						</StyledText>
 						<StyledText
 							footer={color === 'black' ?? true}
-							h5={color === 'white' ?? true}
+							h4={color === 'white' ?? true}
 							h3={color === 'black' ?? true}
 							textAlign="left"
 						>
@@ -54,7 +54,7 @@ const KontaktItems = ({ footerItems, subMenuItems, color }) => (
 
 						<StyledText
 							footer={color === 'black' ?? true}
-							h5={color === 'white' ?? true}
+							h4={color === 'white' ?? true}
 							h3={color === 'black' ?? true}
 						>
 							Zadzwoń
@@ -69,7 +69,7 @@ const KontaktItems = ({ footerItems, subMenuItems, color }) => (
 								footer
 							>
 								<StyledText
-									h5={color === 'white' ?? true}
+									h4={color === 'white' ?? true}
 									h3={color === 'black' ?? true}
 									black={color === 'black' ?? true}
 									key={item?.node?.id}
@@ -171,5 +171,6 @@ const ContactPageItems = ({ adres, telefon, color }) => (
 		)}
 	</StyledContact>
 );
+
 KontaktItems.KontaktPage = ContactPageItems;
 export default KontaktItems;

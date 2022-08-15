@@ -131,6 +131,7 @@ export const StyledFeature = styled.div`
 `;
 
 export const StyledIcon = styled.div`
+	padding: 1rem;
 	height: initial;
 	:hover {
 		transform: scale(1.1);

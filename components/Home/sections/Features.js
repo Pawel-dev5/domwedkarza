@@ -29,6 +29,7 @@ const Features = ({ features, heading }) => {
 									alt={feature?.icon?.altText}
 									width="140px"
 									height="140px"
+									quality={65}
 								/>
 							</StyledIcon>
 
