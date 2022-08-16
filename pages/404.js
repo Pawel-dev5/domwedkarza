@@ -5,20 +5,21 @@ import { getPrimaryMenu, getSubMenu, getFooter } from '../lib/api';
 
 // COMPONENTS
 const Layout = dynamic(() => import('../components/Layout/layout'));
+import { Custom404 as Page } from '../components/custom404';
 
-const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems }) => {
+const Custom404 = ({ menuItems: { menuItems }, subMenuItems, footerItems }) => {
 	return (
 		<Layout
 			menuItems={menuItems?.edges}
 			subMenuItems={subMenuItems?.menuItems?.edges}
 			footerItems={footerItems?.menuItems?.edges}
 		>
-			<span>Nie ma takiej strony</span>
+			<Page />
 		</Layout>
 	);
 };
 
-export default Index;
+export default Custom404;
 
 export async function getStaticProps() {
 	const menuItems = (await getPrimaryMenu()) ?? null;

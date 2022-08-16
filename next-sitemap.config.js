@@ -12,9 +12,7 @@ const config = {
 			},
 		],
 
-		additionalSitemaps: [
-			'https://www.restauracja-nadzalewem.pl/server-sitemap-index.xml', // <==== Add here
-		],
+		additionalSitemaps: ['https://www.restauracja-nadzalewem.pl/server-sitemap-index.xml'],
 	},
 };
 
