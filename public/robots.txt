@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.restauracja-nadzalewem.pl/
+
+# Sitemaps
+Sitemap: https://www.restauracja-nadzalewem.pl/sitemap.xml
+Sitemap: https://www.restauracja-nadzalewem.pl/server-sitemap-index.xml
