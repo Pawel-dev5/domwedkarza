@@ -9,8 +9,8 @@ export default class MyDocument extends Document {
 					{/* <!-- Google tag (gtag.js) --> */}
 					<script async src="https://www.googletagmanager.com/gtag/js?id=G-3459J6CE0V"></script>
 					<script>
-						window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}
-						gtag('js', new Date()); gtag('config', 'G-3459J6CE0V');
+						window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}; gtag('js',
+						newDate()); gtag('config', 'G-3459J6CE0V');
 					</script>
 
 					{/* FONTS */}
