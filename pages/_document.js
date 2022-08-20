@@ -6,10 +6,10 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					{/* <!-- Google tag (gtag.js) --> */}
+					{/* <!-- Start Google Tag Manager --> */}
 					<script async src="https://www.googletagmanager.com/gtag/js?id=G-3459J6CE0V"></script>
 					<script>
-						window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}; gtag('js',
+						window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js',
 						newDate()); gtag('config', 'G-3459J6CE0V');
 					</script>
 
