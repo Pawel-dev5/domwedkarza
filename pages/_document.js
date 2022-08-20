@@ -6,6 +6,14 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
+					{/* <!-- Google tag (gtag.js) --> */}
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-3459J6CE0V"></script>
+					<script>
+						window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}
+						gtag('js', new Date()); gtag('config', 'G-3459J6CE0V');
+					</script>
+
+					{/* FONTS */}
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link
