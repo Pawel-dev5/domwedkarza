@@ -76,7 +76,6 @@ export default class MyDocument extends Document {
 						src="https://db.restauracja-nadzalewem.pl/wp-content/plugins/easy-facebook-likebox/facebook/frontend/assets/js/public.js?ver=6.3.8"
 						id="easy-facebook-likebox-public-script-js"
 					/>
-
 					{/* END FB FEED STYLES */}
 				</Head>
 
@@ -88,6 +87,7 @@ export default class MyDocument extends Document {
 						}}
 					/>
 					{/* <!-- End Google Tag Manager (noscript) --> */}
+
 					<Main />
 					<NextScript />
 				</body>

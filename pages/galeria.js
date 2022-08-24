@@ -2,7 +2,8 @@ import dynamic from 'next/dynamic';
 import { SRLWrapper } from 'simple-react-lightbox';
 
 // API
-import { getPrimaryMenu, getSubMenu, getFooter, getGalleryPage } from '../lib/api';
+import { getGalleryPage } from '../lib/gallery';
+import { getPrimaryMenu, getSubMenu, getFooter } from '../lib/nav';
 
 // COMPONENTS
 const Layout = dynamic(() => import('../components/Layout/layout'));
