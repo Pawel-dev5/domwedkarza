@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -7,8 +8,8 @@ export default class MyDocument extends Document {
 			<Html lang="pl">
 				<Head>
 					{/* <!-- Google Analytics --> */}
-					<script async src="https://www.googletagmanager.com/gtag/js?id=G-93GN096F3Y" />
-					<script
+					<Script async src="https://www.googletagmanager.com/gtag/js?id=G-93GN096F3Y" />
+					<Script
 						dangerouslySetInnerHTML={{
 							__html: `window.dataLayer = window.dataLayer || [];
 							function gtag(){dataLayer.push(arguments);}
@@ -20,7 +21,7 @@ export default class MyDocument extends Document {
 					{/* <!-- END Google Analytics --> */}
 
 					{/* <!-- Google Tag Manager --> */}
-					<script
+					<Script
 						dangerouslySetInnerHTML={{
 							__html: `(function(w,d,s,l,i){
 							w[l]=w[l]||[];
@@ -54,7 +55,7 @@ export default class MyDocument extends Document {
 						media="all"
 					/>
 
-					<script
+					<Script
 						dangerouslySetInnerHTML={{
 							__html: `window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/db.restauracja-nadzalewem.pl\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.1"}};
 							/*! This file is auto-generated */
@@ -62,17 +63,17 @@ export default class MyDocument extends Document {
 						}}
 					/>
 
-					<script
+					<Script
 						src="https://db.restauracja-nadzalewem.pl/wp-includes/js/jquery/jquery.min.js?ver=3.6.0"
 						id="jquery-core-js"
 					/>
 
-					<script
+					<Script
 						src="https://db.restauracja-nadzalewem.pl/wp-content/plugins/easy-facebook-likebox/facebook/frontend/assets/js/esf-free-popup.min.js?ver=6.3.8"
 						id="easy-facebook-likebox-popup-script-js"
 					/>
 
-					<script
+					<Script
 						src="https://db.restauracja-nadzalewem.pl/wp-content/plugins/easy-facebook-likebox/facebook/frontend/assets/js/public.js?ver=6.3.8"
 						id="easy-facebook-likebox-public-script-js"
 					/>
