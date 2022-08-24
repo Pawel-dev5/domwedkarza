@@ -102,6 +102,10 @@ export const StyledSubMenuWrapper = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	margin: auto;
+
+	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) and (max-width: ${({ theme }) => theme.breakpoints.xl}) {
+		padding: 0 2rem;
+	}
 `;
 
 // LAYOUT
@@ -282,13 +286,15 @@ export const StyledSubFooter = styled.div`
 
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	width: 100%;
+	max-width: 1220px;
 	min-height: 2.8rem;
 	padding: 2rem;
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
 		flex-direction: row;
-		align-items: flex-start;
-		padding: 1.5rem 10rem;
+	}
+	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) and (max-width: ${({ theme }) => theme.breakpoints.xl}) {
+		padding: 0 7rem 0 2rem;
 	}
 `;
 

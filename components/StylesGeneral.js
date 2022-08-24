@@ -16,7 +16,7 @@ export const StyledText = styled.span`
 		css`
 			font-size: 2rem;
 			padding: 0;
-			padding-right: 0.5rem;
+			padding-right: 0.5rem 0;
 			padding-bottom: 0.5rem;
 		`}
 
@@ -25,23 +25,24 @@ export const StyledText = styled.span`
 		css`
 			font-size: 1.5rem;
 		`}
-  
-  ${({ h2 }) =>
+			
+	${({ h2 }) =>
 		h2 &&
 		css`
 			font-size: 1.25rem;
 		`}
-
-  ${({ h3 }) =>
+			
+	${({ h3 }) =>
 		h3 &&
 		css`
 			font-size: 1rem;
 		`}
 
-    ${({ h5 }) =>
+	${({ h5 }) =>
 		h5 &&
 		css`
 			font-size: 0.9rem;
+			line-height: 1.3rem;
 		`}
 
     ${({ h6 }) =>
@@ -120,13 +121,21 @@ export const StyledText = styled.span`
 			line-height: ${lh};
 		`}
  
- ${({ padding }) =>
+ 	${({ padding }) =>
 		padding &&
 		css`
 			padding: ${padding};
 		`}
+ 	
+	${({ paddingdesktop }) =>
+		paddingdesktop &&
+		css`
+			@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+				padding: ${paddingdesktop};
+			}
+		`}
  
- ${({ textAlign }) =>
+ 	${({ textAlign }) =>
 		textAlign &&
 		css`
 			text-align: ${textAlign};
@@ -351,6 +360,7 @@ export const StyledSubMenu = styled.a`
 	color: ${({ theme }) => theme.white};
 	padding: 0 0.8rem;
 	font-size: 0.85rem;
+	line-height: 1.5rem;
 
 	:hover {
 		text-decoration: underline;

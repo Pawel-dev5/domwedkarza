@@ -31,7 +31,7 @@ const Footer = ({ footerItems, subMenuItems }) => {
 				</StyledFooterWrapper>
 
 				<StyledFooterWrapper>
-					<StyledText h5 white>
+					<StyledText h5 white paddingdesktop="0 2.6rem">
 						Informujemy, że nasza firma korzysta z&nbsp;subwencji finansowej, w ramach rządowego programu "Tarcza
 						Finansowa 2.0 Polskiego Funduszu&nbsp; Rozwoju dla Mikro, Małych i Średnich Firm", udzielonej przez
 						przez PFR SA.
