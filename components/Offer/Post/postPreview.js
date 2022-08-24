@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// STYLES
+// COMPONENTS
 import { StyledText, StyledWrapper } from '../../../components/StylesGeneral';
+
+// STYLES
 import { StyledPostPreviewWrapper, StyledCoverImg } from './Styles';
 import { StyledMorePostWrapper } from '../Styles';
 

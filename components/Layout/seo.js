@@ -1,4 +1,6 @@
 import Head from 'next/head';
+
+// CONSTANS
 import { COMPANY_NAME, HOME_OG_IMAGE_URL, BASIC_META_DESCRIPTION } from '../../lib/constants';
 
 const Seo = ({ metatitle, metadescription, shareimage, article }) => (

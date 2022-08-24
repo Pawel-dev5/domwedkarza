@@ -95,6 +95,7 @@ export const StyledNavWrapper = styled.nav`
 			display: none;
 		`}
 `;
+
 export const StyledSubMenuWrapper = styled.div`
 	max-width: 1110px;
 	display: flex;
@@ -134,6 +135,7 @@ export const StyledImageWrapper = styled.div`
 		}
 	}
 `;
+
 // FOOTER
 export const StyledFooterWrapper = styled.div`
 	display: flex;
