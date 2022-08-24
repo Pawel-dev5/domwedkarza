@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic';
 
 // API
-import { getPrimaryMenu, getSubMenu, getFooter, getAktualnosciHeader } from '../lib/api';
+import { getAktualnosciHeader } from '../lib/aktualnosci';
+import { getPrimaryMenu, getSubMenu, getFooter } from '../lib/nav';
 
 // COMPONENTS
 const Layout = dynamic(() => import('../components/Layout/layout'));

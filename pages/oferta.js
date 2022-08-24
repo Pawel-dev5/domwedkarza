@@ -1,7 +1,9 @@
 import dynamic from 'next/dynamic';
 
 // API
-import { getAllPostsForHome, getPrimaryMenu, getSubMenu, getFooter, getOfferHeader } from '../lib/api';
+import { getPrimaryMenu, getSubMenu, getFooter } from '../lib/nav';
+import { getAllPostsForHome } from '../lib/home';
+import { getOfferHeader } from '../lib/offer';
 
 // COMPONENTS
 import { Container } from '../components/elements';

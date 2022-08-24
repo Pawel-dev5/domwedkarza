@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
-// NEXT
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import dynamic from 'next/dynamic';
+
+// LIGHTBOX
 import { SRLWrapper } from 'simple-react-lightbox';
 
 // STATE
-import { getPostAndMorePosts, getAllPostsForHome, getPrimaryMenu, getSubMenu, getFooter } from '../../lib/api';
+import { getAllPostsForHome } from '../../lib/home';
+import { getPrimaryMenu, getSubMenu, getFooter } from '../../lib/nav';
+import { getPostAndMorePosts } from '../../lib/offerSlug';
 
 // COMPONENTS
 const Layout = dynamic(() => import('../../components/Layout/layout'));
