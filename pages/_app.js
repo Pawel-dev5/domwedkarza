@@ -16,6 +16,8 @@ import 'react-multi-carousel/lib/styles.css';
 config.autoAddCss = false;
 
 const GlobalStyle = createGlobalStyle`
+  
+  
   body {
     margin:0;
 
