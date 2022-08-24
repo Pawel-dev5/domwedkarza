@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 
 const StyledFBWrapper = styled.div`
