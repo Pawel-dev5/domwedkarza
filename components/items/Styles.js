@@ -51,6 +51,7 @@ export const StyledAdressWrapper = styled.div`
 
 	span {
 		width: 90%;
+		line-height: 1.5rem;
 	}
 `;
 
