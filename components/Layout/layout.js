@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import { COMPANY_NAME } from '../../lib/constants';
 import { useState, useEffect } from 'react';
 
 // COMPONENTS
