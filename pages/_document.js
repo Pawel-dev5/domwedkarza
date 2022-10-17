@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -8,8 +7,8 @@ export default class MyDocument extends Document {
 			<Html lang="pl">
 				<Head>
 					{/* <!-- Google Analytics --> */}
-					<Script async src="https://www.googletagmanager.com/gtag/js?id=G-93GN096F3Y" />
-					<Script
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-93GN096F3Y" />
+					<script
 						dangerouslySetInnerHTML={{
 							__html: `window.dataLayer = window.dataLayer || [];
 							function gtag(){dataLayer.push(arguments);}
@@ -21,7 +20,7 @@ export default class MyDocument extends Document {
 					{/* <!-- END Google Analytics --> */}
 
 					{/* <!-- Google Tag Manager --> */}
-					<Script
+					<script
 						dangerouslySetInnerHTML={{
 							__html: `(function(w,d,s,l,i){
 							w[l]=w[l]||[];
