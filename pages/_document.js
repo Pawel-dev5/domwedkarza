@@ -6,8 +6,18 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="pl">
 				<Head>
+					{/* <!-- Google Tag Manager --> */}
+					<script
+						dangerouslySetInnerHTML={{
+							__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+							new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+							j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+							'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+							})(window,document,'script','dataLayer','GTM-MNP6WP4');`,
+						}}
+					/>
+					{/* <!-- END Google Tag Manager --> */}
 					{/* <!-- Google Analytics --> */}
-					<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQB2266JV2" />
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `window.dataLayer = window.dataLayer || [];
@@ -18,19 +28,6 @@ export default class MyDocument extends Document {
 						}}
 					/>
 					{/* <!-- END Google Analytics --> */}
-
-					{/* <!-- Google Tag Manager --> */}
-					<script
-						dangerouslySetInnerHTML={{
-							__html: `(function(w,d,s,l,i){
-							w[l]=w[l]||[];
-							w[l].push({'gtm.start':	new Date().getTime(),event:'gtm.js'});
-							var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-							j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-							})(window,document,'script','dataLayer','GTM-MNP6WP4');`,
-						}}
-					/>
-					{/* <!-- END Google Tag Manager --> */}
 
 					{/* FONTS */}
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
