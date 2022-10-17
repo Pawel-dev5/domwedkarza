@@ -7,14 +7,14 @@ export default class MyDocument extends Document {
 			<Html lang="pl">
 				<Head>
 					{/* <!-- Google Analytics --> */}
-					<script async src="https://www.googletagmanager.com/gtag/js?id=G-93GN096F3Y" />
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQB2266JV2" />
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `window.dataLayer = window.dataLayer || [];
 							function gtag(){dataLayer.push(arguments);}
 							gtag('js', new Date());
 							
-							gtag('config', 'G-93GN096F3Y');`,
+							gtag('config', 'G-QQB2266JV2');`,
 						}}
 					/>
 					{/* <!-- END Google Analytics --> */}
