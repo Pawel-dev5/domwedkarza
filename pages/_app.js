@@ -17,7 +17,6 @@ config.autoAddCss = false;
 
 const GlobalStyle = createGlobalStyle`
   
-  
   body {
     margin:0;
 
@@ -32,7 +31,6 @@ const GlobalStyle = createGlobalStyle`
       
     }
 
-    
   }
 `;
 

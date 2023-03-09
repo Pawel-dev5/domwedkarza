@@ -155,8 +155,8 @@ export const StyledSectionWrapper = styled.div`
 	margin-bottom: 1rem;
 
 	img {
-		min-height: 800px !important;
-		object-fit: cover;
+		min-height: 500px !important;
+		object-fit: contain;
 	}
 
 	display: flex;
@@ -177,7 +177,10 @@ export const StyledListWrapper = styled.div`
 	flex-direction: column;
 	max-width: 500px;
 	margin-bottom: 4rem;
-	min-height: 500px;
+
+	> div > ul > li {
+		padding-bottom: 10px;
+	}
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
 		margin-right: 5rem;
@@ -187,36 +190,34 @@ export const StyledListWrapper = styled.div`
 
 export const StyledImageWrapper = styled.div`
 	position: relative;
-	min-width: 500px;
-	min-height: 500px;
-	max-width: 800px;
-
-	height: 100%;
 	width: 100%;
+	min-width: 500px;
+	max-width: 800px;
+	height: 500px;
 `;
 
 export const StyledOtherResWrapper = styled.div`
-  position: relative;
-  display: block
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  cursor: pointer;
+	position: relative;
+	display: block;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	cursor: pointer;
 
-  height: 100%;
-  min-height: 400px;
-  span{
-    min-height: 400px;
-    img{
-      object-fit:cover;
-      min-height: 400px;
-    }
-  }
-  width: 100%;
-  
-  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-    min-width: 1200px;
-  }
+	height: 100%;
+	min-height: 400px;
+	span {
+		min-height: 400px;
+		img {
+			object-fit: cover;
+			min-height: 400px;
+		}
+	}
+	width: 100%;
+
+	@media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+		min-width: 1200px;
+	}
 `;
 
 export const StyledIframeWrapper = styled.div`

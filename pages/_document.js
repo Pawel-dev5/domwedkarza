@@ -31,12 +31,11 @@ export default class MyDocument extends Document {
 						}}
 					/>
 					{/* <!-- END Google Analytics --> */}
-
-					{/* FONTS */}
-					<link rel="preconnect" href="https://fonts.googleapis.com" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" />
-					{/* END FONTS */}
 				</Head>
+				{/* FONTS */}
+				<link rel="stylesheet" href="https://fonts.googleapis.com" />
+				<link rel="stylesheet" href="https://fonts.gstatic.com" />
+				{/* END FONTS */}
 
 				<body>
 					{/* <!-- Google Tag Manager (noscript) --> */}

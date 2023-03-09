@@ -15,6 +15,7 @@ export const StyledText = styled.span`
 		h1 &&
 		css`
 			font-size: 2rem;
+			line-height: 2.4rem;
 			padding: 0;
 			padding-right: 0.5rem 0;
 			padding-bottom: 0.5rem;
@@ -36,6 +37,7 @@ export const StyledText = styled.span`
 		h3 &&
 		css`
 			font-size: 1rem;
+			line-height: 1.5rem;
 		`}
 
 	${({ h5 }) =>
