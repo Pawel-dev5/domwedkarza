@@ -55,6 +55,7 @@ const Index = ({ menuItems: { menuItems }, subMenuItems, footerItems, aktualnosc
 				/>
 				{/* END FB FEED STYLES */}
 			</Head>
+
 			<Layout
 				menuItems={menuItems?.edges}
 				subMenuItems={subMenuItems?.menuItems?.edges}
