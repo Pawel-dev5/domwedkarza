@@ -112,4 +112,5 @@ const FacebookWall = ({ content }) => {
 
 	return <>{content && <StyledFBWrapper dangerouslySetInnerHTML={{ __html: content }} />}</>;
 };
+
 export default FacebookWall;

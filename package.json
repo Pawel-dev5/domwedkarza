@@ -12,10 +12,12 @@
 	},
 	"next-unused": {
 		"alias": {},
-		"include": ["component"],
+		"include": [
+			"component"
+		],
 		"exclude": [],
 		"entrypoints": []
-	  },
+	},
 	"dependencies": {
 		"@babel/plugin-proposal-do-expressions": "^7.18.6",
 		"@emailjs/browser": "^3.4.0",
