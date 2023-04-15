@@ -40,6 +40,7 @@ export async function getStaticProps() {
 			footerItems,
 			aktualnosciHeader,
 		},
+
 		revalidate: 300, // In seconds
 	};
 }
