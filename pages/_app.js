@@ -12,6 +12,9 @@ import SimpleReactLightbox from 'simple-react-lightbox';
 // LIGHTBOX
 import 'react-multi-carousel/lib/styles.css';
 
+// VERCEL ANALYTICS
+import { Analytics } from '@vercel/analytics/react';
+
 // FONTAWESOME CONFIG
 config.autoAddCss = false;
 
@@ -40,6 +43,7 @@ const App = ({ Component, pageProps }) => {
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				<Component {...pageProps} />
+				<Analytics />
 			</ThemeProvider>
 		</SimpleReactLightbox>
 	);
