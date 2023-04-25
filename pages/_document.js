@@ -66,11 +66,10 @@ export default class MyDocument extends Document {
 				/>
 
 				{/* FB FEED STYLES */}
-				<link
-					rel="stylesheet"
-					id="easy-facebook-likebox-frontend-css"
-					href="https://db.restauracja-nadzalewem.pl/wp-content/plugins/easy-facebook-likebox/facebook/frontend/assets/css/easy-facebook-likebox-frontend.css?ver=6.3.8"
-					media="all"
+				<style
+					dangerouslySetInnerHTML={{
+						__html: `@import url('https://db.restauracja-nadzalewem.pl/wp-content/plugins/easy-facebook-likebox/facebook/frontend/assets/css/easy-facebook-likebox-frontend.css?ver=6.3.8');`,
+					}}
 				/>
 
 				<body>
