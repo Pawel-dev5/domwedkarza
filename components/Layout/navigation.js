@@ -67,9 +67,12 @@ const Navigation = ({ menuItems, subMenuItems, hideSubMenu }) => {
 
 				{menuItems && (
 					<StyledNavMenuWrapper>
-						{menuItems?.map((item) => (
+						{menuItems?.map((item, index) => (
 							<Link href={item?.node?.path} passHref key={item?.node?.id}>
-								<StyledNavText active={router?.pathname === item?.node?.path ?? true}>
+								<StyledNavText
+									active={router?.pathname === item?.node?.path ?? true}
+									isLast={index === menuItems?.length - 1}
+								>
 									{item?.node?.label}
 								</StyledNavText>
 							</Link>

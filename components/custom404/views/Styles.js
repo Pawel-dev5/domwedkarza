@@ -49,8 +49,10 @@ export const StyledTextWrapper = styled.div`
 		padding: 0 2rem;
 		margin-bottom: 2.1rem;
 		margin-top: 0.8rem;
+
 		li {
 			overflow: visible;
+			margin-bottom: 0.5rem;
 			a {
 				font-weight: ${({ theme }) => theme.bold};
 				font-size: 1rem;
@@ -60,6 +62,11 @@ export const StyledTextWrapper = styled.div`
 					color: ${({ theme }) => theme.black};
 				}
 			}
+		}
+
+		li:last-child {
+			background-color: #f59042;
+			padding: 0.5rem;
 		}
 	}
 `;

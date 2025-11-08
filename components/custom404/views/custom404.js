@@ -38,13 +38,25 @@ const Custom404 = () => {
 
 				<ul>
 					<li>
-						<a href="/oferta">Oferta</a>
-					</li>
-					<li>
 						<a href="/o-nas">O nas</a>
 					</li>
 					<li>
+						<a href="/oferta">Oferta</a>
+					</li>
+					<li>
+						<a href="/galeria">Galeria</a>
+					</li>
+					<li>
+						<a href="/aktualnosci">Aktualności</a>
+					</li>
+					<li>
+						<a href="/wirtualnyspacer">Wirtualny spacer</a>
+					</li>
+					<li>
 						<a href="/kontakt">Kontakt</a>
+					</li>
+					<li>
+						<a href="/zamowienia">Zamów online</a>
 					</li>
 				</ul>
 

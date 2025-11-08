@@ -30,6 +30,13 @@ export const StyledNavText = styled.a`
 			color: ${({ theme }) => theme.darken({ amount: 0.2, color: theme.white })};
 		`}
 
+	${({ isLast }) =>
+		isLast &&
+		css`
+			background-color: black;
+			padding: 0.5rem 0.7rem;
+		`}
+
 	${({ submenu }) =>
 		submenu &&
 		css`
