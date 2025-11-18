@@ -56,7 +56,7 @@ const Custom404 = () => {
 						<a href="/kontakt">Kontakt</a>
 					</li>
 					<li>
-						<a href="/zamowienia">Zamów online</a>
+						<a href="/zamowienie">Zamów online</a>
 					</li>
 				</ul>
 

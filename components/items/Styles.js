@@ -92,6 +92,7 @@ export const StyledMessangerIcon = styled.a`
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
+	z-index: 1000;
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
 		bottom: 20px;
