@@ -249,8 +249,8 @@ const Order = () => {
 		<Container>
 			<MainImageWrapper>
 				<Image
-					src="/assets/KPO_NextGenerationEU_poziom_zestawienie_podstawowe_ RGB_wariant_achromatyczny.jpg"
-					alt="KPO_NextGenerationEU_poziom_zestawienie_podstawowe_ RGB_wariant_achromatyczny"
+					src="/assets/KPO_NextGenerationEU_poziom_zestawienie_podstawowe_ RGB_wariant_kolor.jpg"
+					alt="KPO_NextGenerationEU_poziom_zestawienie_podstawowe_ RGB_wariant_kolor"
 					layout="fill"
 					objectFit="contain"
 				/>
